@@ -1,16 +1,16 @@
 import React from 'react';
 
 export default function Item({ itemData }) {
-  const { name, brand } = itemData.product;
   const { price: total, quantity } = itemData;
+  const { name, brand } = itemData.product;
 
   return (
-    <li>
+    <>
+      <div>IMAAAGE HERE LOL</div>
       <div>{name}</div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </li>
+      <div>
+        {brand} &bull; {quantity}st &bull; {total}kr
+      </div>
+    </>
   );
 }
