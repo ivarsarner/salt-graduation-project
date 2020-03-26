@@ -2,9 +2,14 @@ import React, { useContext } from 'react';
 import { CheckoutContext } from '../context/CheckoutContext';
 
 export default function CheckoutContainer() {
-  const CheckoutData = useContext(CheckoutContext);
-
-  console.log(CheckoutData);
-
-  return <div>CheckoutContainer</div>;
+  const { data } = useContext(CheckoutContext);
+  return (
+    <div>
+      <ul>
+        {data.map((checkout) => (
+          <li key={checkout.id}>{checkout.merchantName}</li>
+        ))}
+      </ul>
+    </div>
+  );
 }

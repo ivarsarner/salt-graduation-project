@@ -1,16 +1,13 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
+import mockData from '../assets/order-mock-data.json';
 
 export const CheckoutContext = createContext();
 
 const CheckoutContextProvider = (props) => {
-  const [books, setBooks] = useState([
-    { title: 'A Brave New World', id: 1 },
-    { title: 'War of the worlds', id: 2 },
-    { title: 'Rendezvous with Rama', id: 3 },
-    { title: "Childhood's End", id: 4 },
-  ]);
+  const [data, setBooks] = useState(mockData);
+
   return (
-    <CheckoutContext.Provider value={{ books }}>
+    <CheckoutContext.Provider value={{ data }}>
       {props.children}
     </CheckoutContext.Provider>
   );
