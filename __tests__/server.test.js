@@ -1,9 +1,12 @@
 const request = require('supertest');
-const api = require('../server.js');
-
-const { app } = api;
+const { app, server } = require('../server.js');
 
 describe('The API', () => {
+  afterEach((done) => {
+    server.close();
+    done();
+  });
+
   it('is up and running', (done) => {
     request(app)
       .get('/api')
