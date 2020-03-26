@@ -1,7 +1,10 @@
-//container for all checkouts
-
-import React from 'react';
+import React, { useContext } from 'react';
+import CheckoutContext from '../context/CheckoutContext';
 
 export default function CheckoutContainer() {
-	return <div>CheckoutContainer</div>;
+  const CheckoutData = useContext(CheckoutContext);
+
+  console.log(CheckoutData);
+
+  return <div>CheckoutContainer</div>;
 }
