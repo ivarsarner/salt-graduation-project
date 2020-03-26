@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { CheckoutContext } from '../context/CheckoutContext';
-import CheckoutCard from './checkout';
+import CheckoutCard from './checkout/CheckoutCard';
 
 export default function CheckoutContainer() {
   const { data } = useContext(CheckoutContext);

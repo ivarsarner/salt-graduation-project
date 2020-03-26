@@ -12,7 +12,9 @@ export default function Checkout({ data, checkoutID }) {
       <p>Items</p>
       <ul>
         {data.items.map((item) => (
-          <Item data={item} />
+          <div className="item-container">
+            <Item itemData={item} />
+          </div>
         ))}
       </ul>
     </div>
