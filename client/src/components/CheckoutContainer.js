@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import CheckoutContext from '../context/CheckoutContext';
+import { CheckoutContext } from '../context/CheckoutContext';
 
 export default function CheckoutContainer() {
   const CheckoutData = useContext(CheckoutContext);
