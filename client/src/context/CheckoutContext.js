@@ -4,7 +4,14 @@ import mockData from '../assets/order-mock-data.json';
 export const CheckoutContext = createContext();
 
 const CheckoutContextProvider = (props) => {
-  const [data, setBooks] = useState(mockData);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const filterData = mockData.filter(
+      (checkout) => checkout.merchant === 'IfO0fugaM9XRaaICJ7LQ'
+    );
+    setData(filterData);
+  }, []);
 
   return (
     <CheckoutContext.Provider value={{ data }}>
