@@ -1,0 +1,26 @@
+{
+	"name": "way-merchant-dashboard",
+	"version": "1.0.0",
+	"description": "A dashboard for connected merchants to get an overview of their Way checkout flow.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/wayretail/way-merchant-dashboard.git"
+	},
+	"author": "Oskar Näsman, Daniel Reed, Ivar Särner, Isabelle Caspersson",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/wayretail/way-merchant-dashboard/issues"
+	},
+	"homepage": "https://github.com/wayretail/way-merchant-dashboard#readme",
+	"dependencies": {
+		"axios": "^0.19.2",
+		"body-parser": "^1.19.0",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"nodemon": "^2.0.2"
+	}
+}
