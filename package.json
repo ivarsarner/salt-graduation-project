@@ -7,7 +7,7 @@
     "server": "nodemon server.js",
     "client": "cd client && npm start",
     "start": "npm-run-all --parallel server client",
-    "test": "jest . --forceExit",
+    "test": "jest __tests__/ --forceExit --maxWorkers=10",
     "lint": "eslint ."
   },
   "jest": {
