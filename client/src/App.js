@@ -1,23 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import CheckoutContextProvider from './context/CheckoutContext';
+import CustomerContextProvider from './context/CustomerContext';
 import Navigation from './components/Navigation';
 import CheckoutContainer from './components/CheckoutContainer';
-import axios from 'axios';
 import './App.scss';
 
 export default function App() {
-  const testApi = async () => {
-    const request = await axios.get('/api');
-  };
-
-  useEffect(() => {
-    testApi();
-  });
-
   return (
     <CheckoutContextProvider>
-      <Navigation />
-      <CheckoutContainer />
+      <CustomerContextProvider>
+        <Navigation />
+        <CheckoutContainer />
+      </CustomerContextProvider>
     </CheckoutContextProvider>
   );
 }
