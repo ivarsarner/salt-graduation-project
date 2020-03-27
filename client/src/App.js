@@ -3,6 +3,7 @@ import CheckoutContextProvider from './context/CheckoutContext';
 import Navigation from './components/Navigation';
 import CheckoutContainer from './components/CheckoutContainer';
 import axios from 'axios';
+import './App.scss';
 
 export default function App() {
   const testApi = async () => {

@@ -14,17 +14,15 @@ export default function CheckoutContainer() {
   }, [data]);
 
   return (
-    <div>
-      <ul>
-        {/* how can we dymanically show the number of live checkouts */}
-        {recentCheckouts.map((checkout, index) => (
-          <CheckoutCard
-            key={checkout.id.toString()}
-            data={checkout}
-            checkoutID={index + 1} // this is a temp fix. checkout id should come from the data
-          />
-        ))}
-      </ul>
+    <div className="container">
+      {/* how can we dymanically show the number of live checkouts */}
+      {recentCheckouts.map((checkout, index) => (
+        <CheckoutCard
+          key={checkout.id.toString()}
+          data={checkout}
+          checkoutID={index + 1} // this is a temp fix. checkout id should come from the data
+        />
+      ))}
     </div>
   );
 }

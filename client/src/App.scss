@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+.item-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.checkout-card {
+  border: solid 1px black;
+  width: 300px;
+  margin: 10px 10px;
+}

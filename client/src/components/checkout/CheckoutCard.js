@@ -16,7 +16,7 @@ export default function Checkout({ data, checkoutID }) {
   });
 
   return (
-    <div>
+    <div className="checkout-card">
       <h4>Checkout {checkoutID}</h4>
       <p>
         Time: <Moment fromNow>{data.timeCreated}</Moment>
