@@ -2,14 +2,15 @@
   box-sizing: border-box;
 }
 
-.item-container {
+.container {
   display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .checkout-card {
   border: solid 1px black;
-  width: 300px;
-  margin: 10px 10px;
+  flex: 0 32%;
+  height: auto;
+  margin-bottom: 2%; /* (100-32*3)/2 */
 }
