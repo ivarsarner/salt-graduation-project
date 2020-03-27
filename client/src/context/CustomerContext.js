@@ -8,7 +8,6 @@ const CustomerContextProvider = (props) => {
 
   useEffect(() => {
     fetchCustomers();
-    console.log('hi');
   }, []);
 
   const fetchCustomers = async () => {

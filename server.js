@@ -11,7 +11,7 @@ app.get('/api/customers', async (req, res) => {
     'https://randomuser.me/api/?nat=gb&results=10&noinfo&exc=location,login,id,email,dob,phone,cell,registered'
   );
   const customers = data.results.map((customer) => ({
-    name: customer.name.first + customer.name.last,
+    name: `${customer.name.first} ${customer.name.last}`,
     picture: customer.picture.large,
   }));
   res.json(customers);
