@@ -4,6 +4,7 @@ import CheckoutCard from './checkout/CheckoutCard';
 
 export default function CheckoutContainer() {
   const { data } = useContext(CheckoutContext);
+  const { customers } = useContext(CustomerContext);
   const [recentCheckouts, setRecentCheckouts] = useState([]);
 
   useEffect(() => {
