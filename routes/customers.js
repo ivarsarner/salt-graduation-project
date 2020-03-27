@@ -13,10 +13,6 @@ const getData = async (limit) => {
   return data;
 };
 
-router.post('*', (_, res) => res.status(400).end());
-router.delete('*', (_, res) => res.status(400).end());
-router.patch('*', (_, res) => res.status(400).end());
-
 router.get('/', async (_, res) => {
   const data = await getData(10);
   const customers = data.results.map((customer) => ({
