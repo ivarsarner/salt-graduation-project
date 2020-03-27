@@ -14,3 +14,22 @@
   height: auto;
   margin-bottom: 2%; /* (100-32*3)/2 */
 }
+
+.checkout-card__header {
+	display: flex;
+	align-items: center;
+	padding: 10px 10px;
+	margin-bottom: 10px;
+}
+
+.checkout-card__header__left {
+	width: 20%;
+}
+
+.checkout-card__header__middle {
+	width: 70%;
+}
+
+.checkout-card__header__right {
+	width: 10%;
+}
