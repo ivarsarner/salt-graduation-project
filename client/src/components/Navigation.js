@@ -4,17 +4,20 @@ import { CheckoutContext } from '../context/CheckoutContext';
 
 export default function Navigation() {
   const { data } = useContext(CheckoutContext);
-  const [currentStore, setCurrentStore] = useState('');
+  const [currentStore, setCurrentStore] = useState(null);
 
   useEffect(() => {
-    // const getCurrentStore = data[0];
-    // console.log(getCurrentStore.merchantName || 'jeff');
-  });
+    const getCurrentStore = data
+      .slice(0, 1)
+      .map((item) => item.merchantName)
+      .join('');
+    setCurrentStore(getCurrentStore);
+  }, [data]);
 
   return (
     <>
       <img src={logo} alt="Way" width="100px" />
-      <p>Current Store: ICA Supermarket Sabbatsberg</p>
+      <p>Current Store: {currentStore}</p>
     </>
   );
 }
