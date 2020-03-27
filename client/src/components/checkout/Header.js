@@ -14,19 +14,20 @@ export default function Header({ headerData }) {
       (acc, current) => acc + current.quantity,
       0
     );
+    console.log('i am a buzz kill');
     setCheckoutTotal(reducer);
-    const fetchedCustomer = actions.getRandomCustomer();
-    console.log(fetchedCustomer);
-    // setCustomer(fetchedCustomer);
-  });
+    setCustomer(actions.getRandomCustomer());
+  }, [customers]);
 
   return (
     <header className="checkout-card__header">
       <section className="checkout-card__header__left">
-        <img src={isabelleIMG} />
+        <img src={customer && customer.picture} />
       </section>
       <section className="checkout-card__header__middle">
-        <div className="checkout-card__header__name">Isabelle Böbsson</div>
+        <div className="checkout-card__header__name">
+          {customer && customer.name}
+        </div>
         <span className="checkout-card__header__middle__quantity">
           {checkoutTotal} items &bull;
         </span>
