@@ -15,8 +15,12 @@ const CustomerContextProvider = (props) => {
     setCustomers(data);
   };
 
+  const getRandomCustomer = () => customers[Math.floor(Math.random() * 9)];
+
   return (
-    <CustomerContext.Provider value={{ customers }}>
+    <CustomerContext.Provider
+      value={{ customers, actions: { getRandomCustomer } }}
+    >
       {props.children}
     </CustomerContext.Provider>
   );

@@ -4,7 +4,6 @@ import CheckoutCard from './checkout/CheckoutCard';
 
 export default function CheckoutContainer() {
   const { data } = useContext(CheckoutContext);
-  const { customers } = useContext(CustomerContext);
   const [recentCheckouts, setRecentCheckouts] = useState([]);
 
   useEffect(() => {
@@ -20,7 +19,7 @@ export default function CheckoutContainer() {
       {recentCheckouts.map((checkout, index) => (
         <CheckoutCard
           key={checkout.id.toString()}
-          data={checkout}
+          products={checkout}
           checkoutID={index + 1} // this is a temp fix. checkout id should come from the data
         />
       ))}
