@@ -18,4 +18,5 @@ jobs:
         working-directory: ./client
         run: npm install
       - name: test react components
+        working-directory: ./client
         run: npm test
