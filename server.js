@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 8080;
 
-const customersRoutes = require('./routes');
+const customersRoutes = require('./customer-routes');
 
 app.get('/api', (req, res) => res.send('Way Merchant API'));
 
