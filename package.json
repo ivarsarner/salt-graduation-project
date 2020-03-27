@@ -8,7 +8,8 @@
     "client": "cd client && npm start",
     "start": "npm-run-all --parallel server client",
     "test": "jest __tests__/",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "new-install": "npm i && cd client && npm i"
   },
   "jest": {
     "testPathIgnorePatterns": [
