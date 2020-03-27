@@ -7,7 +7,7 @@
     "server": "nodemon server.js",
     "client": "cd client && npm start",
     "start": "npm-run-all --parallel server client",
-    "test": "jest __tests__/",
+    "test": "jest __tests__/ --watch",
     "lint": "eslint .",
     "new-install": "npm i && cd client && npm i"
   },

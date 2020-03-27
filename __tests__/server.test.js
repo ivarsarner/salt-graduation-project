@@ -1,12 +1,12 @@
 const request = require('supertest');
 const { app, server } = require('../server.js');
 
-describe('The API', () => {
-  afterEach((done) => {
-    server.close();
-    done();
-  });
+afterAll((done) => {
+  server.close();
+  done();
+});
 
+describe('The API', () => {
   it('is up and running', (done) => {
     request(app)
       .get('/api')
@@ -15,19 +15,38 @@ describe('The API', () => {
         done();
       });
   });
-  it('rejects non-GET requests', (done) => {
-    request(app)
-      .post('/api')
-      .then((res) => {
-        expect(res.statusCode).toBe(404);
-        done();
-      });
-  });
-  it('returns the "hello world" message', (done) => {
+  it('returns the welcome message', (done) => {
     request(app)
       .get('/api')
       .then((res) => {
-        expect(res.text).toBe('Hello World!');
+        expect(res.text).toBe('Way Merchant API');
+        done();
+      });
+  });
+});
+
+describe('The customer API', () => {
+  it('returns 200', (done) => {
+    request(app)
+      .get('/api/customers')
+      .then((res) => {
+        expect(res.statusCode).toBe(200);
+        done();
+      });
+  });
+  it('only works for GET requests', (done) => {
+    request(app)
+      .post('/api/customers')
+      .then((res) => {
+        expect(res.statusCode).toBe(400);
+        done();
+      });
+  });
+  it('returns an array of customers', (done) => {
+    request(app)
+      .get('/api/customers')
+      .then((res) => {
+        expect(Array.isArray(res.body)).toBe(true);
         done();
       });
   });
