@@ -3,8 +3,9 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 8080;
 
-const customersRoutes = require('./routes/customers');
-const productsRoutes = require('./routes/products');
+const { customersRoutes, productsRoutes } = require('./routes');
+
+app.use('/api/images', express.static('db/images'));
 
 app.post('*', (_, res) => res.status(400).end());
 app.delete('*', (_, res) => res.status(400).end());
