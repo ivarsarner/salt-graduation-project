@@ -23,8 +23,8 @@ body {
   height: auto;
   margin-bottom: 2%; /* (100-32*3)/2 */
 
-  // flex: 0 24% would put 4 items on every row,
-  //flex: 0 19% would put 5 items on every row
+  // v2 flex: 0 24% would put 4 items on every row
+  // v2 flex: 0 19% would put 5 items on every row
 
   .checkout-card__checkoutNr {
     margin: 5% 5%;
