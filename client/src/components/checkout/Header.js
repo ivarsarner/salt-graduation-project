@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import Moment from 'react-moment';
 import { CustomerContext } from '../../context/CustomerContext';
-import isabelleIMG from '../../assets/isabelle.JPG';
+// import isabelleIMG from '../../assets/isabelle.JPG';
 import doneIMG from '../../assets/done.JPG';
 
 export default function Header({ headerData }) {
@@ -20,27 +20,31 @@ export default function Header({ headerData }) {
   }, [customers]);
 
   return (
-    <header className="checkout-card__header">
-      <section className="checkout-card__header__left">
-        <img src={customer && customer.picture} />
-      </section>
-      <section className="checkout-card__header__middle">
-        <div className="checkout-card__header__name">
-          {customer && customer.name}
-        </div>
-        <span className="checkout-card__header__middle__quantity">
-          {checkoutTotal} items &bull;
-        </span>
-        <span className="checkout-card__header__middle__total">
-          {checkoutTotal} kr &bull;
-        </span>
-        <span className="checkout-card__header__middle__time">
-          <Moment fromNow>{headerData.timeCreated}</Moment>
-        </span>
-      </section>
-      <section className="checkout-card__header__right">
-        <img src={doneIMG} />
-      </section>
-    </header>
+    <div>
+      <header className="checkout-card__header">
+        <section className="checkout-card__header__left">
+          <img src={customer && customer.picture} />
+        </section>
+        <section className="checkout-card__header__middle">
+          <div className="checkout-card__header__name">
+            {customer && customer.name}
+          </div>
+          <span className="checkout-card__header__middle__quantity">
+            {checkoutTotal} items &bull;
+          </span>
+          <span className="checkout-card__header__middle__total">
+            {' ' + checkoutTotal} kr &bull;
+          </span>
+          <span className="checkout-card__header__middle__time">
+            {' '}
+            <Moment fromNow>{headerData.timeCreated}</Moment>
+          </span>
+        </section>
+        <section className="checkout-card__header__right">
+          <img src={doneIMG} />
+        </section>
+      </header>
+      <hr></hr>
+    </div>
   );
 }
