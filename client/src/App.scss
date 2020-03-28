@@ -14,7 +14,7 @@ body {
 }
 
 .checkout-card {
-  border: solid 1px grey;
+  border: solid 1px #7dc164;
   border-radius: 10px;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   flex: 0 32%;
@@ -24,15 +24,20 @@ body {
   // flex: 0 24% would put 4 items on every row,
   //flex: 0 19% would put 5 items on every row
 
+  .checkout-card__checkoutNr {
+    margin: 5% 5%;
+    color: #808080;
+  }
+
   .checkout-card__header {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 5% 5%;
+    margin: 5% 5%;
   }
 
   hr {
-    border: 0.5px solid lightgrey;
+    border: 0.5px solid #e1e1e1;
     width: 90%;
     margin: 0 2;
   }
@@ -47,14 +52,13 @@ body {
   }
 
   .checkout-card__header__middle {
-    color: grey;
+    color: #808080;
     width: 65%;
     font-size: 0.8em;
-    justify-content: space-evenly;
     margin: 0 5%;
 
     .checkout-card__header__name {
-      color: black;
+      color: #000000;
       font-size: 1.2em;
       font-weight: 700;
       margin-bottom: 5%;
@@ -67,7 +71,36 @@ body {
     img {
       width: 100%;
       height: auto;
-      margin: 5%px;
+      margin: 5%;
+    }
+  }
+
+  .checkout-card__bottom {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 5%;
+
+    .checkout-card__bottom__left {
+      width: 30%;
+
+      img {
+        width: 100%;
+        height: auto;
+        margin: 5%;
+      }
+    }
+
+    .checkout-card__bottom__right {
+      width: 70%;
+      font-size: 1.3em;
+      margin: 0 5%;
+
+      .checkout-card__bottom__product__details {
+        flex-direction: row;
+        font-size: 0.6em;
+        margin: 1%;
+      }
     }
   }
 }

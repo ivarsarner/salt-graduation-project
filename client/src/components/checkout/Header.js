@@ -23,7 +23,7 @@ export default function Header({ headerData }) {
     <div>
       <header className="checkout-card__header">
         <section className="checkout-card__header__left">
-          <img src={customer && customer.picture} />
+          <img src={customer && customer.picture} alt="Customer" />
         </section>
         <section className="checkout-card__header__middle">
           <div className="checkout-card__header__name">
@@ -41,7 +41,7 @@ export default function Header({ headerData }) {
           </span>
         </section>
         <section className="checkout-card__header__right">
-          <img src={doneIMG} />
+          <img src={doneIMG} alt="Status of transaction" />
         </section>
       </header>
       <hr></hr>
