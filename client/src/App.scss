@@ -10,6 +10,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 2%;
 }
 
 .checkout-card {
@@ -18,7 +19,7 @@ body {
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   flex: 0 24%;
   height: auto;
-  margin: 5px; /* (100-32*3)/2 */
+  margin: 1px; /* (100-32*3)/2 */
 
   .checkout-card__header {
     display: flex;
@@ -38,32 +39,32 @@ body {
   }
 
   .checkout-card__header__left img {
-    width: 70px;
+    width: 100%;
     border-radius: 10px;
   }
 
   .checkout-card__header__middle {
     color: grey;
     width: 60%;
-    margin-left: 10px;
     font-size: 0.8em;
     justify-content: space-evenly;
+    margin: 0 5%;
 
     .checkout-card__header__name {
       color: black;
       font-size: 1.5em;
       font-weight: 700;
-      margin-bottom: 10%;
+      margin-bottom: 5%;
     }
   }
 
   .checkout-card__header__right {
-    width: 10%;
+    width: 15%;
 
     img {
-      width: 30px;
-      height: 30px;
-      margin: 10px;
+      width: 100%;
+      height: auto;
+      margin: 5%px;
     }
   }
 }
