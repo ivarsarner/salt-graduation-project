@@ -33,7 +33,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 5% 5%;
+    margin: 5% 5% 1% 5%;
   }
 
   hr {
@@ -43,7 +43,7 @@ body {
   }
 
   .checkout-card__header__left {
-    width: 25%;
+    width: 20%;
   }
 
   .checkout-card__header__left img {
@@ -61,7 +61,7 @@ body {
       color: #000000;
       font-size: 1.2em;
       font-weight: 700;
-      margin-bottom: 5%;
+      margin-bottom: 16%;
     }
   }
 
@@ -83,18 +83,17 @@ body {
 
     .checkout-card__bottom__left {
       width: 30%;
+      margin: 0% 3% 0% 0%;
 
       img {
         width: 100%;
         height: auto;
-        margin: 5%;
       }
     }
 
     .checkout-card__bottom__right {
       width: 70%;
       font-size: 1.3em;
-      margin: 0 5%;
 
       .checkout-card__bottom__product__details {
         flex-direction: row;
