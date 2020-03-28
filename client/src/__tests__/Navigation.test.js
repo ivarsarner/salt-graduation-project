@@ -1,9 +1,14 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { shallow } from 'enzyme';
 import Navigation from '../components/Navigation';
 
-test('renders learn react link', () => {
-  const { getByAltText } = render(<Navigation />);
-  const wayLogo = getByAltText(/way/i);
-  expect(wayLogo).toBeInTheDocument();
+import CheckoutContextProvider from '../context/CheckoutContext';
+
+it('<Navigation /> renders without crashing', () => {
+  const component = shallow(
+    <CheckoutContextProvider>
+      <Navigation />
+    </CheckoutContextProvider>
+  );
+  expect(component.html()).toMatch(/<img .*\/>/i);
 });
