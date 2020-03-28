@@ -2,13 +2,13 @@ import React from 'react';
 import Header from './Header';
 import Item from './Item';
 
-export default function Checkout({ products, checkoutID }) {
+export default function Checkout({ checkout, checkoutID }) {
   return (
     <div className="checkout-card">
       <h4>Checkout {checkoutID}</h4>
-      <Header headerData={products} />
+      <Header checkout={checkout} />
       <div className="item-container">
-        {products.items.map((item) => (
+        {checkout.items.map((item) => (
           <Item key={item.gtin} itemData={item} />
         ))}
       </div>

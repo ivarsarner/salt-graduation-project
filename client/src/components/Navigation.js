@@ -3,16 +3,16 @@ import logo from '../assets/logo-black.svg';
 import { CheckoutContext } from '../context/CheckoutContext';
 
 export default function Navigation() {
-  const { data } = useContext(CheckoutContext);
+  const { checkouts } = useContext(CheckoutContext);
   const [currentStore, setCurrentStore] = useState(null);
 
   useEffect(() => {
-    const getCurrentStore = data
+    const getCurrentStore = checkouts
       .slice(0, 1)
       .map((item) => item.merchantName)
       .join('');
     setCurrentStore(getCurrentStore);
-  }, [data]);
+  }, [checkouts]);
 
   return (
     <>

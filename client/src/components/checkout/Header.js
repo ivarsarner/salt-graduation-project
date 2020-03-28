@@ -1,28 +1,27 @@
 import React, { useEffect, useState, useContext } from 'react';
-import Moment from 'react-moment';
 import { CustomerContext } from '../../context/CustomerContext';
-import isabelleIMG from '../../assets/isabelle.JPG';
+import Moment from 'react-moment';
 import doneIMG from '../../assets/done.JPG';
 
-export default function Header({ headerData }) {
-  const [checkoutTotal, setCheckoutTotal] = useState(0);
-  const { customers, actions } = useContext(CustomerContext);
+export default function Header({ checkout }) {
+  const { customers, customersActions } = useContext(CustomerContext);
   const [customer, setCustomer] = useState('');
+  const [checkoutTotal, setCheckoutTotal] = useState(0);
 
   useEffect(() => {
-    const reducer = headerData.items.reduce(
+    const checkoutTotal = checkout.items.reduce(
       (acc, current) => acc + current.quantity,
       0
     );
     console.log('i am a buzz kill');
-    setCheckoutTotal(reducer);
-    setCustomer(actions.getRandomCustomer());
+    setCheckoutTotal(checkoutTotal);
+    setCustomer(customersActions.getRandomCustomer());
   }, [customers]);
 
   return (
     <header className="checkout-card__header">
       <section className="checkout-card__header__left">
-        <img src={customer && customer.picture} />
+        <img src={customer && customer.picture} alt="Customer" />
       </section>
       <section className="checkout-card__header__middle">
         <div className="checkout-card__header__name">
@@ -35,11 +34,11 @@ export default function Header({ headerData }) {
           {checkoutTotal} kr &bull;
         </span>
         <span className="checkout-card__header__middle__time">
-          <Moment fromNow>{headerData.timeCreated}</Moment>
+          <Moment fromNow>{checkout.timeCreated}</Moment>
         </span>
       </section>
       <section className="checkout-card__header__right">
-        <img src={doneIMG} />
+        <img src={doneIMG} alt="status" />
       </section>
     </header>
   );
