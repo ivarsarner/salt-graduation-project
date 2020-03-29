@@ -17,10 +17,10 @@ const rareImages = [
 
 const getApiImage = async (res, gtin) => {
   try {
-    const response = await axios.get(`${imageEndpoint}/${gtin}.jpg`);
+    const response = await axios.get(`${imageEndpoint}/${gtin}`);
     if (response.status === 200) {
       res.json({
-        path: response.config.url,
+        path: `${response.config.url}.jpg`,
       });
     }
   } catch (error) {

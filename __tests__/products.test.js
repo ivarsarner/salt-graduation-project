@@ -34,14 +34,27 @@ describe('The API', () => {
       });
   });
   appProductIds.forEach((gtin) => {
-    it('has an image', (done) => {
+    it('returns images for all products', (done) => {
       request(app)
         .get(`/api/products/${gtin}`)
         .then((res) => {
           expect(res.statusCode).toEqual(200);
+          expect(res.body).toHaveProperty('path');
+          expect(res.body.path).toMatch(/.*.jpg$/i);
           done();
         })
         .catch(() => console.log('missing gtin', gtin));
     });
+  });
+});
+
+describe('The ICA image API', () => {
+  it('is up and running', (done) => {
+    request('https://assets.icanet.se/t_product_large_v1,f_auto')
+      .get('/5712840020043')
+      .then((res) => {
+        expect(res.statusCode).toEqual(200);
+        done();
+      });
   });
 });
