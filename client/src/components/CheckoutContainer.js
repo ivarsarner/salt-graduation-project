@@ -3,15 +3,23 @@ import { CheckoutContext } from '../context/CheckoutContext';
 import CheckoutCard from './checkout/CheckoutCard';
 
 export default function CheckoutContainer() {
-  const { data } = useContext(CheckoutContext);
+  const { checkouts } = useContext(CheckoutContext);
   const [recentCheckouts, setRecentCheckouts] = useState([]);
 
   useEffect(() => {
-    const recent = data
-      .sort((a, b) => new Date(b.timeCreated) - new Date(a.timeCreated))
-      .slice(0, 4);
-    setRecentCheckouts(recent);
-  }, [data]);
+    const recent = checkouts.sort(
+      (a, b) => new Date(b.timeCreated) - new Date(a.timeCreated)
+    );
+    let displayCheckouts = [];
+    if (recent.length) {
+      displayCheckouts.push(recent.find((checkout) => checkout.checkout === 1));
+      displayCheckouts.push(recent.find((checkout) => checkout.checkout === 2));
+      displayCheckouts.push(recent.find((checkout) => checkout.checkout === 3));
+      displayCheckouts.push(recent.find((checkout) => checkout.checkout === 4));
+    }
+
+    setRecentCheckouts(displayCheckouts);
+  }, [checkouts]);
 
   return (
     <div className="container">
@@ -20,7 +28,7 @@ export default function CheckoutContainer() {
         <CheckoutCard
           key={checkout.id.toString()}
           products={checkout}
-          checkoutID={index + 1} // this is a temp fix. checkout id should come from the data
+          checkoutID={checkout.checkout} // this is a temp fix. checkout id should come from the data
         />
       ))}
     </div>

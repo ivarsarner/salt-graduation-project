@@ -4,16 +4,16 @@ import { CheckoutContext } from '../context/CheckoutContext';
 import { NavLink } from 'react-router-dom';
 
 export default function Navigation() {
-  const { data, actions } = useContext(CheckoutContext);
+  const { checkouts, checkoutsActions } = useContext(CheckoutContext);
   const [currentStore, setCurrentStore] = useState(null);
 
   useEffect(() => {
-    const getCurrentStore = data
+    const getCurrentStore = checkouts
       .slice(0, 1)
       .map((item) => item.merchantName)
       .join('');
     setCurrentStore(getCurrentStore);
-  }, [data]);
+  }, [checkouts]);
 
   return (
     <div className="main-nav">
@@ -25,7 +25,7 @@ export default function Navigation() {
         <NavLink to="/other">Other</NavLink>
         <button
           className="new-checkout-button"
-          onClick={() => actions.addNewCheckout()}
+          onClick={() => checkoutsActions.addNewCheckout()}
         >
           Add new Checkout
         </button>

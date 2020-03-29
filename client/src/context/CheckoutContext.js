@@ -6,7 +6,7 @@ import moment from 'moment';
 export const CheckoutContext = createContext();
 
 const CheckoutContextProvider = (props) => {
-  const [data, setData] = useState([]);
+  const [checkouts, setData] = useState([]);
   const [newCheckoutData, setNewCheckoutData] = useState([]);
 
   useEffect(() => {
@@ -33,7 +33,9 @@ const CheckoutContextProvider = (props) => {
   };
 
   return (
-    <CheckoutContext.Provider value={{ data, actions: { addNewCheckout } }}>
+    <CheckoutContext.Provider
+      value={{ checkouts, checkoutsActions: { addNewCheckout } }}
+    >
       {props.children}
     </CheckoutContext.Provider>
   );
