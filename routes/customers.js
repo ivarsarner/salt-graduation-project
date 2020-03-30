@@ -25,7 +25,7 @@ router.get('/', async (_, res) => {
     }));
     res.json(customers);
   } catch (error) {
-    throw new Error(error);
+    res.sendStatus(500);
   }
 });
 

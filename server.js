@@ -10,9 +10,9 @@ app.use(compression());
 
 app.use('/api/images', express.static('db/images'));
 
-app.post('*', (_, res) => res.status(400).end());
-app.delete('*', (_, res) => res.status(400).end());
-app.patch('*', (_, res) => res.status(400).end());
+app.post('*', (_, res) => res.sendStatus(400));
+app.delete('*', (_, res) => res.sendStatus(400));
+app.patch('*', (_, res) => res.sendStatus(400));
 
 app.get('/api', (_, res) => res.send('Way Merchant API'));
 
