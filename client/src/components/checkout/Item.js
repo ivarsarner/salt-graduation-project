@@ -1,8 +1,14 @@
 import React from 'react';
+import axios from 'axios';
 
 export default function Item({ itemData }) {
-  const { price: total, quantity } = itemData;
+  const { price: total, quantity, gtin } = itemData;
   const { name, brand } = itemData.product;
+
+  const getProductImage = async () => {
+    const { path } = await axios.get(`/api/products/${gtin}`);
+    return path;
+  };
 
   return (
     <>
