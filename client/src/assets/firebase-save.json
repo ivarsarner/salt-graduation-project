@@ -1,0 +1,1806 @@
+{
+  "-M3evBdxf8WiRuBMsX97" : {
+    "id" : "1JIuDPtTv2Bf2KibdVC4",
+    "items" : [ {
+      "gtin" : "5712840020043",
+      "price" : "24.9",
+      "product" : {
+        "brand" : "Biofood",
+        "name" : "Rawbite Lime",
+        "quantity" : "50g",
+        "sku" : "5712840020043",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "24.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 24.9,
+    "timeCreated" : "2020-03-09T12:02:25.003Z",
+    "user" : "Pn26alAgEJgVo1DX23QXmwICUlJ2"
+  },
+  "-M3evBe-suXYMSqI_uEN" : {
+    "id" : "1QJQE1M7v4ycdNuK3laP",
+    "items" : [ {
+      "gtin" : "2340302105897",
+      "price" : "89.53",
+      "product" : {
+        "brand" : "Kvibille",
+        "name" : "Cheddar 32% 6m",
+        "quantity" : "ca 500g",
+        "sku" : "2340302100000",
+        "unit" : "Kr/Kg"
+      },
+      "productPrice" : "89.528",
+      "quantity" : 1
+    }, {
+      "gtin" : "7310760012391",
+      "price" : "42.9",
+      "product" : {
+        "brand" : "Arvid Nordquist Clas",
+        "name" : "Wanyama Bryggkaffe",
+        "quantity" : "500g",
+        "sku" : "7310760012391",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "42.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7310760012896",
+      "price" : "42.9",
+      "product" : {
+        "brand" : "Arvid Nordquist Clas",
+        "name" : "Bryggkaffe Mellanr",
+        "quantity" : "500 g",
+        "sku" : "7310760012896",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "42.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "3046920028752",
+      "price" : "28.9",
+      "product" : {
+        "brand" : "Lindt",
+        "name" : "Intense mint",
+        "quantity" : "100 g",
+        "sku" : "3046920028752",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "28.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 204.23,
+    "timeCreated" : "2020-03-11T18:36:05.284Z",
+    "user" : "boCLBgx44OfLLK43bdAdmi5oQmn1"
+  },
+  "-M3evBe1uZETzPKbwR22" : {
+    "id" : "3876EeZBV8cOOBKcpQoH",
+    "items" : [ {
+      "gtin" : "7315360061503",
+      "price" : "34",
+      "product" : {
+        "brand" : "Delicato",
+        "name" : "Delicatoboll 6-p",
+        "quantity" : "240 g",
+        "sku" : "7315360061503",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "17",
+      "quantity" : 2,
+      "timeCreated" : "2020-03-11T18:29:07.606Z"
+    }, {
+      "gtin" : "7311310032005",
+      "price" : "33.8",
+      "product" : {
+        "brand" : "Santa Maria",
+        "name" : "Nacho Chips",
+        "quantity" : "185 g",
+        "sku" : "7311310032005",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "16.9",
+      "quantity" : 2,
+      "timeCreated" : "2020-03-11T18:30:24.359Z"
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 67.8,
+    "timeCreated" : "2020-03-11T18:35:33.789Z",
+    "user" : "zlUylrc9aFdQtXancy9U4S6AEyS2"
+  },
+  "-M3evBe2pX7hs9E4086W" : {
+    "id" : "3GCF64krDPfHPmtiWThc",
+    "items" : [ {
+      "gtin" : "7318690146964",
+      "price" : "31.9",
+      "product" : {
+        "brand" : "ICA Selection",
+        "name" : "Salsiccia",
+        "quantity" : "300g",
+        "sku" : "7318690146964",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "31.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7318690127086",
+      "price" : "16.9",
+      "product" : {
+        "brand" : "ICA",
+        "name" : "Mozzarella",
+        "quantity" : "125g",
+        "sku" : "7318690127086",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "16.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "8076808060654",
+      "price" : "16.9",
+      "product" : {
+        "brand" : "Barilla",
+        "name" : "Pasta Farfalle",
+        "quantity" : "500g",
+        "sku" : "8076808060654",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "16.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7318690136149",
+      "price" : "16.9",
+      "product" : {
+        "brand" : "ICA",
+        "name" : "Mellanmjölk ESL",
+        "quantity" : "1,5l",
+        "sku" : "7318690136149",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "16.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7318690130420",
+      "price" : "23.9",
+      "product" : {
+        "brand" : "ICA",
+        "name" : "Matlagningsgrä 15%",
+        "quantity" : "500ml",
+        "sku" : "7318690130420",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "23.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7300400114783",
+      "price" : "13.9",
+      "product" : {
+        "brand" : "Falu",
+        "name" : "Falu rågrut",
+        "quantity" : "235 g",
+        "sku" : "7300400114783",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "13.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7318690177814",
+      "price" : "13.9",
+      "product" : {
+        "brand" : "ICA",
+        "name" : "Bacon",
+        "quantity" : "140 g",
+        "sku" : "7318690177814",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "13.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 134.3,
+    "timeCreated" : "2020-03-11T18:16:41.008Z",
+    "user" : "osttPYd3gzdC5aZXKU2Rdted7RT2"
+  },
+  "-M3evBe3O5DeobDzpPcP" : {
+    "id" : "48oIm8qKF2nB1DuLzc1R",
+    "items" : [ {
+      "gtin" : "5000159461122",
+      "price" : "10.9",
+      "product" : {
+        "brand" : "Snickers",
+        "name" : "Snickers",
+        "quantity" : "50g",
+        "sku" : "5000159461122",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "10.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 10.9,
+    "timeCreated" : "2020-03-13T13:33:36.625Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBe3O5DeobDzpPcQ" : {
+    "id" : "53QH6L8jCTnyP1BZ04o9",
+    "items" : [ {
+      "gtin" : "5000112637939",
+      "price" : "12.9",
+      "product" : {
+        "brand" : "Coca-Cola",
+        "name" : "Cola Zero",
+        "quantity" : "33cl",
+        "sku" : "5000112637939",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "12.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 12.9,
+    "timeCreated" : "2020-03-09T14:05:15.508Z",
+    "user" : "2ULsylw8zgYCyVjgBmNUFvoSPr02"
+  },
+  "-M3evBe3O5DeobDzpPcR" : {
+    "id" : "7upxtbd0gLt1zgIthnF9",
+    "items" : [ {
+      "gtin" : "7310511257507",
+      "price" : "9.9",
+      "product" : {
+        "brand" : "Marabou",
+        "name" : "Daim dubbel",
+        "quantity" : "56 g",
+        "sku" : "7310511257507",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "9.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 9.9,
+    "timeCreated" : "2020-03-12T12:13:42.685Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBe454kxohKiZjIG" : {
+    "id" : "97flD9cuzITZNOdBNXRf",
+    "items" : [ {
+      "gtin" : "5000159461122",
+      "price" : "10.9",
+      "product" : {
+        "brand" : "Snickers",
+        "name" : "Snickers",
+        "quantity" : "50g",
+        "sku" : "5000159461122",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "10.9",
+      "quantity" : 1,
+      "timeCreated" : "2020-03-12T15:54:06.512Z"
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 10.9,
+    "timeCreated" : "2020-03-12T15:54:34.696Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBe454kxohKiZjIH" : {
+    "id" : "AIZ9IHUeQj7pTG6cuzsG",
+    "items" : [ {
+      "gtin" : "7300400127363",
+      "price" : "9.9",
+      "product" : {
+        "brand" : "Wasa",
+        "name" : "Sandw Wheat Tom/Ba",
+        "quantity" : "40 g",
+        "sku" : "7300400127363",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "9.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 9.9,
+    "timeCreated" : "2020-03-05T14:25:50.570Z",
+    "user" : "F254wWyHjLZx6Le1JWNyOxOiVOy2"
+  },
+  "-M3evBe5PuXKCOgPeGLN" : {
+    "id" : "BV5hTa0kld1bnPcUzIVP",
+    "items" : [ {
+      "gtin" : "7310350118342",
+      "price" : "10.9",
+      "product" : {
+        "brand" : "Cloetta",
+        "name" : "Kexchoklad",
+        "quantity" : "60g",
+        "sku" : "7310350118342",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "10.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 10.9,
+    "timeCreated" : "2020-03-06T17:17:40.990Z",
+    "user" : "TzgM85JXsbPcUXbJruY70Q4aa773"
+  },
+  "-M3evBe5PuXKCOgPeGLO" : {
+    "id" : "BwC8iyrLyhRDBTAJnNwN",
+    "items" : [ {
+      "gtin" : "4009900527859",
+      "price" : "18.9",
+      "product" : {
+        "brand" : "Extra",
+        "name" : "White Peppermint",
+        "quantity" : "29g",
+        "sku" : "4009900527859",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "18.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "0856991004905",
+      "price" : "13.9",
+      "product" : {
+        "brand" : "Nick´s",
+        "name" : "Coconut",
+        "quantity" : "40 g",
+        "sku" : "856991004905",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "13.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 32.8,
+    "status" : "refunded",
+    "timeCreated" : "2020-03-18T13:09:01.295Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBe5PuXKCOgPeGLP" : {
+    "id" : "Cmn2nyRDi2kVjsIZyMdI",
+    "items" : [ {
+      "gtin" : "5712840020081",
+      "price" : "22.9",
+      "product" : {
+        "brand" : "Biofood",
+        "name" : "Raw bite fruit",
+        "quantity" : "50g",
+        "sku" : "5712840020081",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "22.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 22.9,
+    "timeCreated" : "2020-03-10T12:59:47.729Z",
+    "user" : "XsSz8n7VKQceOsARBpDojTgiK2C2"
+  },
+  "-M3evBe6-aqI9pe03cte" : {
+    "id" : "DIFplCsh8QLcxEx03jdx",
+    "items" : [ {
+      "gtin" : "5000112637922",
+      "price" : "12.9",
+      "product" : {
+        "brand" : "Coca-Cola",
+        "name" : "Coca-Cola Burk",
+        "quantity" : "33cl",
+        "sku" : "5000112637922",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "12.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 12.9,
+    "timeCreated" : "2020-03-14T17:58:41.580Z",
+    "user" : "TzgM85JXsbPcUXbJruY70Q4aa773"
+  },
+  "-M3evBe6-aqI9pe03ctf" : {
+    "id" : "GyfMJVTR10MZhdMFuNpp",
+    "items" : [ {
+      "gtin" : "5711953068102",
+      "price" : "11",
+      "product" : {
+        "brand" : "Cocio",
+        "name" : "Pucko Original",
+        "quantity" : "250 ml",
+        "sku" : "5711953068102",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "11",
+      "quantity" : 1,
+      "timeCreated" : "2020-03-13T08:10:12.202Z"
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 11,
+    "timeCreated" : "2020-03-13T08:14:37.553Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBe7xkcuc8olnyW6" : {
+    "id" : "JM4tTbtMWx7hbGSPjPL1",
+    "items" : [ {
+      "gtin" : "8711327324213",
+      "price" : "15",
+      "product" : {
+        "brand" : "Solero",
+        "name" : "Stycksak Citron",
+        "quantity" : "52ml",
+        "sku" : "8711327324213",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "15",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 15,
+    "timeCreated" : "2020-03-09T14:49:14.959Z",
+    "user" : "oYNFu5C39pT9j5w799xBh8QgdIm2"
+  },
+  "-M3evBe7xkcuc8olnyW7" : {
+    "id" : "Jo9xpYD6Xmzkyv0M7MTa",
+    "items" : [ {
+      "gtin" : "7300400122689",
+      "price" : "9.9",
+      "product" : {
+        "brand" : "Wasa",
+        "name" : "Sandw Cream Ch/Grä",
+        "quantity" : "37 g",
+        "sku" : "7300400122689",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "9.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 9.9,
+    "timeCreated" : "2020-03-09T18:16:30.904Z",
+    "user" : "TzgM85JXsbPcUXbJruY70Q4aa773"
+  },
+  "-M3evBe7xkcuc8olnyW8" : {
+    "id" : "Jov3WqsDGiD8FKblsppR",
+    "items" : [ {
+      "gtin" : "0856991004905",
+      "price" : "13.9",
+      "product" : {
+        "brand" : "Nick´s",
+        "name" : "Coconut",
+        "quantity" : "40 g",
+        "sku" : "856991004905",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "13.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 13.9,
+    "timeCreated" : "2020-03-05T10:14:57.719Z",
+    "user" : "oYNFu5C39pT9j5w799xBh8QgdIm2"
+  },
+  "-M3evBeAavEGlS4gu6dz" : {
+    "id" : "NGdxh98IMpIIraCIU8LV",
+    "items" : [ {
+      "gtin" : "7310511257507",
+      "price" : "9.9",
+      "product" : {
+        "brand" : "Marabou",
+        "name" : "Daim dubbel",
+        "quantity" : "56 g",
+        "sku" : "7310511257507",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "9.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 9.9,
+    "timeCreated" : "2020-03-12T17:34:21.088Z",
+    "user" : "TzgM85JXsbPcUXbJruY70Q4aa773"
+  },
+  "-M3evBeAavEGlS4gu6e-" : {
+    "id" : "NNVwGPpB5N6vkVsjrzyo",
+    "items" : [ {
+      "gtin" : "7310350109029",
+      "price" : "11.9",
+      "product" : {
+        "brand" : "Malaco",
+        "name" : "Djungelvrål",
+        "quantity" : "80 g",
+        "sku" : "7310350109029",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "11.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 11.9,
+    "timeCreated" : "2020-03-04T16:15:32.637Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBeBoxfNuOAg3cR5" : {
+    "id" : "NwFxqWMkBskIGEASUahP",
+    "items" : [ {
+      "gtin" : "40099330",
+      "price" : "10.9",
+      "product" : {
+        "brand" : "Hubba Bubba",
+        "name" : "Apple",
+        "quantity" : "5bit",
+        "sku" : "40099330",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "10.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 10.9,
+    "status" : "refunded",
+    "timeCreated" : "2020-03-04T10:50:28.466Z",
+    "user" : "TzgM85JXsbPcUXbJruY70Q4aa773"
+  },
+  "-M3evBeBoxfNuOAg3cR6" : {
+    "id" : "OZUzRJLMVIuaheiKfSg2",
+    "items" : [ {
+      "gtin" : "7300400122689",
+      "price" : "9.9",
+      "product" : {
+        "brand" : "Wasa",
+        "name" : "Sandw Cream Ch/Grä",
+        "quantity" : "37 g",
+        "sku" : "7300400122689",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "9.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 9.9,
+    "timeCreated" : "2020-03-05T16:20:38.216Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBeBoxfNuOAg3cR7" : {
+    "id" : "PiknZPyo2km3wElMKWeD",
+    "items" : [ {
+      "gtin" : "5000112637922",
+      "price" : "10.9",
+      "product" : {
+        "brand" : "Coca-Cola",
+        "name" : "Coca-Cola Burk",
+        "quantity" : "33cl",
+        "sku" : "5000112637922",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "10.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 10.9,
+    "timeCreated" : "2020-03-10T16:43:52.869Z",
+    "user" : "SX20JyPANYfTj2SpgrUUdGg5Ku72"
+  },
+  "-M3evBeBoxfNuOAg3cR8" : {
+    "id" : "PwaKcFoy9HbyuHlQ4XHR",
+    "items" : [ {
+      "gtin" : "7340001803235",
+      "price" : "26.9",
+      "product" : {
+        "brand" : "Barebells",
+        "name" : "Protein Bar Chokla",
+        "quantity" : "55g",
+        "sku" : "7340001803235",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "26.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 26.9,
+    "timeCreated" : "2020-03-14T16:19:50.457Z",
+    "user" : "SjvAmNwtbYXed2cYI8F27zfUfOp2"
+  },
+  "-M3evBeCQk5N8w86XlDD" : {
+    "id" : "S4zGQh0gpvnRdv3Tocge",
+    "items" : [ {
+      "gtin" : "7310511210304",
+      "price" : "17.9",
+      "product" : {
+        "brand" : "Marabou",
+        "name" : "Mjölkchoklad kaka",
+        "quantity" : "100 g",
+        "sku" : "7310511210304",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "17.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 17.9,
+    "timeCreated" : "2020-03-04T15:51:00.597Z",
+    "user" : "TzgM85JXsbPcUXbJruY70Q4aa773"
+  },
+  "-M3evBeCQk5N8w86XlDE" : {
+    "id" : "SV4E94qSGTCWtJZlN0c4",
+    "items" : [ {
+      "gtin" : "7312631704060",
+      "price" : "8.9",
+      "product" : {
+        "brand" : "Risenta",
+        "name" : "Sesamkakor",
+        "quantity" : "40 g",
+        "sku" : "7312631704060",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "8.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 8.9,
+    "timeCreated" : "2020-03-20T14:12:27.155Z",
+    "user" : "FiTRhxRM5mbeGmaCHfDfAilI5qo1"
+  },
+  "-M3evBeCQk5N8w86XlDF" : {
+    "id" : "ShBMPWgVz2VPMwkvyrvu",
+    "items" : [ {
+      "gtin" : "2319291709430",
+      "price" : "89.58",
+      "product" : {
+        "brand" : "ICA",
+        "name" : "Nötfärs 12%",
+        "quantity" : "1000g",
+        "sku" : "2319291700000",
+        "unit" : "Kr/Kg"
+      },
+      "productPrice" : "89.585",
+      "quantity" : 1,
+      "timeCreated" : "2020-03-10T16:02:47.452Z"
+    }, {
+      "gtin" : "7311310031039",
+      "price" : "30.9",
+      "product" : {
+        "brand" : "Santa Maria",
+        "name" : "Taco Spice Mix",
+        "quantity" : "3p",
+        "sku" : "7311310031039",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "30.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "5060517883683",
+      "price" : "19.9",
+      "product" : {
+        "brand" : "Monster Energy",
+        "name" : "Mango Loco",
+        "quantity" : "50cl",
+        "sku" : "5060517883683",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "19.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "5013965948428",
+      "price" : "31.9",
+      "product" : {
+        "brand" : "Oral-B",
+        "name" : "ProExpert Prof Pro",
+        "quantity" : "75ml",
+        "sku" : "5013965948428",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "31.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 172.28,
+    "timeCreated" : "2020-03-10T16:11:43.885Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBeDjmLxE-oAWgfr" : {
+    "id" : "TbUFbw2qxNvcweck7B2Z",
+    "items" : [ {
+      "gtin" : "7310350118342",
+      "price" : "10.9",
+      "product" : {
+        "brand" : "Cloetta",
+        "name" : "Kexchoklad",
+        "quantity" : "60g",
+        "sku" : "7310350118342",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "10.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 10.9,
+    "timeCreated" : "2020-03-10T15:01:12.216Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBeDjmLxE-oAWgfs" : {
+    "id" : "ULKAPV04qBf51zpqBRik",
+    "items" : [ {
+      "gtin" : "7312080004612",
+      "price" : "27.8",
+      "product" : {
+        "brand" : "Leksands Knäcke",
+        "name" : "Mini-Rut knäcke",
+        "quantity" : "200 g",
+        "sku" : "7312080004612",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "13.9",
+      "quantity" : 2
+    }, {
+      "gtin" : "7313130174002",
+      "price" : "24.9",
+      "product" : {
+        "brand" : "ICA Skona",
+        "name" : "Avfallspåse förnyb",
+        "quantity" : "52x60cm",
+        "sku" : "7313130174002",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "24.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 52.7,
+    "timeCreated" : "2020-03-10T18:51:15.912Z",
+    "user" : "2eJAO0DO2VUTsJScrBnXDJbliAb2"
+  },
+  "-M3evBeDjmLxE-oAWgft" : {
+    "id" : "UphRZUpH9cDZXg4HGwXG",
+    "items" : [ {
+      "gtin" : "5000112637922",
+      "price" : "12.9",
+      "product" : {
+        "brand" : "Coca-Cola",
+        "name" : "Coca-Cola Burk",
+        "quantity" : "33cl",
+        "sku" : "5000112637922",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "12.9",
+      "quantity" : 1,
+      "timeCreated" : "2020-03-11T16:05:18.592Z"
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 12.9,
+    "timeCreated" : "2020-03-11T16:08:30.388Z",
+    "user" : "7Dj2V2hMPAS3NFIH4wqT5Qc0aLm1"
+  },
+  "-M3evBeEqEWrfqRlmor4" : {
+    "id" : "VGzfKVMTqK3uP7JRBP3r",
+    "items" : [ {
+      "gtin" : "5711953068102",
+      "price" : "11",
+      "product" : {
+        "brand" : "Cocio",
+        "name" : "Pucko Original",
+        "quantity" : "250 ml",
+        "sku" : "5711953068102",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "11",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 11,
+    "timeCreated" : "2020-03-11T14:11:51.775Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBeEqEWrfqRlmor5" : {
+    "id" : "XAntFTYHo2bNMw3rFwpb",
+    "items" : [ {
+      "gtin" : "7340001803303",
+      "price" : "26.9",
+      "product" : {
+        "brand" : "Barebells",
+        "name" : "Brownie Core Bar",
+        "quantity" : "35g",
+        "sku" : "7340001803303",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "26.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 26.9,
+    "timeCreated" : "2020-03-06T11:56:54.699Z",
+    "user" : "F254wWyHjLZx6Le1JWNyOxOiVOy2"
+  },
+  "-M3evBeEqEWrfqRlmor6" : {
+    "id" : "XRRSwstnl7r5vOjRxoWb",
+    "items" : [ {
+      "gtin" : "7310511210304",
+      "price" : "35.8",
+      "product" : {
+        "brand" : "Marabou",
+        "name" : "Mjölkchoklad kaka",
+        "quantity" : "100 g",
+        "sku" : "7310511210304",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "17.9",
+      "quantity" : 2,
+      "timeCreated" : "2020-03-06T12:09:07.276Z"
+    }, {
+      "gtin" : "7300400127363",
+      "price" : "9.9",
+      "product" : {
+        "brand" : "Wasa",
+        "name" : "Sandw Wheat Tom/Ba",
+        "quantity" : "40 g",
+        "sku" : "7300400127363",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "9.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7300400122689",
+      "price" : "9.9",
+      "product" : {
+        "brand" : "Wasa",
+        "name" : "Sandw Cream Ch/Grä",
+        "quantity" : "37 g",
+        "sku" : "7300400122689",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "9.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7310350118342",
+      "price" : "10.9",
+      "product" : {
+        "brand" : "Cloetta",
+        "name" : "Kexchoklad",
+        "quantity" : "60g",
+        "sku" : "7310350118342",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "10.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 66.5,
+    "status" : "refunded",
+    "timeCreated" : "2020-03-06T13:27:39.675Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBeF-0lRQJ5tYZii" : {
+    "id" : "Xd3qlNc0gonht6ysigly",
+    "items" : [ {
+      "gtin" : "7310521400412",
+      "price" : "16.9",
+      "product" : {
+        "brand" : "Ballerina",
+        "name" : "Nougatfyllda",
+        "quantity" : "190 g",
+        "sku" : "7310521400412",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "16.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 16.9,
+    "timeCreated" : "2020-03-13T12:48:45.402Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBeF-0lRQJ5tYZij" : {
+    "id" : "YirXpxLQwPTHJcpp0WqI",
+    "items" : [ {
+      "gtin" : "7310070766144",
+      "price" : "10.9",
+      "product" : {
+        "brand" : "Ramlösa",
+        "name" : "Mineralvatten B",
+        "quantity" : "33cl",
+        "sku" : "7310070766144",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "10.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 10.9,
+    "timeCreated" : "2020-03-09T13:34:34.963Z",
+    "user" : "TzgM85JXsbPcUXbJruY70Q4aa773"
+  },
+  "-M3evBeF-0lRQJ5tYZik" : {
+    "id" : "ZO8qOeaMmTwD0AZrj46s",
+    "items" : [ {
+      "gtin" : "7310350118342",
+      "price" : "10.9",
+      "product" : {
+        "brand" : "Cloetta",
+        "name" : "Kexchoklad",
+        "quantity" : "60g",
+        "sku" : "7310350118342",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "10.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 10.9,
+    "timeCreated" : "2020-03-08T14:21:29.712Z",
+    "user" : "TzgM85JXsbPcUXbJruY70Q4aa773"
+  },
+  "-M3evBeG3LcPOAqdtGgJ" : {
+    "id" : "a8MWPFs94FSNZNK1GhTl",
+    "items" : [ {
+      "gtin" : "7318690030959",
+      "price" : "27.9",
+      "product" : {
+        "brand" : "ICA",
+        "name" : "Pistaschnöt salt",
+        "quantity" : "100 g",
+        "sku" : "7318690030959",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "27.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 27.9,
+    "status" : "refunded",
+    "timeCreated" : "2020-03-05T10:09:26.117Z",
+    "user" : "oStKVwduYmRKCG5g1EtxnoKX3Rj2"
+  },
+  "-M3evBeG3LcPOAqdtGgK" : {
+    "id" : "cRSqgLJzI1n4jqKnh3Y2",
+    "items" : [ {
+      "gtin" : "7340001803037",
+      "price" : "24.9",
+      "product" : {
+        "brand" : "Barebells",
+        "name" : "Protein Bar Christ",
+        "quantity" : "55g",
+        "sku" : "7340001803037",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "24.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 24.9,
+    "timeCreated" : "2020-03-10T11:42:36.995Z",
+    "user" : "oYNFu5C39pT9j5w799xBh8QgdIm2"
+  },
+  "-M3evBeHMX_2F1c-hmA5" : {
+    "id" : "dCLjHRJgw2XOb3TNKf0D",
+    "items" : [ {
+      "gtin" : "7300400122689",
+      "price" : "9.9",
+      "product" : {
+        "brand" : "Wasa",
+        "name" : "Sandw Cream Ch/Grä",
+        "quantity" : "37 g",
+        "sku" : "7300400122689",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "9.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 9.9,
+    "timeCreated" : "2020-03-05T16:09:40.699Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBeHMX_2F1c-hmA6" : {
+    "id" : "ddTYE3DSTZV01iQhDQB0",
+    "items" : [ {
+      "gtin" : "7310511257507",
+      "price" : "9.9",
+      "product" : {
+        "brand" : "Marabou",
+        "name" : "Daim dubbel",
+        "quantity" : "56 g",
+        "sku" : "7310511257507",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "9.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 9.9,
+    "timeCreated" : "2020-03-05T09:53:50.661Z",
+    "user" : "H5GX44qsDORPS5Kl35OxCGx8n6m2"
+  },
+  "-M3evBeIcLUru_wVF7o9" : {
+    "id" : "di5e1Sr3L1ZV2UDw2VPo",
+    "items" : [ {
+      "gtin" : "7310350118595",
+      "price" : "13.9",
+      "product" : {
+        "brand" : "Läkerol",
+        "name" : "Salvi",
+        "quantity" : "25g",
+        "sku" : "7310350118595",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "13.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 13.9,
+    "timeCreated" : "2020-03-11T15:18:15.163Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBeIcLUru_wVF7oA" : {
+    "id" : "eTQn9jUGsp7Toe5fmZ63",
+    "items" : [ {
+      "gtin" : "7300400127363",
+      "price" : "9.9",
+      "product" : {
+        "brand" : "Wasa",
+        "name" : "Sandw Wheat Tom/Ba",
+        "quantity" : "40 g",
+        "sku" : "7300400127363",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "9.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 9.9,
+    "timeCreated" : "2020-03-11T10:09:25.994Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBeIcLUru_wVF7oB" : {
+    "id" : "fhiC3PceSpCbX4tT4QKY",
+    "items" : [ {
+      "gtin" : "7318690073727",
+      "price" : "19.9",
+      "product" : {
+        "brand" : "ICA",
+        "name" : "Feta",
+        "quantity" : "150 g",
+        "sku" : "7318690073727",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "19.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7318690013402",
+      "price" : "11.9",
+      "product" : {
+        "brand" : "ICA",
+        "name" : "Tomater krossade",
+        "quantity" : "500 g",
+        "sku" : "7318690013402",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "11.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7392672000697",
+      "price" : "25.9",
+      "product" : {
+        "brand" : "Lindahls",
+        "name" : "Lfri Turkisk yog",
+        "quantity" : "500 g",
+        "sku" : "7392672000697",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "25.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7350068295232",
+      "price" : "16.9",
+      "product" : {
+        "brand" : "NJIE",
+        "name" : "PP MS Strawberry",
+        "quantity" : "330 ml",
+        "sku" : "7350068295232",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "16.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7318690058274",
+      "price" : "35.9",
+      "product" : {
+        "brand" : "ICA",
+        "name" : "Flytande honung",
+        "quantity" : "350 g",
+        "sku" : "7318690058274",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "35.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7318693555824",
+      "price" : "25",
+      "product" : {
+        "brand" : "ICA",
+        "name" : "Druva röd kf ICA",
+        "quantity" : "500g",
+        "sku" : "7318693555824",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "25",
+      "quantity" : 1
+    }, {
+      "gtin" : "7318690141754",
+      "price" : "21.9",
+      "product" : {
+        "brand" : "ICA I love eco",
+        "name" : "eco Mango",
+        "quantity" : "250 g",
+        "sku" : "7318690141754",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "21.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7318690128847",
+      "price" : "33.9",
+      "product" : {
+        "brand" : "ICA Basic",
+        "name" : "Blåbär odlade",
+        "quantity" : "500 g",
+        "sku" : "7318690128847",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "33.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7318690168812",
+      "price" : "19.9",
+      "product" : {
+        "brand" : "ICA",
+        "name" : "Light Granatäpple",
+        "quantity" : "100cl",
+        "sku" : "7318690168812",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "19.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 211.2,
+    "timeCreated" : "2020-03-10T16:23:00.879Z",
+    "user" : "q629THAx35MT9otWXb3mNgXbDef2"
+  },
+  "-M3evBeK3yJt__voiP5s" : {
+    "id" : "foLJTC996I8IWrBlVuEY",
+    "items" : [ {
+      "gtin" : "7310070001726",
+      "price" : "13.9",
+      "product" : {
+        "brand" : "Ramlösa",
+        "name" : "Vatten Citrus",
+        "quantity" : "50cl",
+        "sku" : "7310070001726",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "13.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 13.9,
+    "timeCreated" : "2020-03-11T14:59:39.433Z",
+    "user" : "IAcWzaA8IjYlXAZo0Ub4jlQ7quo2"
+  },
+  "-M3evBeK3yJt__voiP5t" : {
+    "id" : "gjpsNcwUwEdtVzKmxcwb",
+    "items" : [ {
+      "gtin" : "5712840020081",
+      "price" : "24.9",
+      "product" : {
+        "brand" : "Biofood",
+        "name" : "Raw bite fruit",
+        "quantity" : "50g",
+        "sku" : "5712840020081",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "24.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 24.9,
+    "timeCreated" : "2020-03-12T15:50:38.546Z",
+    "user" : "XsSz8n7VKQceOsARBpDojTgiK2C2"
+  },
+  "-M3evBeK3yJt__voiP5u" : {
+    "id" : "gsZ501hpBxjSDR1r0oJF",
+    "items" : [ {
+      "gtin" : "7310511257507",
+      "price" : "9.9",
+      "product" : {
+        "brand" : "Marabou",
+        "name" : "Daim dubbel",
+        "quantity" : "56 g",
+        "sku" : "7310511257507",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "9.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "5000159461122",
+      "price" : "10.9",
+      "product" : {
+        "brand" : "Snickers",
+        "name" : "Snickers",
+        "quantity" : "50g",
+        "sku" : "5000159461122",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "10.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 20.8,
+    "status" : "refunded",
+    "timeCreated" : "2020-03-05T10:02:26.248Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBeL_WaluJXvRWFA" : {
+    "id" : "hWhDD4cCgz7GJnJsHG6h",
+    "items" : [ {
+      "gtin" : "7310350118595",
+      "price" : "13.9",
+      "product" : {
+        "brand" : "Läkerol",
+        "name" : "Salvi",
+        "quantity" : "25g",
+        "sku" : "7310350118595",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "13.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 13.9,
+    "timeCreated" : "2020-03-07T17:10:37.246Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBeL_WaluJXvRWFB" : {
+    "id" : "kIhPnabzXMYVyxN4GJge",
+    "items" : [ {
+      "gtin" : "7300400122689",
+      "price" : "9.9",
+      "product" : {
+        "brand" : "Wasa",
+        "name" : "Sandw Cream Ch/Grä",
+        "quantity" : "37 g",
+        "sku" : "7300400122689",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "9.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 9.9,
+    "timeCreated" : "2020-03-04T15:51:47.295Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBeL_WaluJXvRWFC" : {
+    "id" : "kqHgYkiFf1m92ZDo17I6",
+    "items" : [ {
+      "gtin" : "7310350118342",
+      "price" : "10.9",
+      "product" : {
+        "brand" : "Cloetta",
+        "name" : "Kexchoklad",
+        "quantity" : "60g",
+        "sku" : "7310350118342",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "10.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 10.9,
+    "timeCreated" : "2020-03-09T16:08:02.452Z",
+    "user" : "TzgM85JXsbPcUXbJruY70Q4aa773"
+  },
+  "-M3evBeMUCMUKB6PlE98" : {
+    "id" : "lslvoUouGoOkArcracNM",
+    "items" : [ {
+      "gtin" : "7310350118342",
+      "price" : "21.8",
+      "product" : {
+        "brand" : "Cloetta",
+        "name" : "Kexchoklad",
+        "quantity" : "60g",
+        "sku" : "7310350118342",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "10.9",
+      "quantity" : 2
+    }, {
+      "gtin" : "7300400122689",
+      "price" : "19.8",
+      "product" : {
+        "brand" : "Wasa",
+        "name" : "Sandw Cream Ch/Grä",
+        "quantity" : "37 g",
+        "sku" : "7300400122689",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "9.9",
+      "quantity" : 2
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 41.6,
+    "status" : "refunded",
+    "timeCreated" : "2020-03-06T13:34:12.225Z",
+    "user" : "g0vL8HvJFzUmZWoMVE7HiivKwaA3"
+  },
+  "-M3evBeMUCMUKB6PlE99" : {
+    "id" : "mVOkC0t7ujEw3RvsM3vh",
+    "items" : [ {
+      "gtin" : "0856991004905",
+      "price" : "13.9",
+      "product" : {
+        "brand" : "Nick´s",
+        "name" : "Coconut",
+        "quantity" : "40 g",
+        "sku" : "856991004905",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "13.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 13.9,
+    "timeCreated" : "2020-03-05T10:05:47.627Z",
+    "user" : "oYNFu5C39pT9j5w799xBh8QgdIm2"
+  },
+  "-M3evBeMUCMUKB6PlE9A" : {
+    "id" : "o8SClIvSZ4yDS0Zloo8s",
+    "items" : [ {
+      "gtin" : "7312631704060",
+      "price" : "8.9",
+      "product" : {
+        "brand" : "Risenta",
+        "name" : "Sesamkakor",
+        "quantity" : "40 g",
+        "sku" : "7312631704060",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "8.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 8.9,
+    "timeCreated" : "2020-03-05T10:29:23.336Z",
+    "user" : "sXXzszk2plV1AtcEnM358Pw1XUb2"
+  },
+  "-M3evBeNsfW7o7_dIPVk" : {
+    "id" : "pK1p229m4q05xsr13nYF",
+    "items" : [ {
+      "gtin" : "7310350118342",
+      "price" : "10.9",
+      "product" : {
+        "brand" : "Cloetta",
+        "name" : "Kexchoklad",
+        "quantity" : "60g",
+        "sku" : "7310350118342",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "10.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 10.9,
+    "timeCreated" : "2020-03-10T14:58:30.436Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBeNsfW7o7_dIPVl" : {
+    "id" : "r1Qw78uij6slDUTGePWe",
+    "items" : [ {
+      "gtin" : "5000159461122",
+      "price" : "10.9",
+      "product" : {
+        "brand" : "Snickers",
+        "name" : "Snickers",
+        "quantity" : "50g",
+        "sku" : "5000159461122",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "10.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 10.9,
+    "timeCreated" : "2020-03-12T15:54:09.078Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBeNsfW7o7_dIPVm" : {
+    "id" : "sRSkrmCWPjYkXbS4Ciuq",
+    "items" : [ {
+      "gtin" : "7300400114813",
+      "price" : "19.9",
+      "product" : {
+        "brand" : "Falu",
+        "name" : "Falu rågrut",
+        "quantity" : "470 g",
+        "sku" : "7300400114813",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "19.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7394376616037",
+      "price" : "21.9",
+      "product" : {
+        "brand" : "OATLY",
+        "name" : "iKaffe",
+        "quantity" : "1 l",
+        "sku" : "7394376616037",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "21.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 41.8,
+    "timeCreated" : "2020-03-10T16:40:06.816Z",
+    "user" : "4m0gtYu3ipSE433ArVawHuYmeok2"
+  },
+  "-M3evBeO08fUh6UZZOXh" : {
+    "id" : "slCZ3XfptmhbKI2X7edS",
+    "items" : [ {
+      "gtin" : "7310070001788",
+      "price" : "11.9",
+      "product" : {
+        "brand" : "Ramlösa",
+        "name" : "Vatten Mango",
+        "quantity" : "50cl",
+        "sku" : "7310070001788",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "11.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7622210315649",
+      "price" : "7.9",
+      "product" : {
+        "brand" : "Marabou",
+        "name" : "crisp! peanut",
+        "quantity" : "60g",
+        "sku" : "7622210315649",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "7.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 19.8,
+    "timeCreated" : "2020-03-09T14:14:02.151Z",
+    "user" : "m5v3t2uaJkTXfCq5W4i4WZtjZQo2"
+  },
+  "-M3evBeO08fUh6UZZOXi" : {
+    "id" : "svjkYSeudgc2if9Lfmef",
+    "items" : [ {
+      "gtin" : "7394376616037",
+      "price" : "71.7",
+      "product" : {
+        "brand" : "OATLY",
+        "name" : "iKaffe",
+        "quantity" : "1 l",
+        "sku" : "7394376616037",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "23.9",
+      "quantity" : 3
+    }, {
+      "gtin" : "7310060004348",
+      "price" : "17.9",
+      "product" : {
+        "brand" : "Kronägg",
+        "name" : "Ägg frig 6-p M",
+        "quantity" : "6 pack",
+        "sku" : "7310060004348",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "17.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7313619000952",
+      "price" : "34.9",
+      "product" : {
+        "brand" : "Brämhults",
+        "name" : "Jordgubb-Lime",
+        "quantity" : "850ml",
+        "sku" : "7313619000952",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "34.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7310865866424",
+      "price" : "16.9",
+      "product" : {
+        "brand" : "Arla Ko",
+        "name" : "Mild Yog naturell",
+        "quantity" : "1000 g",
+        "sku" : "7310865866424",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "16.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 141.4,
+    "timeCreated" : "2020-03-11T18:35:40.934Z",
+    "user" : "006k1Ai1Mody1IXVEa5Kz4Z2XZJ2"
+  },
+  "-M3evBeO08fUh6UZZOXj" : {
+    "id" : "swoyxcVK8j99V7ciK6MW",
+    "items" : [ {
+      "gtin" : "7350071470114",
+      "price" : "21.9",
+      "product" : {
+        "brand" : "Smiling",
+        "name" : "Cashewnött Havssal",
+        "quantity" : "50g",
+        "sku" : "7350071470114",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "21.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7310865071880",
+      "price" : "21.5",
+      "product" : {
+        "brand" : "Keso",
+        "name" : "Cott Ch nat Eko 4%",
+        "quantity" : "250g",
+        "sku" : "7310865071880",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "21.5",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 43.4,
+    "timeCreated" : "2020-03-13T08:13:32.154Z",
+    "user" : "ThjWV7Zm96aK7xcLcMQbsm8ZQPw1"
+  },
+  "-M3evBePjdwSpcn9CI_l" : {
+    "id" : "sxgHN1h1XnvR2NVHWoc4",
+    "items" : [ {
+      "gtin" : "7318690137962",
+      "price" : "19.9",
+      "product" : {
+        "brand" : "ICA",
+        "name" : "Lättkvarg lemoncur",
+        "quantity" : "500g",
+        "sku" : "7318690137962",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "19.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7318690052678",
+      "price" : "42.9",
+      "product" : {
+        "brand" : "ICA",
+        "name" : "Smör Normalsaltat",
+        "quantity" : "500 g",
+        "sku" : "7318690052678",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "42.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7310861015024",
+      "price" : "16.9",
+      "product" : {
+        "brand" : "Gainomax",
+        "name" : "Recovery Chocolate",
+        "quantity" : "250 ml",
+        "sku" : "7310861015024",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "16.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7350058331100",
+      "price" : "22.9",
+      "product" : {
+        "brand" : "Celsius",
+        "name" : "Energidr Citr/Lime",
+        "quantity" : "35,5cl",
+        "sku" : "7350058331100",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "22.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 102.6,
+    "timeCreated" : "2020-03-10T16:41:18.484Z",
+    "user" : "mgTqaCMeqwgSqv3fbadpjwr3nYU2"
+  },
+  "-M3evBePjdwSpcn9CI_m" : {
+    "id" : "tZMSbLFTZviaYjt6aE8C",
+    "items" : [ {
+      "gtin" : "5024278003063",
+      "price" : "21.9",
+      "product" : {
+        "brand" : "Wholebake",
+        "name" : "FlapJack Choklad",
+        "quantity" : "80g",
+        "sku" : "5024278003063",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "21.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 21.9,
+    "timeCreated" : "2020-03-10T15:07:34.438Z",
+    "user" : "oYNFu5C39pT9j5w799xBh8QgdIm2"
+  },
+  "-M3evBePjdwSpcn9CI_n" : {
+    "id" : "uZuIwAUZ06jBU26eNENX",
+    "items" : [ {
+      "gtin" : "5712840020074",
+      "price" : "24.9",
+      "product" : {
+        "brand" : "Biofood",
+        "name" : "Rawbite Frukt&nöt",
+        "quantity" : "50g",
+        "sku" : "5712840020074",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "24.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 24.9,
+    "timeCreated" : "2020-03-09T12:03:44.799Z",
+    "user" : "V2irR890eFhFBCQSP0pC97Hxv7W2"
+  },
+  "-M3evBePjdwSpcn9CI_o" : {
+    "id" : "w3XI9lcyUYgb2V7DHcMQ",
+    "items" : [ {
+      "gtin" : "8717163691618",
+      "price" : "24",
+      "product" : {
+        "brand" : "Magnum",
+        "name" : "Glasspinne White C",
+        "quantity" : "90ml",
+        "sku" : "8717163691618",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "24",
+      "quantity" : 1
+    }, {
+      "gtin" : "7310070003492",
+      "price" : "11.9",
+      "product" : {
+        "brand" : "Ramlösa",
+        "name" : "Periska/Apelsin",
+        "quantity" : "50cl",
+        "sku" : "7310070003492",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "11.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 35.9,
+    "timeCreated" : "2020-03-09T14:49:18.306Z",
+    "user" : "Bhxl3LtYmjdWCq5BPeJksw67AVi1"
+  },
+  "-M3evBeQAn1o6W_-t6g1" : {
+    "id" : "wDFtMQeaSB9A4nfcjial",
+    "items" : [ {
+      "gtin" : "7310350118595",
+      "price" : "11.9",
+      "product" : {
+        "brand" : "Läkerol",
+        "name" : "Salvi",
+        "quantity" : "25g",
+        "sku" : "7310350118595",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "11.9",
+      "quantity" : 1
+    }, {
+      "gtin" : "7310511210304",
+      "price" : "15.9",
+      "product" : {
+        "brand" : "Marabou",
+        "name" : "Mjölkchoklad kaka",
+        "quantity" : "100 g",
+        "sku" : "7310511210304",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "15.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "IfO0fugaM9XRaaICJ7LQ",
+    "merchantName" : "ICA Supermarket Sabbatsberg",
+    "price" : 27.8,
+    "timeCreated" : "2020-03-10T11:16:38.456Z",
+    "user" : "YY7xM2wtLdNPGd1RQi7amupKxQX2"
+  },
+  "-M3evBeQAn1o6W_-t6g2" : {
+    "id" : "wRWO4t5XYLyBXwdfoiJg",
+    "items" : [ {
+      "gtin" : "7312631704060",
+      "price" : "8.9",
+      "product" : {
+        "brand" : "Risenta",
+        "name" : "Sesamkakor",
+        "quantity" : "40 g",
+        "sku" : "7312631704060",
+        "unit" : "Kr/Förp"
+      },
+      "productPrice" : "8.9",
+      "quantity" : 1
+    } ],
+    "merchant" : "cpcaYhuM5LGoyhayHoHo",
+    "merchantName" : "Way Pop-up Store",
+    "price" : 8.9,
+    "timeCreated" : "2020-03-20T14:17:02.519Z",
+    "user" : "TzgM85JXsbPcUXbJruY70Q4aa773"
+  }
+}

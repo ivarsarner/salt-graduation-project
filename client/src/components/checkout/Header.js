@@ -13,10 +13,9 @@ export default function Header({ checkout }) {
       (acc, current) => acc + current.quantity,
       0
     );
-    console.log('i am a buzz kill');
     setCheckoutTotal(checkoutTotal);
     setCustomer(customersActions.getRandomCustomer());
-  }, [customers]);
+  }, [customers, checkout.items, customersActions]);
 
   return (
     <div>

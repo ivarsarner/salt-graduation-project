@@ -12,8 +12,6 @@ const CheckoutContextProvider = (props) => {
   const [currentStore, setCurrentStore] = useState('');
 
   const filterOrders = (firebaseData) => {
-    console.log('this is the firebase data', firebaseData[63]);
-    console.log('this is the firebase data', firebaseData[5]);
     const filterData = firebaseData
       .filter((checkout) => checkout.merchant === 'IfO0fugaM9XRaaICJ7LQ')
       .map((checkout) => ({
@@ -27,21 +25,13 @@ const CheckoutContextProvider = (props) => {
   const filterCurrentStore = () =>
     setCurrentStore(checkouts[0] && checkouts[0].merchantName);
 
-  const getFirebaseData = () => {
-    let database = firebase.database().ref('/');
-    database.on('value', (snapshot) => {
-      const firebaseData = snapshot.val();
-      filterOrders(firebaseData);
-    });
-    console.log('DATA RETRIEVED');
-  };
-
   const addNewCheckout = () => {
     let newCheckout = newCheckoutData.splice(-1, 1);
     newCheckout = {
       ...newCheckout[0],
       timeCreated: moment().format('YYYY-MM-DDTHH:mm:ss'),
       checkout: Math.floor(Math.random() * 4) + 1,
+      id: Math.floor(Math.random() * 999999999),
     };
     firebase
       .database()
@@ -50,9 +40,15 @@ const CheckoutContextProvider = (props) => {
   };
 
   useEffect(() => {
-    getFirebaseData();
+    let database = firebase.database().ref('/');
+    database.on('value', (snapshot) => {
+      const firebaseData = snapshot.val();
+      filterOrders(Object.values(firebaseData));
+    });
+
     setNewCheckoutData(newMockData);
   }, []);
+  // eslint-disable-next-line
   useEffect(() => filterCurrentStore(), [checkoutSyncComplete]);
 
   return (
