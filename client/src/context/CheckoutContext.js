@@ -2,6 +2,7 @@ import React, { createContext, useState, useEffect } from 'react';
 import newMockData from '../assets/new-checkouts-mock-data.json';
 import moment from 'moment';
 import firebase from '../firebase';
+import axios from 'axios';
 
 export const CheckoutContext = createContext();
 
@@ -15,9 +16,17 @@ const CheckoutContextProvider = (props) => {
     const dataWithCheckoutId = firebaseData.map((checkout) => ({
       ...checkout,
       checkoutId: Math.floor(Math.random() * 4) + 1,
+      customer: {
+        imageUrl: getCustomer(),
+      },
     }));
     setCheckouts(dataWithCheckoutId);
     setCheckoutSyncComplete(true);
+  };
+
+  const getCustomer = async () => {
+    const { data } = await axios.get('/api/customers');
+    return data[Math.floor(Math.random() * 99)];
   };
 
   const filterCurrentStore = () =>
@@ -28,8 +37,11 @@ const CheckoutContextProvider = (props) => {
     newCheckout = {
       ...newCheckout[0],
       timeCreated: moment().format('YYYY-MM-DDTHH:mm:ss'),
-      checkout: Math.floor(Math.random() * 4) + 1,
+      checkoutId: Math.floor(Math.random() * 4) + 1,
       id: Math.floor(Math.random() * 999999999),
+      customer: {
+        imageUrl: getCustomer(),
+      },
     };
     firebase
       .database()

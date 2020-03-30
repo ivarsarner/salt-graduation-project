@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { CustomerContext } from '../../context/CustomerContext';
 import Moment from 'react-moment';
-import doneIMG from '../../assets/done.JPG';
 
 export default function Header({ checkout }) {
   const { customers, customersActions } = useContext(CustomerContext);
@@ -21,7 +20,10 @@ export default function Header({ checkout }) {
     <div>
       <header className="checkout-card__header">
         <section className="checkout-card__header__left">
-          <img src={customer && customer.picture} alt="Customer" />
+          <img
+            src={checkout.customer && checkout.customer.imageUrl}
+            alt="Customer"
+          />
         </section>
         <section className="checkout-card__header__middle">
           <h4>{customer && customer.name}</h4>
@@ -30,9 +32,6 @@ export default function Header({ checkout }) {
           </p>
           <Moment fromNow>{checkout.timeCreated}</Moment>
         </section>
-        {/* <section className="checkout-card__header__right">
-          <img src={doneIMG} alt="Status of transaction" />
-        </section> */}
       </header>
       <hr></hr>
     </div>
