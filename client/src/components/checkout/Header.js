@@ -24,19 +24,11 @@ export default function Header({ checkout }) {
           <img src={customer && customer.picture} alt="Customer" />
         </section>
         <section className="checkout-card__header__middle">
-          <div className="checkout-card__header__name">
-            {customer && customer.name}
-          </div>
-          <span className="checkout-card__header__middle__quantity">
-            {checkoutTotal} items &bull;
-          </span>
-          <span className="checkout-card__header__middle__total">
-            {' ' + checkout.price} kr &bull;
-          </span>
-          <span className="checkout-card__header__middle__time">
-            {' '}
-            <Moment fromNow>{checkout.timeCreated}</Moment>
-          </span>
+          <h4>{customer && customer.name}</h4>
+          <p>
+            {checkoutTotal} items &bull; {' ' + checkout.price} kr &bull;{' '}
+          </p>
+          <Moment fromNow>{checkout.timeCreated}</Moment>
         </section>
         {/* <section className="checkout-card__header__right">
           <img src={doneIMG} alt="Status of transaction" />

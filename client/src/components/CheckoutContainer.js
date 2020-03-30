@@ -15,14 +15,16 @@ export default function CheckoutContainer() {
 
   return (
     <div className="container">
-      {/* how can we dymanically show the number of live checkouts */}
-      {recentCheckouts.map((checkout) => (
-        <CheckoutCard
-          key={checkout.id.toString()}
-          checkout={checkout}
-          checkoutID={checkout.checkoutId} // this is a temp fix. checkout id should come from the data
-        />
-      ))}
+      <section className="recent">
+        {recentCheckouts.map((checkout) => (
+          <CheckoutCard
+            key={checkout.id.toString()}
+            checkout={checkout}
+            checkoutID={checkout.checkoutId} // this is a temp fix. checkout id should come from the data
+          />
+        ))}
+      </section>
+      <section className="history">i'm on the other left </section>
     </div>
   );
 }
