@@ -19,7 +19,7 @@ const CustomerContextProvider = (props) => {
 
   return (
     <CustomerContext.Provider
-      value={{ customers, actions: { getRandomCustomer } }}
+      value={{ customers, customersActions: { getRandomCustomer } }}
     >
       {props.children}
     </CustomerContext.Provider>

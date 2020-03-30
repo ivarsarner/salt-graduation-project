@@ -3,15 +3,15 @@ import { CheckoutContext } from '../context/CheckoutContext';
 import CheckoutCard from './checkout/CheckoutCard';
 
 export default function CheckoutContainer() {
-  const { data } = useContext(CheckoutContext);
+  const { checkouts } = useContext(CheckoutContext);
   const [recentCheckouts, setRecentCheckouts] = useState([]);
 
   useEffect(() => {
-    const recent = data
+    const recent = checkouts
       .sort((a, b) => new Date(b.timeCreated) - new Date(a.timeCreated))
       .slice(0, 4);
     setRecentCheckouts(recent);
-  }, [data]);
+  }, [checkouts]);
 
   return (
     <div className="container">
@@ -19,7 +19,7 @@ export default function CheckoutContainer() {
       {recentCheckouts.map((checkout, index) => (
         <CheckoutCard
           key={checkout.id.toString()}
-          products={checkout}
+          checkout={checkout}
           checkoutID={index + 1} // this is a temp fix. checkout id should come from the data
         />
       ))}
