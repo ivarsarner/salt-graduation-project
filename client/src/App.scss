@@ -1,18 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: rgb(255, 255, 255);
+  background-color: #f5f5f5;
+  font-family: 'Open Sans', sans-serif;
 }
+
+a {
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+}
+
+/* HEADER -------- */
+
+.main-nav {
+  display: flex;
+  background-color: white;
+  align-items: center;
+  padding: 0.5rem 2.5rem;
+  margin-top: 1rem;
+}
+
+.main-nav * {
+  margin: 0rem 1rem;
+}
+
+.main-nav-logo {
+  margin-right: 0;
+}
+
+.main-nav-links {
+  margin-left: auto;
+}
+
+.new-checkout-button {
+  padding: 0.5em 1.2em;
+  border-radius: 0.3em;
+  color: #ffffff;
+  background-color: #9c9797;
+  border: none;
+  transition: all 0.2s;
+  font-size: 0.7rem;
+  font-family: 'Open Sans', sans-serif;
+  outline: none;
+}
+.new-checkout-button:hover {
+  cursor: pointer;
+  background-color: #6d6767;
+}
+
+/* CARD ANIMATIONS -------- */
+/* slide enter */
+.slide-appear {
+  opacity: 0;
+  transform: scale(0.97) translateY(5px);
+  z-index: 1;
+}
+.slide-appear.slide-appear-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: opacity 300ms linear 100ms, transform 300ms ease-in-out 100ms;
+}
+
+/* slide exit */
+.slide-exit {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+.slide-exit.slide-exit-active {
+  opacity: 0;
+  transform: scale(0.97) translateY(5px);
+  transition: opacity 150ms linear, transform 150ms ease-out;
+}
+.slide-exit-done {
+  opacity: 0;
+}
+
+/* MAIN CONTAINER -------- */
 
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  // v2 justify-content: space-between;
-  padding: 2%;
+  justify-content: center;
 }
+
+.checkout-section {
+  flex: 0 550px;
+  // max-width: 700px;
+  height: auto;
+  margin: 2%;
+}
+
+.checkout-card {
+  position: relative;
+  border: solid 1px #808080;
+  border-radius: 10px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  // v2 flex: 0 32%;
+  //width: 350px;
+  height: auto;
+}
+
+// v2 flex: 0 24% would put 4 items on every row
 
 .checkout-card {
   border: solid 1px #808080;
@@ -23,7 +116,6 @@ body {
   height: auto;
   margin-bottom: 2%; /* (100-32*3)/2 */
 
-  // v2 flex: 0 24% would put 4 items on every row
   // v2 flex: 0 19% would put 5 items on every row
 
   .checkout-card__checkout-number {

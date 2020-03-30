@@ -20,7 +20,7 @@ export default function CheckoutContainer() {
         <CheckoutCard
           key={checkout.id.toString()}
           checkout={checkout}
-          checkoutID={index + 1} // this is a temp fix. checkout id should come from the data
+          checkoutID={checkout.checkout} // this is a temp fix. checkout id should come from the data
         />
       ))}
     </div>
