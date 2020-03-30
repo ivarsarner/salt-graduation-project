@@ -11,23 +11,43 @@ const CheckoutContextProvider = (props) => {
   const [newCheckoutData, setNewCheckoutData] = useState([]);
   const [checkoutSyncComplete, setCheckoutSyncComplete] = useState(false);
   const [currentStore, setCurrentStore] = useState('');
+  const [customers, setCustomers] = useState([]);
 
-  const addCheckoutId = (firebaseData) => {
-    const dataWithCheckoutId = firebaseData.map((checkout) => ({
-      ...checkout,
-      checkoutId: Math.floor(Math.random() * 4) + 1,
-      customer: {
-        imageUrl: getCustomer(),
-      },
-    }));
+  const addCheckoutId = async (firebaseData) => {
+    console.log('but customers exist', customers);
+    const dataWithCheckoutId = Promise.all(
+      firebaseData.map(async (checkout) => {
+        const customer = await getRandomCustomer();
+        console.log('im a customer', customer);
+        return {
+          ...checkout,
+          checkoutId: Math.floor(Math.random() * 4) + 1,
+          customer: {
+            imageUrl: customer && customer.picture,
+          },
+        };
+      })
+    );
+
+    console.log('hello, is we alive?', dataWithCheckoutId);
     setCheckouts(dataWithCheckoutId);
     setCheckoutSyncComplete(true);
   };
 
-  const getCustomer = async () => {
+  const fetchCustomers = async () => {
     const { data } = await axios.get('/api/customers');
-    return data[Math.floor(Math.random() * 99)];
+    setCustomers(data);
   };
+
+  const getRandomCustomer = () => customers[Math.floor(Math.random() * 99)];
+
+  // const getRandomCustomer = (data) =>
+  //   data[Math.floor(Math.random() * 99)].picture;
+
+  // const getCustomers = async () => {
+  //   const { data } = await axios.get('/api/customers');
+  //   return data;
+  // };
 
   const filterCurrentStore = () =>
     setCurrentStore(checkouts[0] && checkouts[0].merchantName);
@@ -39,9 +59,9 @@ const CheckoutContextProvider = (props) => {
       timeCreated: moment().format('YYYY-MM-DDTHH:mm:ss'),
       checkoutId: Math.floor(Math.random() * 4) + 1,
       id: Math.floor(Math.random() * 999999999),
-      customer: {
-        imageUrl: getCustomer(),
-      },
+      // customer: {
+      //   imageUrl: getCustomer(),
+      // },
     };
     firebase
       .database()
@@ -56,9 +76,9 @@ const CheckoutContextProvider = (props) => {
       .equalTo('IfO0fugaM9XRaaICJ7LQ')
       .on('value', (snapshot) => {
         const firebaseData = snapshot.val();
+        fetchCustomers();
         addCheckoutId(Object.values(firebaseData));
       });
-
     setNewCheckoutData(newMockData);
   }, []);
   // eslint-disable-next-line
