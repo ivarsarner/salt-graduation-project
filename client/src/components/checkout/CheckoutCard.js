@@ -3,7 +3,7 @@ import Header from './Header';
 import Item from './Item';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-export default function Checkout({ checkout, checkoutID }) {
+function Checkout({ checkout, checkoutID }) {
   return (
     <div className="checkout-section">
       <h4>Checkout {checkoutID}</h4>
@@ -27,3 +27,5 @@ export default function Checkout({ checkout, checkoutID }) {
     </div>
   );
 }
+
+export default React.memo(Checkout);
