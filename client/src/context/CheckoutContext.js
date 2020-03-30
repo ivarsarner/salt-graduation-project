@@ -12,7 +12,7 @@ const CheckoutContextProvider = (props) => {
   const [checkoutSyncComplete, setCheckoutSyncComplete] = useState(false);
   const [currentStore, setCurrentStore] = useState('');
   const [customers, setCustomers] = useState([]);
-  const [CustomerSyncComplete, setCustomerSyncComplete] = useState(false);
+  const [customerSyncComplete, setCustomerSyncComplete] = useState(false);
 
   const addCheckoutId = async (firebaseData) => {
     console.log('i am run');
@@ -63,7 +63,7 @@ const CheckoutContextProvider = (props) => {
   }, []);
 
   useEffect(() => {
-    if (CustomerSyncComplete) {
+    if (customerSyncComplete) {
       let database = firebase.database().ref('/');
       database
         .orderByChild('merchant')
@@ -74,7 +74,7 @@ const CheckoutContextProvider = (props) => {
         });
       setNewCheckoutData(newMockData);
     }
-  }, [CustomerSyncComplete]);
+  }, [customerSyncComplete]);
   // eslint-disable-next-line
   useEffect(() => filterCurrentStore(), [checkoutSyncComplete]);
 

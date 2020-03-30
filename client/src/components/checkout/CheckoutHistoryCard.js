@@ -1,9 +1,8 @@
 import React from 'react';
 import Header from './Header';
-import Item from './Item';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-function Checkout({ checkout }) {
+function CheckoutHistoryCard({ checkout }) {
   return (
     <TransitionGroup>
       <CSSTransition key={checkout.id} timeout={450} classNames="slide" appear>
@@ -19,4 +18,4 @@ function shouldRender(prevProps, nextProps) {
   if (prevProps !== nextProps) return true;
 }
 
-export default React.memo(Checkout, shouldRender);
+export default React.memo(CheckoutHistoryCard, shouldRender);
