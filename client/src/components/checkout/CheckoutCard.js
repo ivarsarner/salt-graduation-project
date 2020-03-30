@@ -9,11 +9,9 @@ function CheckoutCard({ checkout }) {
       <CSSTransition key={checkout.id} timeout={450} classNames="slide" appear>
         <div className="checkout-card">
           <Header checkout={checkout} />
-          <div className="item-container">
-            {checkout.items.map((item) => (
-              <Item key={item.gtin} itemData={item} />
-            ))}
-          </div>
+          {checkout.items.map((item) => (
+            <Item key={item.gtin} itemData={item} />
+          ))}
         </div>
       </CSSTransition>
     </TransitionGroup>
