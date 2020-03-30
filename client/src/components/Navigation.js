@@ -3,7 +3,7 @@ import logo from '../assets/logo-black.svg';
 import { CheckoutContext } from '../context/CheckoutContext';
 import { NavLink } from 'react-router-dom';
 
-export default function Navigation() {
+function Navigation() {
   const { currentStore, checkoutsActions } = useContext(CheckoutContext);
 
   return (
@@ -24,3 +24,9 @@ export default function Navigation() {
     </div>
   );
 }
+
+function shouldRender(prevProps, nextProps) {
+  if (prevProps !== nextProps) return true;
+}
+
+export default React.memo(Navigation, shouldRender);
