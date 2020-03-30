@@ -7,14 +7,16 @@
     "server": "nodemon server.js",
     "client": "cd client && npm start",
     "start": "npm-run-all --parallel server client",
-    "test": "jest __tests__/",
+    "test": "jest __tests__/ --maxWorkers=1",
+    "watch": "jest __tests__/ --maxWorkers=1 --watch",
     "lint": "eslint .",
     "new-install": "npm i && cd client && npm i"
   },
   "jest": {
     "testPathIgnorePatterns": [
       "node_modules/",
-      "client/"
+      "client/",
+      "__tests__/testarray.js"
     ]
   },
   "repository": {

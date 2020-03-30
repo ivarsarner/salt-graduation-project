@@ -5,16 +5,25 @@ export const CheckoutContext = createContext();
 
 const CheckoutContextProvider = (props) => {
   const [checkouts, setCheckouts] = useState([]);
+  const [checkoutSyncComplete, setCheckoutSyncComplete] = useState(false);
+  const [currentStore, setCurrentStore] = useState('');
 
-  useEffect(() => {
+  const filterOrders = () => {
     const filterData = mockData.filter(
       (checkout) => checkout.merchant === 'IfO0fugaM9XRaaICJ7LQ'
     );
     setCheckouts(filterData);
-  }, []);
+    setCheckoutSyncComplete(true);
+  };
+
+  const filterCurrentStore = () =>
+    setCurrentStore(checkouts[0] && checkouts[0].merchantName);
+
+  useEffect(() => filterOrders(), []);
+  useEffect(() => filterCurrentStore(), [checkoutSyncComplete]);
 
   return (
-    <CheckoutContext.Provider value={{ checkouts }}>
+    <CheckoutContext.Provider value={{ checkouts, currentStore }}>
       {props.children}
     </CheckoutContext.Provider>
   );

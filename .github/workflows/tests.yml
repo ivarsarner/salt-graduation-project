@@ -1,9 +1,10 @@
-name: Run all tests
+name: Run all server and react tests
 
 on:
   push:
     branches:
       - master
+      - salt
 
 jobs:
   build:
