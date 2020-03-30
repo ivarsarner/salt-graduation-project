@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
-import mockData from '../assets/order-mock-data.json';
 import newMockData from '../assets/new-checkouts-mock-data.json';
 import moment from 'moment';
+import firebase from '../firebase';
 
 export const CheckoutContext = createContext();
 
@@ -11,8 +11,8 @@ const CheckoutContextProvider = (props) => {
   const [checkoutSyncComplete, setCheckoutSyncComplete] = useState(false);
   const [currentStore, setCurrentStore] = useState('');
 
-  const filterOrders = () => {
-    const filterData = mockData
+  const filterOrders = (firebaseData) => {
+    const filterData = firebaseData
       .filter((checkout) => checkout.merchant === 'IfO0fugaM9XRaaICJ7LQ')
       .map((checkout) => ({
         ...checkout,
@@ -25,8 +25,17 @@ const CheckoutContextProvider = (props) => {
   const filterCurrentStore = () =>
     setCurrentStore(checkouts[0] && checkouts[0].merchantName);
 
+  const getFirebaseData = () => {
+    let database = firebase.database().ref('/');
+    database.on('value', (snapshot) => {
+      const firebaseData = snapshot.val();
+      filterOrders(firebaseData);
+    });
+    console.log('DATA RETRIEVED');
+  };
+
   useEffect(() => {
-    filterOrders();
+    getFirebaseData();
     setNewCheckoutData(newMockData);
   }, []);
   useEffect(() => filterCurrentStore(), [checkoutSyncComplete]);
