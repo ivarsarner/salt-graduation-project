@@ -12,6 +12,8 @@ const CheckoutContextProvider = (props) => {
   const [currentStore, setCurrentStore] = useState('');
 
   const filterOrders = (firebaseData) => {
+    console.log('this is the firebase data', firebaseData[63]);
+    console.log('this is the firebase data', firebaseData[5]);
     const filterData = firebaseData
       .filter((checkout) => checkout.merchant === 'IfO0fugaM9XRaaICJ7LQ')
       .map((checkout) => ({
@@ -34,12 +36,6 @@ const CheckoutContextProvider = (props) => {
     console.log('DATA RETRIEVED');
   };
 
-  useEffect(() => {
-    getFirebaseData();
-    setNewCheckoutData(newMockData);
-  }, []);
-  useEffect(() => filterCurrentStore(), [checkoutSyncComplete]);
-
   const addNewCheckout = () => {
     let newCheckout = newCheckoutData.splice(-1, 1);
     newCheckout = {
@@ -47,10 +43,17 @@ const CheckoutContextProvider = (props) => {
       timeCreated: moment().format('YYYY-MM-DDTHH:mm:ss'),
       checkout: Math.floor(Math.random() * 4) + 1,
     };
-    setCheckouts((prevState) => {
-      return [...prevState, newCheckout];
-    });
+    firebase
+      .database()
+      .ref('/')
+      .push(newCheckout);
   };
+
+  useEffect(() => {
+    getFirebaseData();
+    setNewCheckoutData(newMockData);
+  }, []);
+  useEffect(() => filterCurrentStore(), [checkoutSyncComplete]);
 
   return (
     <CheckoutContext.Provider
