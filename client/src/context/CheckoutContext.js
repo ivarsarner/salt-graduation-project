@@ -15,17 +15,19 @@ const CheckoutContextProvider = (props) => {
   const [CustomerSyncComplete, setCustomerSyncComplete] = useState(false);
 
   const addCheckoutId = async (firebaseData) => {
-    console.log('i am run');
     const dataWithCheckoutId = firebaseData.map((checkout) => {
-      const customer = getRandomCustomer();
-      return {
-        ...checkout,
-        checkoutId: Math.floor(Math.random() * 4) + 1,
-        customer: {
-          imageUrl: customer && customer.picture,
-          name: customer && customer.name,
-        },
-      };
+      if (!checkout.customer) {
+        const customer = getRandomCustomer();
+        return {
+          ...checkout,
+          checkoutId: Math.floor(Math.random() * 4) + 1,
+          customer: {
+            imageUrl: customer.picture,
+            name: customer.name,
+          },
+        };
+      }
+      return checkout;
     });
     setCheckouts(dataWithCheckoutId);
     setCheckoutSyncComplete(true);
@@ -38,14 +40,17 @@ const CheckoutContextProvider = (props) => {
 
   const addNewCheckout = () => {
     let newCheckout = newCheckoutData.splice(-1, 1);
+    const customer = getRandomCustomer();
+
     newCheckout = {
       ...newCheckout[0],
       timeCreated: moment().format('YYYY-MM-DDTHH:mm:ss'),
       checkoutId: Math.floor(Math.random() * 4) + 1,
       id: Math.floor(Math.random() * 999999999),
-      // customer: {
-      //   imageUrl: getCustomer(),
-      // },
+      customer: {
+        imageUrl: customer.picture,
+        name: customer.name,
+      },
     };
     firebase
       .database()
