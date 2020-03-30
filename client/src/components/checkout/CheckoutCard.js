@@ -5,7 +5,7 @@ import Item from './Item';
 export default function Checkout({ products, checkoutID }) {
   return (
     <div className="checkout-card">
-      <h4 className="checkout-card__checkoutNr">Checkout {checkoutID}</h4>
+      <h4 className="checkout-card__checkout-number">Checkout {checkoutID}</h4>
       <Header headerData={products} />
       <div className="item-container">
         {products.items.map((item) => (

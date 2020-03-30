@@ -15,7 +15,7 @@ body {
 }
 
 .checkout-card {
-  border: solid 1px #7dc164;
+  border: solid 1px #808080;
   border-radius: 10px;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   // v2 flex: 0 32%;
@@ -26,7 +26,7 @@ body {
   // v2 flex: 0 24% would put 4 items on every row
   // v2 flex: 0 19% would put 5 items on every row
 
-  .checkout-card__checkoutNr {
+  .checkout-card__checkout-number {
     margin: 5% 5%;
     color: #808080;
   }
