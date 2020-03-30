@@ -8,7 +8,7 @@ function Checkout({ checkout }) {
     <TransitionGroup>
       <CSSTransition key={checkout.id} timeout={450} classNames="slide" appear>
         <div className="checkout-card">
-          <Header checkout={checkout} />
+          <Header checkout={checkout} hideHr={true} />
         </div>
       </CSSTransition>
     </TransitionGroup>

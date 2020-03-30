@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 // import { CustomerContext } from '../../context/CustomerContext';
 import Moment from 'react-moment';
 
-export default function Header({ checkout }) {
+export default function Header({ checkout, hideHr }) {
   // const { customers, customersActions } = useContext(CustomerContext);
   // const [customer, setCustomer] = useState('');
   const [checkoutTotal, setCheckoutTotal] = useState(0);
@@ -17,23 +17,20 @@ export default function Header({ checkout }) {
   }, [checkout.items]);
 
   return (
-    <div>
-      <header className="checkout-card__header">
-        <section className="checkout-card__header__left">
-          <img
-            src={checkout.customer && checkout.customer.imageUrl}
-            alt="Customer"
-          />
-        </section>
-        <section className="checkout-card__header__middle">
+    <>
+      <header className="header">
+        <img src={checkout.customer && checkout.customer.imageUrl} />
+        <div className="details">
           <h4>{checkout.customer && checkout.customer.name}</h4>
-          <p>
-            {checkoutTotal} items &bull; {' ' + checkout.price} kr &bull;{' '}
-          </p>
-          <Moment fromNow>{checkout.timeCreated}</Moment>
-        </section>
+          <div className="data">
+            <p>
+              {checkoutTotal} items &bull; {checkout.price} kr
+            </p>
+            <Moment fromNow>{checkout.timeCreated}</Moment>
+          </div>
+        </div>
       </header>
-      <hr></hr>
-    </div>
+      {hideHr ? '' : <hr></hr>}
+    </>
   );
 }

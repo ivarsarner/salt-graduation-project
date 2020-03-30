@@ -17,18 +17,14 @@ export default function Item({ itemData }) {
 
   return (
     <>
-      <div className="checkout-card__bottom">
-        <div className="checkout-card__bottom__left">
-          <div className="checkout-card__bottom__product__img">
-            <img src={imagePath} alt="product" style={{ width: '60px' }} />
-          </div>
-        </div>
-
-        <div className="checkout-card__bottom__right">
-          <div className="checkout-card__bottom__product__name">{name}</div>
-          <div className="checkout-card__bottom__product__details">
-            {brand} &bull; {quantity} st &bull; {total} kr
-          </div>
+      <div className="item">
+        <img src={imagePath} alt="product" style={{ width: '60px' }} />
+        <div className="details">
+          <p className="title">{name}</p>
+          <p className="brand">{brand}</p>
+          <p className="data">
+            {quantity} st &bull; {total} kr
+          </p>
         </div>
       </div>
     </>
