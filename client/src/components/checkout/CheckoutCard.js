@@ -28,4 +28,8 @@ function Checkout({ checkout, checkoutID }) {
   );
 }
 
-export default React.memo(Checkout);
+function shouldRender(prevProps, nextProps) {
+  if (prevProps !== nextProps) return true;
+}
+
+export default React.memo(Checkout, shouldRender);

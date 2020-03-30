@@ -16,11 +16,11 @@ export default function CheckoutContainer() {
   return (
     <div className="container">
       {/* how can we dymanically show the number of live checkouts */}
-      {recentCheckouts.map((checkout, index) => (
+      {recentCheckouts.map((checkout) => (
         <CheckoutCard
           key={checkout.id.toString()}
           checkout={checkout}
-          checkoutID={checkout.checkout} // this is a temp fix. checkout id should come from the data
+          checkoutID={checkout.checkoutId} // this is a temp fix. checkout id should come from the data
         />
       ))}
     </div>

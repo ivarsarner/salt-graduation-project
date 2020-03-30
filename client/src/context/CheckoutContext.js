@@ -11,14 +11,12 @@ const CheckoutContextProvider = (props) => {
   const [checkoutSyncComplete, setCheckoutSyncComplete] = useState(false);
   const [currentStore, setCurrentStore] = useState('');
 
-  const filterOrders = (firebaseData) => {
-    const filterData = firebaseData
-      .filter((checkout) => checkout.merchant === 'IfO0fugaM9XRaaICJ7LQ')
-      .map((checkout) => ({
-        ...checkout,
-        checkout: Math.floor(Math.random() * 4) + 1,
-      }));
-    setCheckouts(filterData);
+  const addCheckoutId = (firebaseData) => {
+    const dataWithCheckoutId = firebaseData.map((checkout) => ({
+      ...checkout,
+      checkoutId: Math.floor(Math.random() * 4) + 1,
+    }));
+    setCheckouts(dataWithCheckoutId);
     setCheckoutSyncComplete(true);
   };
 
@@ -41,10 +39,14 @@ const CheckoutContextProvider = (props) => {
 
   useEffect(() => {
     let database = firebase.database().ref('/');
-    database.on('value', (snapshot) => {
-      const firebaseData = snapshot.val();
-      filterOrders(Object.values(firebaseData));
-    });
+    database
+      .orderByChild('merchant')
+      .equalTo('IfO0fugaM9XRaaICJ7LQ')
+      .on('value', (snapshot) => {
+        const firebaseData = snapshot.val();
+        console.log(firebaseData);
+        addCheckoutId(Object.values(firebaseData));
+      });
 
     setNewCheckoutData(newMockData);
   }, []);
