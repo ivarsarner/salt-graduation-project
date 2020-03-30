@@ -12,42 +12,26 @@ const CheckoutContextProvider = (props) => {
   const [checkoutSyncComplete, setCheckoutSyncComplete] = useState(false);
   const [currentStore, setCurrentStore] = useState('');
   const [customers, setCustomers] = useState([]);
+  const [CustomerSyncComplete, setCustomerSyncComplete] = useState(false);
 
   const addCheckoutId = async (firebaseData) => {
-    console.log('but customers exist', customers);
-    const dataWithCheckoutId = Promise.all(
-      firebaseData.map(async (checkout) => {
-        const customer = await getRandomCustomer();
-        console.log('im a customer', customer);
-        return {
-          ...checkout,
-          checkoutId: Math.floor(Math.random() * 4) + 1,
-          customer: {
-            imageUrl: customer && customer.picture,
-          },
-        };
-      })
-    );
-
-    console.log('hello, is we alive?', dataWithCheckoutId);
+    console.log('i am run');
+    const dataWithCheckoutId = firebaseData.map((checkout) => {
+      const customer = getRandomCustomer();
+      return {
+        ...checkout,
+        checkoutId: Math.floor(Math.random() * 4) + 1,
+        customer: {
+          imageUrl: customer && customer.picture,
+          name: customer && customer.name,
+        },
+      };
+    });
     setCheckouts(dataWithCheckoutId);
     setCheckoutSyncComplete(true);
   };
 
-  const fetchCustomers = async () => {
-    const { data } = await axios.get('/api/customers');
-    setCustomers(data);
-  };
-
   const getRandomCustomer = () => customers[Math.floor(Math.random() * 99)];
-
-  // const getRandomCustomer = (data) =>
-  //   data[Math.floor(Math.random() * 99)].picture;
-
-  // const getCustomers = async () => {
-  //   const { data } = await axios.get('/api/customers');
-  //   return data;
-  // };
 
   const filterCurrentStore = () =>
     setCurrentStore(checkouts[0] && checkouts[0].merchantName);
@@ -70,17 +54,27 @@ const CheckoutContextProvider = (props) => {
   };
 
   useEffect(() => {
-    let database = firebase.database().ref('/');
-    database
-      .orderByChild('merchant')
-      .equalTo('IfO0fugaM9XRaaICJ7LQ')
-      .on('value', (snapshot) => {
-        const firebaseData = snapshot.val();
-        fetchCustomers();
-        addCheckoutId(Object.values(firebaseData));
-      });
-    setNewCheckoutData(newMockData);
+    async function fetchCustomers() {
+      const { data } = await axios.get('/api/customers');
+      setCustomers(data);
+      setCustomerSyncComplete(true);
+    }
+    fetchCustomers();
   }, []);
+
+  useEffect(() => {
+    if (CustomerSyncComplete) {
+      let database = firebase.database().ref('/');
+      database
+        .orderByChild('merchant')
+        .equalTo('IfO0fugaM9XRaaICJ7LQ')
+        .on('value', (snapshot) => {
+          const firebaseData = snapshot.val();
+          addCheckoutId(Object.values(firebaseData));
+        });
+      setNewCheckoutData(newMockData);
+    }
+  }, [CustomerSyncComplete]);
   // eslint-disable-next-line
   useEffect(() => filterCurrentStore(), [checkoutSyncComplete]);
 

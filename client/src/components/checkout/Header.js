@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { CustomerContext } from '../../context/CustomerContext';
+// import { CustomerContext } from '../../context/CustomerContext';
 import Moment from 'react-moment';
 
 export default function Header({ checkout }) {
-  const { customers, customersActions } = useContext(CustomerContext);
-  const [customer, setCustomer] = useState('');
+  // const { customers, customersActions } = useContext(CustomerContext);
+  // const [customer, setCustomer] = useState('');
   const [checkoutTotal, setCheckoutTotal] = useState(0);
 
   useEffect(() => {
@@ -13,8 +13,8 @@ export default function Header({ checkout }) {
       0
     );
     setCheckoutTotal(checkoutTotal);
-    setCustomer(customersActions.getRandomCustomer());
-  }, [customers, checkout.items, customersActions]);
+    // setCustomer(customersActions.getRandomCustomer());
+  }, [checkout.items]);
 
   return (
     <div>
@@ -26,7 +26,7 @@ export default function Header({ checkout }) {
           />
         </section>
         <section className="checkout-card__header__middle">
-          <h4>{customer && customer.name}</h4>
+          <h4>{checkout.customer && checkout.customer.name}</h4>
           <p>
             {checkoutTotal} items &bull; {' ' + checkout.price} kr &bull;{' '}
           </p>
