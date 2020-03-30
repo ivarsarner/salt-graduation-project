@@ -38,9 +38,9 @@ export default function Header({ checkout }) {
             <Moment fromNow>{checkout.timeCreated}</Moment>
           </span>
         </section>
-        <section className="checkout-card__header__right">
+        {/* <section className="checkout-card__header__right">
           <img src={doneIMG} alt="Status of transaction" />
-        </section>
+        </section> */}
       </header>
       <hr></hr>
     </div>

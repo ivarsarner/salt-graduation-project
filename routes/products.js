@@ -5,7 +5,7 @@ const fs = require('fs');
 
 const router = express.Router();
 const asyncReadFile = util.promisify(fs.readFile);
-const imageEndpoint = 'https://assets.icanet.se/t_product_large_v1,f_auto';
+const imageEndpoint = 'https://assets.icanet.se/t_product_small_v1,f_auto';
 
 const rareImages = [
   '40099330',

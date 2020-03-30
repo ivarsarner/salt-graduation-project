@@ -44,7 +44,6 @@ const CheckoutContextProvider = (props) => {
       .equalTo('IfO0fugaM9XRaaICJ7LQ')
       .on('value', (snapshot) => {
         const firebaseData = snapshot.val();
-        console.log(firebaseData);
         addCheckoutId(Object.values(firebaseData));
       });
 

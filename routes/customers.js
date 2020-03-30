@@ -17,7 +17,7 @@ const getData = async (limit) => {
 
 router.get('/', async (_, res) => {
   try {
-    const data = await getData(10);
+    const data = await getData(100);
     const customers = data.results.map((customer) => ({
       id: customer.login.uuid,
       name: `${customer.name.first} ${customer.name.last}`,
