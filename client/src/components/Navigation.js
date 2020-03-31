@@ -11,9 +11,9 @@ function Navigation() {
       <NavLink className="main-nav-logo" exact to="/">
         <img src={logo} alt="Way" width={100} />
       </NavLink>
-      <p>{currentStore}</p>
+      <p className="store-name">{currentStore}</p>
       <div className="main-nav-links">
-        <NavLink to="/other">Other</NavLink>
+        {/* <NavLink to="/other">Other</NavLink> */}
         <button
           className="new-checkout-button"
           onClick={() => checkoutsActions.addNewCheckout()}
