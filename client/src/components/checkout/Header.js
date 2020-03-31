@@ -12,12 +12,15 @@ export default function Header({ checkout, hideHr }) {
     );
     setCheckoutTotal(checkoutTotal);
     setItemprice((Math.round(checkout.price * 100) / 100).toFixed(2));
-  }, [checkout.items]);
+  }, [checkout.items, checkout.price]);
 
   return (
     <>
       <header className="header">
-        <img src={checkout.customer && checkout.customer.imageUrl} />
+        <img
+          src={checkout.customer && checkout.customer.imageUrl}
+          alt="customer"
+        />
         <div className="details">
           <h4>{checkout.customer && checkout.customer.name}</h4>
           <div className="data">

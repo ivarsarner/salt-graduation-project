@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -7,15 +8,15 @@ export default function Item({ itemData }) {
   const [imagePath, setImagePath] = useState('');
   const [itemPrice, setItemprice] = useState(0);
 
-  useEffect(() => {
-    getProductImage();
-    setItemprice((Math.round(total * 100) / 100).toFixed(2));
-  }, []);
-
   const getProductImage = async () => {
     const { data } = await axios.get(`/api/products/${gtin}`);
     setImagePath(data.path);
   };
+
+  useEffect(() => {
+    getProductImage();
+    setItemprice((Math.round(total * 100) / 100).toFixed(2));
+  }, []);
 
   return (
     <>

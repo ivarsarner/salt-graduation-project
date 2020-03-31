@@ -27,8 +27,14 @@
   },
   "proxy": "http://localhost:8080",
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "settings": {
+			"react": {
+				"version": "999.999.999"
+			}
+		}
   },
+
   "browserslist": {
     "production": [
       ">0.2%",

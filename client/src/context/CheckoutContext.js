@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { createContext, useState, useEffect } from 'react';
 import newMockData from '../assets/new-checkouts-mock-data.json';
 import moment from 'moment';
