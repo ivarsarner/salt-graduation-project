@@ -106,7 +106,7 @@ a {
 .recent {
   max-height: calc(100vh - 110px);
   flex: 0 0 55%;
-  max-width: 600px;
+  max-width: 550px;
   min-width: 300px;
 
   > div {
@@ -115,7 +115,7 @@ a {
 }
 .history {
   flex: 0 0 40%;
-  max-width: 450px;
+  max-width: 430px;
   min-width: 250px;
 }
 
