@@ -116,7 +116,7 @@ a {
   font-size: 1rem;
   .header > img {
     border-radius: 10px;
-    height: 60px;
+    height: 50px;
   }
   .item:last-child {
     margin-bottom: 0;
@@ -131,6 +131,9 @@ a {
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 5px;
+    img {
+      height: 50px;
+    }
     .details {
       > * {
         margin: 0;

@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Header from './Header';
 import Item from './Item';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CheckoutContext } from '../../context/CheckoutContext';
 
 function CheckoutCard({ checkout }) {
+  const { checkoutsActions } = useContext(CheckoutContext);
+
   return (
     <TransitionGroup>
       <CSSTransition key={checkout.id} timeout={450} classNames="slide" appear>
-        <div className="checkout-card">
+        <div
+          className="checkout-card"
+          onClick={() => checkoutsActions.showMoreDetails(checkout.id)}
+        >
           <Header checkout={checkout} />
-          {checkout.items.map((item) => (
-            <Item key={item.gtin} itemData={item} />
-          ))}
+          <div className="items-container">
+            {checkout.items.map((item) => (
+              <Item key={item.gtin} itemData={item} />
+            ))}
+          </div>
         </div>
       </CSSTransition>
     </TransitionGroup>

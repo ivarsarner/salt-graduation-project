@@ -67,6 +67,10 @@ const CheckoutContextProvider = (props) => {
     fetchCustomers();
   }, []);
 
+  const showMoreDetails = (itemId) => {
+    console.log('checkout.id is ', itemId);
+  };
+
   useEffect(() => {
     if (customerSyncComplete) {
       let database = firebase.database().ref('/');
@@ -85,7 +89,11 @@ const CheckoutContextProvider = (props) => {
 
   return (
     <CheckoutContext.Provider
-      value={{ checkouts, currentStore, checkoutsActions: { addNewCheckout } }}
+      value={{
+        checkouts,
+        currentStore,
+        checkoutsActions: { addNewCheckout, showMoreDetails },
+      }}
     >
       {props.children}
     </CheckoutContext.Provider>

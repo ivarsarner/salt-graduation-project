@@ -1,11 +1,9 @@
-import React, { useEffect, useState, useContext } from 'react';
-// import { CustomerContext } from '../../context/CustomerContext';
+import React, { useEffect, useState } from 'react';
 import Moment from 'react-moment';
 
 export default function Header({ checkout, hideHr }) {
-  // const { customers, customersActions } = useContext(CustomerContext);
-  // const [customer, setCustomer] = useState('');
   const [checkoutTotal, setCheckoutTotal] = useState(0);
+  const [itemPrice, setItemprice] = useState(0);
 
   useEffect(() => {
     const checkoutTotal = checkout.items.reduce(
@@ -13,7 +11,7 @@ export default function Header({ checkout, hideHr }) {
       0
     );
     setCheckoutTotal(checkoutTotal);
-    // setCustomer(customersActions.getRandomCustomer());
+    setItemprice((Math.round(checkout.price * 100) / 100).toFixed(2));
   }, [checkout.items]);
 
   return (
@@ -24,7 +22,7 @@ export default function Header({ checkout, hideHr }) {
           <h4>{checkout.customer && checkout.customer.name}</h4>
           <div className="data">
             <p>
-              {checkoutTotal} items &bull; {checkout.price} kr
+              {checkoutTotal} items &bull; {itemPrice} kr
             </p>
             <Moment fromNow>{checkout.timeCreated}</Moment>
           </div>
