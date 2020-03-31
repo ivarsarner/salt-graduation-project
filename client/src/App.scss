@@ -105,8 +105,8 @@ a {
 
 .recent {
   max-height: calc(100vh - 110px);
-  flex: 0 0 50%;
-  max-width: 500px;
+  flex: 0 0 55%;
+  max-width: 600px;
   min-width: 300px;
 
   > div {
@@ -114,9 +114,9 @@ a {
   }
 }
 .history {
-  flex: 0 0 30%;
-  max-width: 350px;
-  min-width: 300px;
+  flex: 0 0 40%;
+  max-width: 450px;
+  min-width: 250px;
 }
 
 .checkout-card {
