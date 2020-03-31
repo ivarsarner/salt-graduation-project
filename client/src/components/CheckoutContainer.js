@@ -9,6 +9,7 @@ export default function CheckoutContainer() {
   const [historyCheckouts, setHistoryCheckouts] = useState([]);
 
   useEffect(() => {
+    console.log(checkouts);
     const recent = checkouts
       .sort((a, b) => new Date(b.timeCreated) - new Date(a.timeCreated))
       .slice(0, 4);

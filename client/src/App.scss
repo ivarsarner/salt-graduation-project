@@ -26,7 +26,6 @@ a {
   display: flex;
   background-color: white;
   align-items: center;
-  padding: 0.5rem 2.5rem;
   margin-top: 1rem;
 }
 
@@ -88,7 +87,8 @@ a {
 /* MAIN CONTAINER -------- */
 
 .container {
-  display: flex;
+	display: flex;
+	justify-content: center;
 }
 
 .recent,
@@ -150,4 +150,17 @@ a {
     width: 90%;
     margin: 0 2;
   }
+}
+
+@media only screen and (max-width: 425px) {
+	.container {
+		background-color: red;
+	}
+}
+
+@media only screen and (min-width: 1025px) {
+	.container {
+		background-color: blue;
+
+	}
 }
