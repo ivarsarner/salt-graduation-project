@@ -4,6 +4,30 @@ A dashboard for connected merchants to get an overview of their Way checkout flo
 
 ![Alt Text](https://media1.giphy.com/media/qqtvGYCjDNwac/giphy.gif?cid=ecf05e47943ce736693fad5f7895f2b27b4e279dbf9f24eb&rid=giphy.gif)
 
+## firebase
+
+You will need to create a firebase config at `client/src/firebase.js` to connect to the database:
+
+```
+import * as firebase from 'firebase/app';
+import 'firebase/database';
+
+const firebaseConfig = {
+  apiKey: XXX,
+  authDomain: XXX,
+  databaseURL: XXX,
+  projectId: XXX,
+  storageBucket: XXX,
+  messagingSenderId: XXX,
+  appId:
+};
+
+firebase.initializeApp(firebaseConfig);
+
+export default firebase;
+
+```
+
 ## using the custom APIs
 
 **_Products_**
