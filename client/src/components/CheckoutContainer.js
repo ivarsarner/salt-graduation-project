@@ -44,11 +44,13 @@ export default function CheckoutContainer() {
         </button>
       </div>
       <section className={`recent ${showHistory ? 'hide' : ''}`}>
+        <h3>Checkout feed</h3>
         {recentCheckouts.map((checkout) => (
           <CheckoutCard key={checkout.id.toString()} checkout={checkout} />
         ))}
       </section>
       <section className={`history ${showHistory ? '' : 'hide'}`}>
+        <h3>Log</h3>
         {historyCheckouts.map((checkout) => (
           <CheckoutHistoryCard
             key={checkout.id.toString()}
