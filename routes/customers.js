@@ -31,22 +31,4 @@ router.get('/', async (_, res) => {
   }
 });
 
-router.get('/one', async (_, res) => {
-  try {
-    const request = await getData(1);
-    const data = request.results
-      .map((key) => ({
-        id: key.login.uuid,
-        name: `${key.name.first} ${key.name.last}`,
-        picture: key.picture.large,
-      }))
-      .slice(0, 1);
-    const customer = { ...data[0] };
-    res.setHeader('Set-Cookie', 'HttpOnly;Secure;SameSite=Strict');
-    res.json(customer);
-  } catch (error) {
-    res.sendStatus(500);
-  }
-});
-
 module.exports = router;

@@ -51,16 +51,6 @@ Returns either an array of 10 customers, or 1 random customer from the [Random U
 ]
 ```
 
-`GET /api/customers/one`
-
-```
-{
-   "id": "298cc9d7-28d1-4cb8-bb53-a1d3206678cd",
-   "name": "Caitlin Montgomery",
-   "picture": "https://randomuser.me/api/portraits/women/14.jpg"
-}
-```
-
 ## dev guidelines
 
 1. Only use functional components with hooks.
