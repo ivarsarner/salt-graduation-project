@@ -15,10 +15,10 @@ function Navigation() {
       <div className="main-nav-links">
         {/* <NavLink to="/other">Other</NavLink> */}
         <button
-          className="new-checkout-button"
+          className="button button-dark "
           onClick={() => checkoutsActions.addNewCheckout()}
         >
-          Add new Checkout
+          Add New
         </button>
       </div>
     </div>
