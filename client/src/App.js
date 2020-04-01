@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import CheckoutContextProvider from './context/CheckoutContext';
 import Navigation from './components/Navigation';
 import CheckoutContainer from './components/CheckoutContainer';
-import Other from './components/Other';
+import Login from './components/Login';
 import './App.scss';
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
         <Navigation />
         <Switch>
           <Route exact path="/" component={CheckoutContainer} />
-          <Route path="/other" component={Other} />
+          <Route path="/login" component={Login} />
         </Switch>
       </CheckoutContextProvider>
     </BrowserRouter>
