@@ -3,16 +3,26 @@ import React, { useState } from 'react';
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const handleLogin = (e) => {
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password);
-    setUsername('');
-    setPassword('');
+    if (validateUsername()) {
+      console.log(username, password);
+      setUsername('');
+      setPassword('');
+    } else {
+      console.log('wrong email');
+    }
+  };
+
+  const validateUsername = () => {
+    const emailRegex = /^[\w._-]+@(\w[\w_-]+)+\.[a-z]{2,3}$/i;
+    return emailRegex.test(username);
   };
 
   return (
     <div className="login-container">
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="user name"
