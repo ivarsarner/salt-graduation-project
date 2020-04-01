@@ -28,7 +28,7 @@ export default function CheckoutContainer() {
     setShowHistory(state);
   };
 
-  if (recentCheckouts.length < 1)
+  if (recentCheckouts.length < 1) {
     return (
       <div className="loading-container">
         <div className="loading">
@@ -41,6 +41,7 @@ export default function CheckoutContainer() {
         </div>
       </div>
     );
+  }
 
   return (
     <div className="container">

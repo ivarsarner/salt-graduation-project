@@ -68,8 +68,9 @@ const CheckoutContextProvider = (props) => {
     fetchCustomers();
   }, []);
 
-  const showMoreDetails = (itemId) => {
-    console.log('checkout.id is ', itemId);
+  const showMoreDetails = (queryId) => {
+    const data = checkouts.find((item) => item.id === queryId);
+    console.log('checkout.id is ', data);
   };
 
   useEffect(() => {
