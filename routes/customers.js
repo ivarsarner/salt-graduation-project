@@ -24,6 +24,7 @@ router.get('/', async (_, res) => {
       name: `${customer.name.first} ${customer.name.last}`,
       picture: customer.picture.large,
     }));
+    res.setHeader('Set-Cookie', 'HttpOnly;Secure;SameSite=Strict');
     res.json(customers);
   } catch (error) {
     res.sendStatus(500);
@@ -41,6 +42,7 @@ router.get('/one', async (_, res) => {
       }))
       .slice(0, 1);
     const customer = { ...data[0] };
+    res.setHeader('Set-Cookie', 'HttpOnly;Secure;SameSite=Strict');
     res.json(customer);
   } catch (error) {
     res.sendStatus(500);
