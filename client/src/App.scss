@@ -57,6 +57,28 @@ a {
   background-color: #6d6767;
 }
 
+/* LOGIN PAGE */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+
+  form {
+    // width: 100px;
+    align-content: center;
+    width: 200px;
+  }
+
+  input {
+    border: grey SOLID 1px;
+    border-radius: 5px;
+    padding: 2%;
+    margin: 3%;
+    font-size: 1rem;
+  }
+}
+
 /* CARD ANIMATIONS -------- */
 /* slide enter */
 .slide-appear {
@@ -88,10 +110,10 @@ a {
 
 .container {
   display: flex;
-	justify-content: center;
-	h4 {
-		margin: 5px
-	}
+  justify-content: center;
+  h4 {
+    margin: 5px;
+  }
 }
 
 .loading-container {
