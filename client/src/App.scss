@@ -65,17 +65,19 @@ a {
   margin: 5%;
 
   form {
-    // width: 100px;
-    align-content: center;
     width: 200px;
+    text-align: center;
   }
 
   input {
+    display: flex;
+    text-align: center;
     border: grey SOLID 1px;
     border-radius: 5px;
     padding: 2%;
-    margin: 3%;
+    margin: 5%;
     font-size: 1rem;
+    display: inline-block;
   }
 }
 
