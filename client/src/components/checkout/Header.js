@@ -33,11 +33,11 @@ export default function Header({ checkout, hideHr }) {
   );
 }
 
-function Image({ imageData }) {
+export function Image({ imageData }) {
   // this should be replaced by a real checkout id from Firebase
   const randomId = Math.floor(Math.random() * 4 + 1);
 
-  if (imageData !== undefined) {
+  if (imageData === true && imageData !== undefined) {
     return (
       <img src={imageData.customer.imageUrl} alt={imageData.customer.name} />
     );
@@ -46,8 +46,8 @@ function Image({ imageData }) {
   }
 }
 
-function CustomerName({ customerData }) {
-  if (customerData !== undefined) {
+export function CustomerName({ customerData }) {
+  if (customerData === true && customerData !== undefined) {
     return <h4>{customerData.customer && customerData.customer.name}</h4>;
   } else {
     return null;
