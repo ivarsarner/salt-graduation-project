@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/checkout/Header';
+import CheckoutCard from '../components/checkout/CheckoutCard';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export default function OrderDetails({ data, close }) {
@@ -9,8 +9,7 @@ export default function OrderDetails({ data, close }) {
         <div className="order-details">
           <div className="background" onClick={() => close()}>
             <div className="card">
-              <Header checkout={data} />
-              <p>hey there {data.customer.name}</p>
+              <CheckoutCard checkout={data} showFullList />
             </div>
           </div>
         </div>
