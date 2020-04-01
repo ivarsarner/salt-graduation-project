@@ -3,9 +3,10 @@ import { CheckoutContext } from '../context/CheckoutContext';
 import CheckoutCard from './checkout/CheckoutCard';
 import CheckoutHistoryCard from './checkout/CheckoutHistoryCard';
 import Contols from './Controls';
+import OrderDetailsCard from './OrderDetails';
 
 export default function CheckoutContainer() {
-  const { checkouts } = useContext(CheckoutContext);
+  const { checkouts, orderDetails } = useContext(CheckoutContext);
   const [recentCheckouts, setRecentCheckouts] = useState([]);
   const [historyCheckouts, setHistoryCheckouts] = useState([]);
   const [showHistory, setShowHistory] = useState(false);
@@ -28,7 +29,7 @@ export default function CheckoutContainer() {
     setShowHistory(state);
   };
 
-  if (recentCheckouts.length < 1)
+  if (recentCheckouts.length < 1) {
     return (
       <div className="loading-container">
         <div className="loading">
@@ -41,9 +42,16 @@ export default function CheckoutContainer() {
         </div>
       </div>
     );
+  }
 
   return (
     <div className="container">
+      {orderDetails.showOrderDetails && (
+        <OrderDetailsCard
+          close={orderDetails.hideOrderDetails}
+          data={orderDetails.orderDetails}
+        />
+      )}
       <Contols setMobileView={setMobileView} />
       <section className={`recent ${showHistory ? 'hide' : ''}`}>
         <h4>Checkout feed</h4>

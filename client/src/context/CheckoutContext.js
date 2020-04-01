@@ -15,6 +15,9 @@ const CheckoutContextProvider = (props) => {
   const [customers, setCustomers] = useState([]);
   const [customerSyncComplete, setCustomerSyncComplete] = useState(false);
 
+  const [showOrderDetails, setShowOrderDetails] = useState(false);
+  const [orderDetails, setOrderDetails] = useState({});
+
   const addCheckoutId = async (firebaseData) => {
     const dataWithCheckoutId = firebaseData.map((checkout) => {
       if (!checkout.customer) {
@@ -68,8 +71,14 @@ const CheckoutContextProvider = (props) => {
     fetchCustomers();
   }, []);
 
-  const showMoreDetails = (itemId) => {
-    console.log('checkout.id is ', itemId);
+  const showMoreDetails = (queryId) => {
+    const orderData = checkouts.find((item) => item.id === queryId);
+    setShowOrderDetails(!showOrderDetails);
+    setOrderDetails(orderData);
+  };
+
+  const hideOrderDetails = () => {
+    setShowOrderDetails(!showOrderDetails);
   };
 
   useEffect(() => {
@@ -94,6 +103,7 @@ const CheckoutContextProvider = (props) => {
         checkouts,
         currentStore,
         checkoutsActions: { addNewCheckout, showMoreDetails },
+        orderDetails: { showOrderDetails, orderDetails, hideOrderDetails },
       }}
     >
       {props.children}
