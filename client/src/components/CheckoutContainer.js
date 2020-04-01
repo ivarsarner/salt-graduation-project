@@ -2,8 +2,9 @@ import React, { useContext, useState, useEffect } from 'react';
 import { CheckoutContext } from '../context/CheckoutContext';
 import CheckoutCard from './checkout/CheckoutCard';
 import CheckoutHistoryCard from './checkout/CheckoutHistoryCard';
-import Contols from './Controls';
 import OrderDetailsCard from './OrderDetails';
+import Contols from './Controls';
+import Loading from './Loading';
 
 export default function CheckoutContainer() {
   const { checkouts, orderDetails } = useContext(CheckoutContext);
@@ -30,18 +31,7 @@ export default function CheckoutContainer() {
   };
 
   if (recentCheckouts.length < 1) {
-    return (
-      <div className="loading-container">
-        <div className="loading">
-          <div className="lds-ellipsis">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </div>
-      </div>
-    );
+    return <Loading />;
   }
 
   return (

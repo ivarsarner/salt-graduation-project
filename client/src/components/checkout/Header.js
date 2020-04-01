@@ -17,12 +17,9 @@ export default function Header({ checkout, hideHr }) {
   return (
     <>
       <header className="header">
-        <img
-          src={checkout.customer && checkout.customer.imageUrl}
-          alt="customer"
-        />
+        <Image imageData={checkout} />
         <div className="details">
-          <h4>{checkout.customer && checkout.customer.name}</h4>
+          <CustomerName customerData={checkout} />
           <div className="data">
             <p>
               {checkoutTotal} items &bull; {itemPrice} kr
@@ -34,4 +31,25 @@ export default function Header({ checkout, hideHr }) {
       {hideHr ? '' : <hr></hr>}
     </>
   );
+}
+
+function Image({ imageData }) {
+  // this should be replaced by a real checkout id from Firebase
+  const randomId = Math.floor(Math.random() * 4 + 1);
+
+  if (imageData !== undefined) {
+    return (
+      <img src={imageData.customer.imageUrl} alt={imageData.customer.name} />
+    );
+  } else {
+    return <p className="checkout-number">{randomId}</p>;
+  }
+}
+
+function CustomerName({ customerData }) {
+  if (customerData !== undefined) {
+    return <h4>{customerData.customer && customerData.customer.name}</h4>;
+  } else {
+    return null;
+  }
 }

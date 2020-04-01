@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import Header from './Header';
-import Item from './Item';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { CheckoutContext } from '../../context/CheckoutContext';
+import Header from './Header';
+import Item from './Item';
 
 function CheckoutCard({ checkout, showFullList }) {
   const { checkoutsActions } = useContext(CheckoutContext);
