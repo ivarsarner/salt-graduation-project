@@ -6,26 +6,16 @@ A dashboard for connected merchants to get an overview of their Way checkout flo
 
 ## firebase
 
-You will need to create a firebase config at `client/src/firebase.js` to connect to the database:
+You will need to create a `.env` file to connect to the database. This needs to be saved at `client/.env`:
 
 ```
-import * as firebase from 'firebase/app';
-import 'firebase/database';
-
-const firebaseConfig = {
-  apiKey: XXX,
-  authDomain: XXX,
-  databaseURL: XXX,
-  projectId: XXX,
-  storageBucket: XXX,
-  messagingSenderId: XXX,
-  appId:
-};
-
-firebase.initializeApp(firebaseConfig);
-
-export default firebase;
-
+REACT_APP_API_KEY=XXXXXX
+REACT_APP_AUTH_DOMAIN=XXXXXX
+REACT_APP_DB_URL=XXXXXX
+REACT_APP_PROJECT_ID=XXXXXX
+REACT_APP_STORAGE_BUCKET=XXXXXX
+REACT_APP_MESSAGING_ID=XXXXXX
+REACT_APP_APPID=XXXXXX
 ```
 
 ## using the custom APIs
