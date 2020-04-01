@@ -23,12 +23,12 @@
   },
   "eslintConfig": {
     "extends": "react-app",
-		"settings": {
-			"react": {
-				"version": "999.999.999"
-			}
-		}
-	},
+    "settings": {
+      "react": {
+        "version": "999.999.999"
+      }
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wayretail/way-merchant-dashboard.git"
