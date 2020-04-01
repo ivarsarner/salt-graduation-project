@@ -13,14 +13,14 @@ export default function CheckoutContainer() {
   useEffect(() => {
     const recent = checkouts
       .sort((a, b) => new Date(b.timeCreated) - new Date(a.timeCreated))
-      .slice(0, 4);
+      .slice(0, 3);
     setRecentCheckouts(recent);
   }, [checkouts]);
 
   useEffect(() => {
     const history = checkouts
       .sort((a, b) => new Date(b.timeCreated) - new Date(a.timeCreated))
-      .slice(4, 14);
+      .slice(3, 14);
     setHistoryCheckouts(history);
   }, [checkouts]);
 
@@ -46,13 +46,13 @@ export default function CheckoutContainer() {
     <div className="container">
       <Contols setMobileView={setMobileView} />
       <section className={`recent ${showHistory ? 'hide' : ''}`}>
-        <h3>Checkout feed</h3>
+        <h4>Checkout feed</h4>
         {recentCheckouts.map((checkout) => (
           <CheckoutCard key={checkout.id.toString()} checkout={checkout} />
         ))}
       </section>
       <section className={`history ${showHistory ? '' : 'hide'}`}>
-        <h3>Log</h3>
+        <h4>Log</h4>
         {historyCheckouts.map((checkout) => (
           <CheckoutHistoryCard
             key={checkout.id.toString()}
