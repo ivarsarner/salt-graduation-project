@@ -3,9 +3,10 @@ import { CheckoutContext } from '../context/CheckoutContext';
 import CheckoutCard from './checkout/CheckoutCard';
 import CheckoutHistoryCard from './checkout/CheckoutHistoryCard';
 import Contols from './Controls';
+import OrderDetailsCard from './OrderDetails';
 
 export default function CheckoutContainer() {
-  const { checkouts } = useContext(CheckoutContext);
+  const { checkouts, orderDetails } = useContext(CheckoutContext);
   const [recentCheckouts, setRecentCheckouts] = useState([]);
   const [historyCheckouts, setHistoryCheckouts] = useState([]);
   const [showHistory, setShowHistory] = useState(false);
@@ -45,6 +46,12 @@ export default function CheckoutContainer() {
 
   return (
     <div className="container">
+      {orderDetails.showOrderDetails && (
+        <OrderDetailsCard
+          close={orderDetails.hideOrderDetails}
+          data={orderDetails.orderDetails}
+        />
+      )}
       <Contols setMobileView={setMobileView} />
       <section className={`recent ${showHistory ? 'hide' : ''}`}>
         <h3>Checkout feed</h3>
