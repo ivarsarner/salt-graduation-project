@@ -21,7 +21,7 @@ function CheckoutCard({ checkout, showFullList }) {
     <TransitionGroup>
       <CSSTransition key={checkout.id} timeout={450} classNames="slide" appear>
         <div
-          className="checkout-card"
+          className={`checkout-card ${showFullList ? 'full-screen' : ''}`}
           onClick={() => checkoutsActions.showMoreDetails(checkout.id)}
         >
           <Header checkout={checkout} />

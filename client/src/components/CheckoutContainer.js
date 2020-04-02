@@ -1,10 +1,55 @@
 import React, { useContext, useState, useEffect } from 'react';
+import styled, { css } from 'styled-components';
 import { CheckoutContext } from '../context/CheckoutContext';
 import CheckoutCard from './checkout/CheckoutCard';
 import CheckoutHistoryCard from './checkout/CheckoutHistoryCard';
 import OrderDetailsCard from './OrderDetails';
 import Contols from './Controls';
 import Loading from './Loading';
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  h4 {
+    margin: 5px;
+  }
+  @media (max-width: 625px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  @media (max-width: 625px) {
+    padding-top: 0;
+    max-width: 600px;
+    width: 100%;
+    ${(props) =>
+      props.hide &&
+      css`
+        display: none;
+      `};
+  }
+`;
+
+const Recent = styled(Section)`
+  max-height: calc(100vh - 110px);
+  flex: 0 0 55%;
+  max-width: 550px;
+  min-width: 300px;
+`;
+
+const History = styled(Section)`
+  flex: 0 0 40%;
+  max-width: 430px;
+  min-width: 250px;
+  .header {
+    margin-bottom: 0;
+  }
+`;
 
 export default function CheckoutContainer() {
   const { checkouts, orderDetails } = useContext(CheckoutContext);
@@ -35,7 +80,7 @@ export default function CheckoutContainer() {
   }
 
   return (
-    <div className="container">
+    <Container>
       {orderDetails.showOrderDetails && (
         <OrderDetailsCard
           close={orderDetails.hideOrderDetails}
@@ -45,13 +90,14 @@ export default function CheckoutContainer() {
       )}
 
       <Contols setMobileView={setMobileView} />
-      <section className={`recent ${showHistory ? 'hide' : ''}`}>
+      <Recent hide={showHistory}>
         <h4>Checkout feed</h4>
         {recentCheckouts.map((checkout) => (
           <CheckoutCard key={checkout.id.toString()} checkout={checkout} />
         ))}
-      </section>
-      <section className={`history ${showHistory ? '' : 'hide'}`}>
+      </Recent>
+
+      <History hide={!showHistory}>
         <h4>Log</h4>
         {historyCheckouts.map((checkout) => (
           <CheckoutHistoryCard
@@ -59,7 +105,7 @@ export default function CheckoutContainer() {
             checkout={checkout}
           />
         ))}
-      </section>
-    </div>
+      </History>
+    </Container>
   );
 }
