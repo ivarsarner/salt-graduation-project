@@ -62,36 +62,6 @@ a {
   opacity: 0;
 }
 
-/* MAIN CONTAINER -------- */
-
-.checkout-card {
-  border-radius: 10px;
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-  margin: 0 auto;
-  margin-bottom: 10px;
-  background-color: white;
-  padding: 10px;
-  font-size: 1rem;
-  z-index: -1;
-  transition: all 0.13s ease-in;
-  &:hover {
-    cursor: pointer;
-    transform: scale(0.98);
-  }
-  .item:last-child {
-    margin-bottom: 0;
-  }
-  .header .details .data p {
-    margin: 0;
-    padding: 0;
-  }
-  hr {
-    border: 0.5px solid #e1e1e1;
-    width: 90%;
-    margin: 0 2;
-  }
-}
-
 @media only screen and (max-width: 625px) {
   .order-details {
     width: 100%;

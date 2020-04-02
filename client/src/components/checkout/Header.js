@@ -32,6 +32,17 @@ const CheckoutNumber = styled.p`
   margin: 0;
 `;
 
+const Line = styled.hr`
+  border: 0.5px solid #e1e1e1;
+  width: 90%;
+  margin: 0 2;
+`;
+
+const Text = styled.p`
+  margin: 0;
+  padding: 0;
+`;
+
 export default function Header({ checkout, hideHr }) {
   const [checkoutTotal, setCheckoutTotal] = useState(0);
   const [itemPrice, setItemprice] = useState(0);
@@ -52,14 +63,14 @@ export default function Header({ checkout, hideHr }) {
         <div className="details">
           <CustomerName customerData={checkout} />
           <div className="data">
-            <p>
+            <Text>
               {checkoutTotal} items &bull; {itemPrice} kr
-            </p>
+            </Text>
             <Moment fromNow>{checkout.timeCreated}</Moment>
           </div>
         </div>
       </HeaderDiv>
-      {hideHr ? '' : <hr></hr>}
+      {hideHr ? '' : <Line />}
     </>
   );
 }

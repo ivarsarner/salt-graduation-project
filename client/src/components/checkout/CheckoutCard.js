@@ -20,6 +20,10 @@ const CheckoutCardDiv = styled.div`
   font-size: 1rem;
   z-index: -1;
   transition: all 0.13s ease-in;
+  &:hover {
+    cursor: pointer;
+    transform: scale(0.98);
+  }
   ${(props) =>
     props.fullScreen &&
     css`
@@ -35,7 +39,7 @@ const CheckoutCardDiv = styled.div`
     `};
 `;
 
-function CheckoutCard({ checkout, showFullList }) {
+function CheckoutCard({ checkout, showFullList, hideHr, hideItems }) {
   const { checkoutsActions } = useContext(CheckoutContext);
   const [itemsToRender, setItemsToRender] = useState([]);
 
@@ -55,12 +59,14 @@ function CheckoutCard({ checkout, showFullList }) {
           fullScreen={showFullList}
           onClick={() => checkoutsActions.showMoreDetails(checkout.id)}
         >
-          <Header checkout={checkout} />
-          <ItemsContainer>
-            {itemsToRender.map((item) => (
-              <Item key={item.gtin} itemData={item} />
-            ))}
-          </ItemsContainer>
+          <Header checkout={checkout} hideHr={hideHr} />
+          {!hideItems && (
+            <ItemsContainer>
+              {itemsToRender.map((item) => (
+                <Item key={item.gtin} itemData={item} />
+              ))}
+            </ItemsContainer>
+          )}
         </CheckoutCardDiv>
       </CSSTransition>
     </TransitionGroup>

@@ -1,14 +1,12 @@
 import React from 'react';
-import Header from './Header';
+import CheckoutCard from './CheckoutCard';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 function CheckoutHistoryCard({ checkout }) {
   return (
     <TransitionGroup>
       <CSSTransition key={checkout.id} timeout={450} classNames="slide" appear>
-        <div className="checkout-card">
-          <Header checkout={checkout} hideHr={true} />
-        </div>
+        <CheckoutCard checkout={checkout} hideHr hideItems />
       </CSSTransition>
     </TransitionGroup>
   );

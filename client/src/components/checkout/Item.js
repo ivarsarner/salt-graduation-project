@@ -15,6 +15,9 @@ export default function Item({ itemData }) {
     justify-content: flex-start;
     margin-bottom: 5px;
     flex: 0 0 49%;
+    &:last-child {
+      margin-bottom: 0;
+    }
   `;
 
   const Details = styled.div`
