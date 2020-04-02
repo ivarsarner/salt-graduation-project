@@ -35,15 +35,16 @@ const Btn = styled.button`
     opacity: 0.75;
   }
   &:focus {
-    outline: 1px dotted #959595;
-    outline-offset: -4px;
+    outline: none;
   }
 `;
 
-export default function Button({ text, clickAction }) {
+function Button({ text, clickAction }) {
   return (
     <Btn isDark onClick={() => clickAction()}>
       {text}
     </Btn>
   );
 }
+
+export default React.memo(Button);

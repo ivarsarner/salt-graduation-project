@@ -11,6 +11,7 @@ export const CheckoutContext = createContext();
 const CheckoutContextProvider = (props) => {
   const initialState = {
     checkouts: [],
+    customers: [],
     currentStore: '',
     showOrderDetails: false,
     currentOrderDetails: {},
@@ -19,13 +20,7 @@ const CheckoutContextProvider = (props) => {
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
-
-  const [newCheckoutData, setNewCheckoutData] = useState([]);
-  const [checkoutSyncComplete, setCheckoutSyncComplete] = useState(false);
-  const [customers, setCustomers] = useState([]);
-  const [customerSyncComplete, setCustomerSyncComplete] = useState(false);
-
-  const [showOrderDetails, setShowOrderDetails] = useState(false); // added to reducer
+  const [newCheckoutData, setNewCheckoutData] = useState([]); // move to reducer
 
   const addCheckoutId = async (firebaseData) => {
     const dataWithCheckoutId = firebaseData.map((checkout) => {
@@ -43,10 +38,10 @@ const CheckoutContextProvider = (props) => {
       return checkout;
     });
     dispatch({ type: 'LOAD_FIREBASE', data: dataWithCheckoutId });
-    setCheckoutSyncComplete(true);
   };
 
-  const getRandomCustomer = () => customers[Math.floor(Math.random() * 99)];
+  const getRandomCustomer = () =>
+    state.customers[Math.floor(Math.random() * 99)];
 
   const filterCurrentStore = () => {
     if (state.checkouts[0]) {
@@ -80,8 +75,7 @@ const CheckoutContextProvider = (props) => {
   useEffect(() => {
     async function fetchCustomers() {
       const { data } = await axios.get('/api/customers');
-      setCustomers(data);
-      setCustomerSyncComplete(true);
+      dispatch({ type: 'SET_CUSTOMERS', data });
     }
     fetchCustomers();
   }, []);
@@ -92,7 +86,7 @@ const CheckoutContextProvider = (props) => {
   };
 
   useEffect(() => {
-    if (customerSyncComplete) {
+    if (state.customerSyncComplete) {
       let database = firebase.database().ref('/');
       database
         .orderByChild('merchant')
@@ -103,19 +97,16 @@ const CheckoutContextProvider = (props) => {
         });
       setNewCheckoutData(newMockData);
     }
-  }, [customerSyncComplete]);
-  // eslint-disable-next-line
-  useEffect(() => filterCurrentStore(), [checkoutSyncComplete]);
+  }, [state.customerSyncComplete]);
+
+  useEffect(() => filterCurrentStore(), [state.checkoutSyncComplete]);
 
   return (
     <CheckoutContext.Provider
       value={{
-        // START NEW
         state,
         dispatch,
-        // END NEW
         checkoutsActions: { addNewCheckout, showMoreDetails },
-        orderDetails: { showOrderDetails },
       }}
     >
       {props.children}
