@@ -20,14 +20,12 @@ const CheckoutContextProvider = (props) => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const [checkouts, setCheckouts] = useState([]); // added to reducer
   const [newCheckoutData, setNewCheckoutData] = useState([]);
   const [checkoutSyncComplete, setCheckoutSyncComplete] = useState(false);
   const [customers, setCustomers] = useState([]);
   const [customerSyncComplete, setCustomerSyncComplete] = useState(false);
 
   const [showOrderDetails, setShowOrderDetails] = useState(false); // added to reducer
-  const [orderDetails, setOrderDetails] = useState({}); // added to reducer
 
   const addCheckoutId = async (firebaseData) => {
     const dataWithCheckoutId = firebaseData.map((checkout) => {
@@ -45,15 +43,17 @@ const CheckoutContextProvider = (props) => {
       return checkout;
     });
     dispatch({ type: 'LOAD_FIREBASE', data: dataWithCheckoutId });
-    setCheckouts(dataWithCheckoutId);
     setCheckoutSyncComplete(true);
   };
 
   const getRandomCustomer = () => customers[Math.floor(Math.random() * 99)];
 
   const filterCurrentStore = () => {
-    if (checkouts[0]) {
-      dispatch({ type: 'SET_STORE_NAME', data: checkouts[0].merchantName });
+    if (state.checkouts[0]) {
+      dispatch({
+        type: 'SET_STORE_NAME',
+        data: state.checkouts[0].merchantName,
+      });
     }
   };
 
@@ -87,15 +87,8 @@ const CheckoutContextProvider = (props) => {
   }, []);
 
   const showMoreDetails = (queryId) => {
-    const orderData = checkouts.find((item) => item.id === queryId);
-    dispatch({ type: 'SHOW_ORDER_DETAILS' });
-    dispatch({ type: 'ORDER_DETAILS_DATA', data: orderData });
-    setShowOrderDetails(!showOrderDetails);
-    setOrderDetails(orderData);
-  };
-
-  const hideOrderDetails = () => {
-    setShowOrderDetails(!showOrderDetails);
+    const orderData = state.checkouts.find((item) => item.id === queryId);
+    dispatch({ type: 'TOGGLE_ORDER_DETAILS', data: orderData });
   };
 
   useEffect(() => {
@@ -122,7 +115,7 @@ const CheckoutContextProvider = (props) => {
         dispatch,
         // END NEW
         checkoutsActions: { addNewCheckout, showMoreDetails },
-        orderDetails: { showOrderDetails, orderDetails, hideOrderDetails },
+        orderDetails: { showOrderDetails },
       }}
     >
       {props.children}

@@ -9,10 +9,14 @@ export default function reducer(state, action) {
     }
     case 'SET_STORE_NAME':
       return { ...state, currentStore: action.data };
-    case 'SHOW_ORDER_DETAILS':
-      return { ...state, showOrderDetails: !state.showOrderDetails };
-    case 'ORDER_DETAILS_DATA':
-      return { ...state, currentOrderDetails: action.data };
+    case 'TOGGLE_ORDER_DETAILS': {
+      const orderData = action.data ? action.data : {};
+      return {
+        ...state,
+        showOrderDetails: !state.showOrderDetails,
+        currentOrderDetails: orderData,
+      };
+    }
     default:
       return state;
   }

@@ -1,18 +1,13 @@
-import React from 'react';
-import Header from './Header';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import React, { forwardRef } from 'react';
+import CheckoutCard from './CheckoutCard';
 
-function CheckoutHistoryCard({ checkout }) {
-  return (
-    <TransitionGroup>
-      <CSSTransition key={checkout.id} timeout={450} classNames="slide" appear>
-        <div className="checkout-card">
-          <Header checkout={checkout} hideHr={true} />
-        </div>
-      </CSSTransition>
-    </TransitionGroup>
-  );
-}
+const CheckoutHistoryCard = forwardRef(({ checkout }, ref) => (
+  <div ref={ref}>
+    <div className="checkout-card">
+      <CheckoutCard checkout={checkout} hideHr hideItems />
+    </div>
+  </div>
+));
 
 function shouldRender(prevProps, nextProps) {
   if (prevProps !== nextProps) return true;
