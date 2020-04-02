@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { LoginContext } from '../context/LoginContext';
 import styled from 'styled-components';
+import { Redirect } from 'react-router-dom';
 
 const LoginContainer = styled.div`
   display: flex;
@@ -44,7 +45,9 @@ export default function Login() {
     return emailRegex.test(username);
   };
 
-  return (
+  return Object.keys(loggedinUser).length > 0 ? (
+    <Redirect to="/" />
+  ) : (
     <LoginContainer>
       <Form onSubmit={handleSubmit}>
         <Input

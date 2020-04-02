@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import CheckoutContextProvider from './context/CheckoutContext';
 import Navigation from './components/Navigation';
@@ -6,6 +6,12 @@ import CheckoutContainer from './components/CheckoutContainer';
 import Login from './components/Login';
 import './App.scss';
 import LoginContextProvider from './context/LoginContext';
+
+// renderRedirect = () => {
+//   if (this.state.redirect) {
+//     return <Redirect to='/target' />
+//   }
+// }
 
 export default function App() {
   return (
