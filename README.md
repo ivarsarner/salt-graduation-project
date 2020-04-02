@@ -34,6 +34,8 @@ Everything can be deployed to Firebase hosting and cloud functions by running `n
 
 We've made 2 mock data APIs to simulate users and product images. These are just for demo purposes.
 
+Since this project is hosted on Firebase as a cloud function, the backend is in the `functions` directory.
+
 **_Products_**
 
 Returns a product image from the ICA image database, based on the product GTIN number in the order items data. There are 5 edge cases where ICA does not have the image, in which case we load the image from a Firebase storage bucket.

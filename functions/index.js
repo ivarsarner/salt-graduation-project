@@ -22,4 +22,4 @@ app.get('/api', (_, res) => res.send('Way Merchant API'));
 app.use('/api/customers', customersRoutes);
 app.use('/api/products', productsRoutes);
 
-exports.server = functions.https.onRequest(app);
+exports.server = functions.region('europe-west3').https.onRequest(app);
