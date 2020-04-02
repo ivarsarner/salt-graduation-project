@@ -285,10 +285,11 @@ a {
   background-color: white;
   padding: 10px;
   font-size: 1rem;
+  z-index: -1;
   transition: all 0.1s ease-in;
   &:hover {
     cursor: pointer;
-    // transform: scale(0.97);
+    transform: scale(0.97);
   }
   .header > img {
     border-radius: 10px;
@@ -377,6 +378,7 @@ a {
   top: 0;
   display: flex;
   justify-content: center;
+  z-index: 1;
 }
 .overlay-hidden {
   background-color: rgba(255, 255, 255, 0);
