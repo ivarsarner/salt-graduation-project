@@ -10,13 +10,14 @@ import Loading from './Loading';
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  h4 {
-    margin: 5px;
-  }
   @media (max-width: 625px) {
     flex-direction: column;
     align-items: center;
   }
+`;
+
+const Headline = styled.h4`
+  margin: 5px;
 `;
 
 const Section = styled.section`
@@ -91,14 +92,14 @@ export default function CheckoutContainer() {
 
       <Contols setMobileView={setMobileView} />
       <Recent hide={showHistory}>
-        <h4>Checkout feed</h4>
+        <Headline>Checkout feed</Headline>
         {recentCheckouts.map((checkout) => (
           <CheckoutCard key={checkout.id.toString()} checkout={checkout} />
         ))}
       </Recent>
 
       <History hide={!showHistory}>
-        <h4>Log</h4>
+        <Headline>Log</Headline>
         {historyCheckouts.map((checkout) => (
           <CheckoutHistoryCard
             key={checkout.id.toString()}

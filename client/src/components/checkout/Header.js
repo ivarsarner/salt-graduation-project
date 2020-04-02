@@ -11,13 +11,25 @@ const HeaderDiv = styled.header`
   * {
     font-size: 0.7rem;
     margin: 0;
-    padding: 0 0 0 10px;
   }
 `;
 
 const Img = styled.img`
   height: 40px;
   border-radius: 10px;
+  margin-right: 10px;
+`;
+
+const Headline = styled.h4`
+  margin: 0;
+`;
+
+const CheckoutNumber = styled.p`
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
 `;
 
 export default function Header({ checkout, hideHr }) {
@@ -61,13 +73,15 @@ export function Image({ imageData }) {
       <Img src={imageData.customer.imageUrl} alt={imageData.customer.name} />
     );
   } else {
-    return <p className="checkout-number">{randomId}</p>;
+    return <CheckoutNumber>{randomId}</CheckoutNumber>;
   }
 }
 
 export function CustomerName({ customerData }) {
   if (customerData !== undefined) {
-    return <h4>{customerData.customer && customerData.customer.name}</h4>;
+    return (
+      <Headline>{customerData.customer && customerData.customer.name}</Headline>
+    );
   } else {
     return null;
   }
