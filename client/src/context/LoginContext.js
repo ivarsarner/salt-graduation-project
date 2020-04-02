@@ -8,7 +8,7 @@ const LoginContextProvider = (props) => {
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      console.log('Logged in!');
+      setLoggedinUser(user);
     } else {
       console.log('Logged out!');
     }
