@@ -286,10 +286,10 @@ a {
   padding: 10px;
   font-size: 1rem;
   z-index: -1;
-  transition: all 0.1s ease-in;
+  transition: all 0.13s ease-in;
   &:hover {
     cursor: pointer;
-    transform: scale(0.97);
+    transform: scale(0.98);
   }
   .header > img {
     border-radius: 10px;
