@@ -131,6 +131,28 @@ a {
   background-color: #6d6767;
 }
 
+/* LOGIN PAGE */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+
+  form {
+    width: 200px;
+    text-align: center;
+  }
+
+  input {
+    text-align: center;
+    border: grey SOLID 1px;
+    border-radius: 5px;
+    padding: 2%;
+    margin: 5%;
+    font-size: 1rem;
+  }
+}
+
 /* CARD ANIMATIONS -------- */
 /* slide enter */
 .slide-appear {
