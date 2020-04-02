@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { LoginContext } from '../context/LoginContext';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const { loggedinUser, loggedinUserActions } = useContext(LoginContext);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateUsername()) {
-      console.log(username, password);
+      await loggedinUserActions.logIn(username, password);
       setUsername('');
       setPassword('');
     } else {
@@ -37,6 +40,13 @@ const Login = () => {
         />
         <input type="submit" value="Login" />
       </form>
+      <button
+        onClick={async () => {
+          await loggedinUserActions.logOut();
+        }}
+      >
+        Log out
+      </button>
     </div>
   );
 };
