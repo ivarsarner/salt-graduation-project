@@ -96,7 +96,6 @@ export default function CheckoutContainer() {
       <Recent hide={showHistory}>
         <Headline>Checkout feed</Headline>
         <FlipMove
-          typeName={null}
           leaveAnimation="fade"
           enterAnimation={{
             from: {
@@ -117,7 +116,7 @@ export default function CheckoutContainer() {
 
       <History hide={!showHistory}>
         <Headline>Log</Headline>
-        <FlipMove typeName={null} enterAnimation="accordionVertical">
+        <FlipMove enterAnimation="accordionVertical">
           {historyCheckouts.map((checkout) => (
             <CheckoutHistoryCard
               key={checkout.id.toString()}
