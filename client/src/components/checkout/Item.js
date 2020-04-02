@@ -23,7 +23,7 @@ const Details = styled.div`
   ${(props) =>
     props.fullScreen &&
     css`
-      font-size: 1rem;
+      font-size: 0.9rem;
     `};
 `;
 

@@ -30,7 +30,8 @@ const Img = styled.img`
     props.fullScreen &&
     css`
       margin-right: 0;
-      height: 100px;
+      height: 120px;
+      margin-bottom: 1rem;
     `};
 `;
 
