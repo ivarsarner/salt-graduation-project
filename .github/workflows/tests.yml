@@ -17,10 +17,10 @@ jobs:
       - name: install dependencies
         run: npm install
       - name: run server tests
-        run: npm test
-      - name: install react deps
-        working-directory: ./client
-        run: npm install
-      - name: test react components
-        working-directory: ./client
-        run: npm run test:actions
+      #  run: npm test
+      #- name: install react deps
+      #  working-directory: ./client
+      #  run: npm install
+      #- name: test react components
+      #  working-directory: ./client
+      #  run: npm run test:actions

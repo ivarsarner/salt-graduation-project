@@ -1,13 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useReducer } from 'react';
 import newMockData from '../assets/new-checkouts-mock-data.json';
 import moment from 'moment';
 import firebase from '../firebase';
 import axios from 'axios';
+import reducer from '../reducer';
 
 export const CheckoutContext = createContext();
 
 const CheckoutContextProvider = (props) => {
+  const initialState = {};
+
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   const [checkouts, setCheckouts] = useState([]);
   const [newCheckoutData, setNewCheckoutData] = useState([]);
   const [checkoutSyncComplete, setCheckoutSyncComplete] = useState(false);
@@ -33,6 +38,7 @@ const CheckoutContextProvider = (props) => {
       }
       return checkout;
     });
+    dispatch({ type: 'LOAD_FIREBASE', data: dataWithCheckoutId });
     setCheckouts(dataWithCheckoutId);
     setCheckoutSyncComplete(true);
   };
@@ -100,6 +106,10 @@ const CheckoutContextProvider = (props) => {
   return (
     <CheckoutContext.Provider
       value={{
+        // START NEW
+        state,
+        dispatch,
+        // END NEW
         checkouts,
         currentStore,
         checkoutsActions: { addNewCheckout, showMoreDetails },
