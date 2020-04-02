@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import React, { useState, useEffect, useContext, forwardRef } from 'react';
 import { CheckoutContext } from '../../context/CheckoutContext';
 import Header from './Header';
 import Item from './Item';
 
-function CheckoutCard({ checkout, showFullList }) {
+const CheckoutCard = forwardRef(({ checkout, showFullList }, ref) => {
   const { checkoutsActions } = useContext(CheckoutContext);
   const [itemsToRender, setItemsToRender] = useState([]);
 
@@ -18,23 +17,21 @@ function CheckoutCard({ checkout, showFullList }) {
   }, [checkout.items, showFullList]);
 
   return (
-    <TransitionGroup>
-      <CSSTransition key={checkout.id} timeout={450} classNames="slide" appear>
-        <div
-          className="checkout-card"
-          onClick={() => checkoutsActions.showMoreDetails(checkout.id)}
-        >
-          <Header checkout={checkout} />
-          <div className="items-container">
-            {itemsToRender.map((item) => (
-              <Item key={item.gtin} itemData={item} />
-            ))}
-          </div>
+    <div ref={ref}>
+      <div
+        className="checkout-card"
+        onClick={() => checkoutsActions.showMoreDetails(checkout.id)}
+      >
+        <Header checkout={checkout} />
+        <div className="items-container">
+          {itemsToRender.map((item) => (
+            <Item key={item.gtin} itemData={item} />
+          ))}
         </div>
-      </CSSTransition>
-    </TransitionGroup>
+      </div>
+    </div>
   );
-}
+});
 
 function shouldRender(prevProps, nextProps) {
   if (prevProps !== nextProps) return true;
