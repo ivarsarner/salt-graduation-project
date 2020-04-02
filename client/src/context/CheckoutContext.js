@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { createContext, useState, useEffect, useReducer } from 'react';
+import apiEndpoint from '../config';
 import newMockData from '../assets/new-checkouts-mock-data.json';
 import moment from 'moment';
 import firebase from '../firebase';
@@ -74,7 +75,7 @@ const CheckoutContextProvider = ({ children }) => {
 
   useEffect(() => {
     async function fetchCustomers() {
-      const { data } = await axios.get('/api/customers');
+      const { data } = await axios.get(`${apiEndpoint}/api/customers`);
       dispatch({ type: 'SET_CUSTOMERS', data });
     }
     fetchCustomers();

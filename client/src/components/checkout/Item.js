@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import axios from 'axios';
+import apiEndpoint from '../../config';
 
 const ItemDiv = styled.div`
   display: flex;
@@ -43,7 +44,7 @@ export default function Item({ itemData, fullScreen }) {
   const [itemPrice, setItemprice] = useState(0);
 
   const getProductImage = async () => {
-    const { data } = await axios.get(`/api/products/${gtin}`);
+    const { data } = await axios.get(`${apiEndpoint}/api/products/${gtin}`);
     setImagePath(data.path);
   };
 

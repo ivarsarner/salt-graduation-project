@@ -14,10 +14,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: install dependencies
-        run: npm install
-      - name: run server tests
-        run: npm test
+      #- name: install dependencies
+      #  run: npm install
+      #- name: run server tests
+      #  run: npm test
       #- name: install react deps
       #  working-directory: ./client
       #  run: npm install
