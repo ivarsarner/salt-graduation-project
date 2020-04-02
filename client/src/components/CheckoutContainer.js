@@ -65,24 +65,24 @@ const History = styled(Section)`
 `;
 
 export default function CheckoutContainer() {
-  const { checkouts, orderDetails } = useContext(CheckoutContext);
+  const { state, dispatch } = useContext(CheckoutContext);
   const [recentCheckouts, setRecentCheckouts] = useState([]);
   const [historyCheckouts, setHistoryCheckouts] = useState([]);
   const [showHistory, setShowHistory] = useState(false);
 
   useEffect(() => {
-    const recent = checkouts
+    const recent = state.checkouts
       .sort((a, b) => new Date(b.timeCreated) - new Date(a.timeCreated))
       .slice(0, 3);
     setRecentCheckouts(recent);
-  }, [checkouts]);
+  }, [state.checkouts]);
 
   useEffect(() => {
-    const history = checkouts
+    const history = state.checkouts
       .sort((a, b) => new Date(b.timeCreated) - new Date(a.timeCreated))
       .slice(3, 14);
     setHistoryCheckouts(history);
-  }, [checkouts]);
+  }, [state.checkouts]);
 
   const setMobileView = (state) => {
     setShowHistory(state);
@@ -94,11 +94,11 @@ export default function CheckoutContainer() {
 
   return (
     <Container>
-      {orderDetails.showOrderDetails && (
+      {state.showOrderDetails && (
         <OrderDetailsCard
-          close={orderDetails.hideOrderDetails}
-          data={orderDetails.orderDetails}
-          show={orderDetails.showOrderDetails}
+          close={() => dispatch({ type: 'TOGGLE_ORDER_DETAILS' })}
+          data={state.currentOrderDetails}
+          show={state.showOrderDetails}
         />
       )}
 
