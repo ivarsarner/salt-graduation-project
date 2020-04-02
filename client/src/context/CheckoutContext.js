@@ -9,14 +9,17 @@ import reducer from '../reducer';
 export const CheckoutContext = createContext();
 
 const CheckoutContextProvider = (props) => {
-  const initialState = {};
+  const initialState = {
+    checkouts: [],
+    currentStore: '',
+    showOrderDetails: false,
+  };
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const [checkouts, setCheckouts] = useState([]);
+  const [checkouts, setCheckouts] = useState([]); // added to reducer
   const [newCheckoutData, setNewCheckoutData] = useState([]);
   const [checkoutSyncComplete, setCheckoutSyncComplete] = useState(false);
-  const [currentStore, setCurrentStore] = useState('');
   const [customers, setCustomers] = useState([]);
   const [customerSyncComplete, setCustomerSyncComplete] = useState(false);
 
@@ -45,8 +48,11 @@ const CheckoutContextProvider = (props) => {
 
   const getRandomCustomer = () => customers[Math.floor(Math.random() * 99)];
 
-  const filterCurrentStore = () =>
-    setCurrentStore(checkouts[0] && checkouts[0].merchantName);
+  const filterCurrentStore = () => {
+    if (checkouts[0]) {
+      dispatch({ type: 'SET_STORE_NAME', data: checkouts[0].merchantName });
+    }
+  };
 
   const addNewCheckout = () => {
     let newCheckout = newCheckoutData.splice(-1, 1);
@@ -79,6 +85,7 @@ const CheckoutContextProvider = (props) => {
 
   const showMoreDetails = (queryId) => {
     const orderData = checkouts.find((item) => item.id === queryId);
+    dispatch({ type: 'SHOW_ORDER_DETAILS' });
     setShowOrderDetails(!showOrderDetails);
     setOrderDetails(orderData);
   };
@@ -111,7 +118,6 @@ const CheckoutContextProvider = (props) => {
         dispatch,
         // END NEW
         checkouts,
-        currentStore,
         checkoutsActions: { addNewCheckout, showMoreDetails },
         orderDetails: { showOrderDetails, orderDetails, hideOrderDetails },
       }}

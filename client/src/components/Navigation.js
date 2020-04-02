@@ -4,14 +4,14 @@ import { CheckoutContext } from '../context/CheckoutContext';
 import { NavLink } from 'react-router-dom';
 
 function Navigation() {
-  const { currentStore, checkoutsActions } = useContext(CheckoutContext);
+  const { checkoutsActions, state } = useContext(CheckoutContext);
 
   return (
     <div className="main-nav">
       <NavLink className="main-nav-logo" exact to="/">
         <img src={logo} alt="Way" width={100} />
       </NavLink>
-      <p className="store-name">{currentStore}</p>
+      <p className="store-name">{state.currentStore}</p>
       <div className="main-nav-links">
         {/* <NavLink to="/other">Other</NavLink> */}
         <button
