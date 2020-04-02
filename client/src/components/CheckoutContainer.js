@@ -50,8 +50,10 @@ export default function CheckoutContainer() {
         <OrderDetailsCard
           close={orderDetails.hideOrderDetails}
           data={orderDetails.orderDetails}
+          show={orderDetails.showOrderDetails}
         />
       )}
+
       <Contols setMobileView={setMobileView} />
       <section className={`recent ${showHistory ? 'hide' : ''}`}>
         <h3>Checkout feed</h3>

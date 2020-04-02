@@ -1,20 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/checkout/Header';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 
-export default function OrderDetails({ data, close }) {
+export default function OrderDetails({ data, close, show }) {
+  const [showBackground, setShowBackground] = useState(false);
+
   return (
-    <TransitionGroup>
-      <CSSTransition key={data.id} timeout={450} classNames="slide" appear>
-        <div className="order-details">
-          <div className="background" onClick={() => close()}>
-            <div className="card">
-              <Header checkout={data} />
-              <p>hey there {data.customer.name}</p>
-            </div>
-          </div>
+    <div
+      className={`order-details overlay-hidden ${
+        showBackground ? 'overlay-display' : ''
+      }`}
+      onClick={() => {
+        close();
+        setShowBackground(false);
+      }}
+    >
+      <CSSTransition
+        in={show}
+        timeout={300}
+        classNames="order-details"
+        unmountOnExit
+        onEntered={() => setShowBackground(true)}
+        appear
+      >
+        <div className="card">
+          <Header checkout={data} />
+          <p>hey there </p>
         </div>
       </CSSTransition>
-    </TransitionGroup>
+    </div>
   );
 }
