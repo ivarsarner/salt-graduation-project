@@ -13,7 +13,9 @@ const CheckoutContextProvider = (props) => {
     checkouts: [],
     currentStore: '',
     showOrderDetails: false,
-    orderDetails: {},
+    currentOrderDetails: {},
+    customerSyncComplete: false,
+    checkoutSyncComplete: false,
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -24,8 +26,8 @@ const CheckoutContextProvider = (props) => {
   const [customers, setCustomers] = useState([]);
   const [customerSyncComplete, setCustomerSyncComplete] = useState(false);
 
-  const [showOrderDetails, setShowOrderDetails] = useState(false);
-  const [orderDetails, setOrderDetails] = useState({});
+  const [showOrderDetails, setShowOrderDetails] = useState(false); // added to reducer
+  const [orderDetails, setOrderDetails] = useState({}); // added to reducer
 
   const addCheckoutId = async (firebaseData) => {
     const dataWithCheckoutId = firebaseData.map((checkout) => {
@@ -87,6 +89,7 @@ const CheckoutContextProvider = (props) => {
   const showMoreDetails = (queryId) => {
     const orderData = checkouts.find((item) => item.id === queryId);
     dispatch({ type: 'SHOW_ORDER_DETAILS' });
+    dispatch({ type: 'ORDER_DETAILS_DATA', data: orderData });
     setShowOrderDetails(!showOrderDetails);
     setOrderDetails(orderData);
   };
@@ -118,7 +121,6 @@ const CheckoutContextProvider = (props) => {
         state,
         dispatch,
         // END NEW
-        checkouts,
         checkoutsActions: { addNewCheckout, showMoreDetails },
         orderDetails: { showOrderDetails, orderDetails, hideOrderDetails },
       }}

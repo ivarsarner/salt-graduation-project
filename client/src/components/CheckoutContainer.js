@@ -7,24 +7,24 @@ import Contols from './Controls';
 import Loading from './Loading';
 
 export default function CheckoutContainer() {
-  const { checkouts, orderDetails } = useContext(CheckoutContext);
+  const { orderDetails, state } = useContext(CheckoutContext);
   const [recentCheckouts, setRecentCheckouts] = useState([]);
   const [historyCheckouts, setHistoryCheckouts] = useState([]);
   const [showHistory, setShowHistory] = useState(false);
 
   useEffect(() => {
-    const recent = checkouts
+    const recent = state.checkouts
       .sort((a, b) => new Date(b.timeCreated) - new Date(a.timeCreated))
       .slice(0, 3);
     setRecentCheckouts(recent);
-  }, [checkouts]);
+  }, [state.checkouts]);
 
   useEffect(() => {
-    const history = checkouts
+    const history = state.checkouts
       .sort((a, b) => new Date(b.timeCreated) - new Date(a.timeCreated))
       .slice(3, 14);
     setHistoryCheckouts(history);
-  }, [checkouts]);
+  }, [state.checkouts]);
 
   const setMobileView = (state) => {
     setShowHistory(state);
