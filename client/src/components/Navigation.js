@@ -4,6 +4,7 @@ import { CheckoutContext } from '../context/CheckoutContext';
 import Button from '../components/Button';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { LoginContext } from '../context/LoginContext';
 
 const MainNav = styled.div`
   display: flex;
@@ -32,6 +33,7 @@ const NavLinks = styled.div`
 
 function Navigation() {
   const { checkoutsActions, state } = useContext(CheckoutContext);
+  const { loggedinUser, loggedinUserActions } = useContext(LoginContext);
 
   return (
     <MainNav>
@@ -40,6 +42,7 @@ function Navigation() {
       </NavLink>
       <p className="store-name">{state.currentStore}</p>
       <NavLinks>
+        <Button text="Log out" clickAction={loggedinUserActions.logOut} />
         {/* <NavLink to="/other">Other</NavLink> */}
         <Button text="Add New" clickAction={checkoutsActions.addNewCheckout} />
       </NavLinks>

@@ -8,11 +8,26 @@ const LoginContextProvider = (props) => {
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      setLoggedinUser(user);
+      console.log(user);
+      console.log('Auth state changed -> Logged in!');
+      //if (!loggedinUser) setLoggedinUser(user);
     } else {
-      console.log('Logged out!');
+      console.log('Auth state changed -> Logged out!');
+      //if (loggedinUser) setLoggedinUser({});
     }
   });
+
+  const getCurrentUser = () => {
+    const user = firebase.auth().currentUser;
+
+    if (user) {
+      console.log(user);
+    } else {
+      console.log('not signed in');
+    }
+  };
+
+  getCurrentUser();
 
   const logIn = async (username, password) => {
     try {

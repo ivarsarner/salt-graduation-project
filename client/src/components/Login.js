@@ -59,13 +59,6 @@ export default function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button
-          onClick={async () => {
-            await loggedinUserActions.logOut();
-          }}
-        >
-          Log out
-        </button>
         <Input type="submit" value="Login" />
       </Form>
     </LoginContainer>
