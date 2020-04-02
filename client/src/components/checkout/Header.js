@@ -37,7 +37,7 @@ export function Image({ imageData }) {
   // this should be replaced by a real checkout id from Firebase
   const randomId = Math.floor(Math.random() * 4 + 1);
 
-  if (imageData === true && imageData !== undefined) {
+  if (imageData !== undefined) {
     return (
       <img src={imageData.customer.imageUrl} alt={imageData.customer.name} />
     );
@@ -47,7 +47,7 @@ export function Image({ imageData }) {
 }
 
 export function CustomerName({ customerData }) {
-  if (customerData === true && customerData !== undefined) {
+  if (customerData !== undefined) {
     return <h4>{customerData.customer && customerData.customer.name}</h4>;
   } else {
     return null;
