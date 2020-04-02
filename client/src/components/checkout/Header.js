@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Moment from 'react-moment';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const HeaderDiv = styled.header`
   display: flex;
@@ -8,16 +8,30 @@ const HeaderDiv = styled.header`
   justify-content: flex-start;
   margin-bottom: 5px;
   flex: 0 0 49%;
+  font-size: 0.7rem;
   * {
-    font-size: 0.7rem;
     margin: 0;
   }
+  ${(props) =>
+    props.fullScreen &&
+    css`
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: 1rem;
+    `};
 `;
 
 const Img = styled.img`
   height: 40px;
   border-radius: 10px;
   margin-right: 10px;
+  ${(props) =>
+    props.isFullScreen &&
+    css`
+      margin-right: 0;
+      height: 100px;
+    `};
 `;
 
 const Headline = styled.h4`
@@ -43,7 +57,7 @@ const Text = styled.p`
   padding: 0;
 `;
 
-export default function Header({ checkout, hideHr }) {
+export default function Header({ checkout, hideHr, fullScreen }) {
   const [checkoutTotal, setCheckoutTotal] = useState(0);
   const [itemPrice, setItemprice] = useState(0);
 
@@ -58,8 +72,8 @@ export default function Header({ checkout, hideHr }) {
 
   return (
     <>
-      <HeaderDiv>
-        <Image imageData={checkout} />
+      <HeaderDiv fullScreen={fullScreen}>
+        <Image imageData={checkout} fullScreen={fullScreen} />
         <div className="details">
           <CustomerName customerData={checkout} />
           <div className="data">
@@ -75,13 +89,17 @@ export default function Header({ checkout, hideHr }) {
   );
 }
 
-export function Image({ imageData }) {
+export function Image({ imageData, fullScreen }) {
   // this should be replaced by a real checkout id from Firebase
   const randomId = Math.floor(Math.random() * 4 + 1);
 
   if (imageData !== undefined) {
     return (
-      <Img src={imageData.customer.imageUrl} alt={imageData.customer.name} />
+      <Img
+        src={imageData.customer.imageUrl}
+        alt={imageData.customer.name}
+        isFullScreen={fullScreen}
+      />
     );
   } else {
     return <CheckoutNumber>{randomId}</CheckoutNumber>;

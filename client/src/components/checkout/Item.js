@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import axios from 'axios';
 
 const ItemDiv = styled.div`
@@ -15,18 +15,28 @@ const ItemDiv = styled.div`
 `;
 
 const Details = styled.div`
+  font-size: 0.7rem;
   > * {
     margin: 0;
     padding: 0 0 0 10px;
-    font-size: 0.7rem;
   }
+  ${(props) =>
+    props.showFullScreen &&
+    css`
+      font-size: 1rem;
+    `};
 `;
 
 const Image = styled.img`
   height: 40px;
+  ${(props) =>
+    props.showFullScreen &&
+    css`
+      height: 60px:
+    `};
 `;
 
-export default function Item({ itemData }) {
+export default function Item({ itemData, showFullScreen }) {
   const { price: total, quantity, gtin } = itemData;
   const { name, brand } = itemData.product;
   const [imagePath, setImagePath] = useState('');
@@ -46,7 +56,7 @@ export default function Item({ itemData }) {
     <>
       <ItemDiv>
         <Image src={imagePath} alt={name} />
-        <Details>
+        <Details showFullScreen={showFullScreen}>
           <p className="title">{name}</p>
           <p className="brand">{brand}</p>
           <p className="data">

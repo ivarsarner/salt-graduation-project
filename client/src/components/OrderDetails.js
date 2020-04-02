@@ -69,7 +69,7 @@ export default function OrderDetails({ data, close, show }) {
           <CloseDiv>
             <CloseBtn src={closeIcon} alt="" />
           </CloseDiv>
-          <CheckoutCard checkout={data} showFullList />
+          <CheckoutCard checkout={data} showFullScreen />
         </Card>
       </CSSTransition>
     </OrderDetailsDiv>
