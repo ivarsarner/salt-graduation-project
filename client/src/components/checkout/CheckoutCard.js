@@ -1,11 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Header from './Header';
 import Item from './Item';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { CheckoutContext } from '../../context/CheckoutContext';
 
-function CheckoutCard({ checkout }) {
+function CheckoutCard({ checkout, showFullList }) {
   const { checkoutsActions } = useContext(CheckoutContext);
+  const [itemsToRender, setItemsToRender] = useState([]);
+
+  useEffect(() => {
+    if (!showFullList) {
+      const limitItems = checkout.items.slice(-4);
+      setItemsToRender(limitItems);
+    } else {
+      setItemsToRender(checkout.items);
+    }
+  }, [checkout.items, showFullList]);
 
   return (
     <TransitionGroup>
@@ -16,7 +26,7 @@ function CheckoutCard({ checkout }) {
         >
           <Header checkout={checkout} />
           <div className="items-container">
-            {checkout.items.map((item) => (
+            {itemsToRender.map((item) => (
               <Item key={item.gtin} itemData={item} />
             ))}
           </div>

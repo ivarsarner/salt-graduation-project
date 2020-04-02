@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Header from '../components/checkout/Header';
+import CheckoutCard from '../components/checkout/CheckoutCard';
 import { CSSTransition } from 'react-transition-group';
 
 export default function OrderDetails({ data, close, show }) {
@@ -24,7 +24,7 @@ export default function OrderDetails({ data, close, show }) {
         appear
       >
         <div className="card">
-          <Header checkout={data} />
+          <CheckoutCard checkout={data} showFullList />
           <p>hey there </p>
         </div>
       </CSSTransition>
