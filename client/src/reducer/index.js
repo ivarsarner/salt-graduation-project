@@ -11,6 +11,8 @@ export default function reducer(state, action) {
       return { ...state, currentStore: action.data };
     case 'SHOW_ORDER_DETAILS':
       return { ...state, showOrderDetails: !state.showOrderDetails };
+    case 'ORDER_DETAILS_DATA':
+      return { ...state, currentOrderDetails: action.data };
     default:
       return state;
   }

@@ -13,6 +13,7 @@ const CheckoutContextProvider = (props) => {
     checkouts: [],
     currentStore: '',
     showOrderDetails: false,
+    orderDetails: {},
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
