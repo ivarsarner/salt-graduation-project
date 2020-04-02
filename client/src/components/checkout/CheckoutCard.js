@@ -27,6 +27,8 @@ const CheckoutCardDiv = styled.div`
     props.fullScreen &&
     css`
       box-shadow: none;
+      position: relative;
+      top: -40px;
       img {
         width: 60px;
         height: auto;

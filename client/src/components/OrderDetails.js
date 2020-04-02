@@ -2,14 +2,19 @@ import React, { useState } from 'react';
 import CheckoutCard from '../components/checkout/CheckoutCard';
 import { CSSTransition } from 'react-transition-group';
 import styled, { css } from 'styled-components';
+import closeIcon from '../assets/close.svg';
 
 const Card = styled.div`
   position: absolute;
   background: #fff;
-  width: 600px;
+  width: 700px;
   height: 80vh;
   bottom: 0;
   padding: 20px;
+  border-radius: 10px 10px 0 0;
+  @media (max-width: 625px) {
+    width: 100%;
+  }
 `;
 
 const OrderDetailsDiv = styled.div`
@@ -29,6 +34,16 @@ const OrderDetailsDiv = styled.div`
       background-color: rgba(0, 0, 0, 0.6);
       visibility: visible;
     `};
+`;
+
+const CloseDiv = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+`;
+
+const CloseBtn = styled.img`
+  width: 25px;
 `;
 
 export default function OrderDetails({ data, close, show }) {
@@ -51,6 +66,9 @@ export default function OrderDetails({ data, close, show }) {
         appear
       >
         <Card>
+          <CloseDiv>
+            <CloseBtn src={closeIcon} alt="" />
+          </CloseDiv>
           <CheckoutCard checkout={data} showFullList />
         </Card>
       </CSSTransition>
