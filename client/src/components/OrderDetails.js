@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import CheckoutCard from '../components/checkout/CheckoutCard';
 import { CSSTransition } from 'react-transition-group';
+import styled from 'styled-components';
+
+const Card = styled.div`
+  position: absolute;
+  background: #fff;
+  width: 600px;
+  height: 80vh;
+  bottom: 0;
+  padding: 20px;
+`;
 
 export default function OrderDetails({ data, close, show }) {
   const [showBackground, setShowBackground] = useState(false);
@@ -23,10 +33,9 @@ export default function OrderDetails({ data, close, show }) {
         onEntered={() => setShowBackground(true)}
         appear
       >
-        <div className="card">
+        <Card>
           <CheckoutCard checkout={data} showFullList />
-          <p>hey there </p>
-        </div>
+        </Card>
       </CSSTransition>
     </div>
   );

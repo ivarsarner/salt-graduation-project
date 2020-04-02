@@ -1,11 +1,10 @@
 import React, { forwardRef } from 'react';
-import Header from './Header';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import CheckoutCard from './CheckoutCard';
 
 const CheckoutHistoryCard = forwardRef(({ checkout }, ref) => (
   <div ref={ref}>
     <div className="checkout-card">
-      <Header checkout={checkout} hideHr={true} />
+      <CheckoutCard checkout={checkout} hideHr hideItems />
     </div>
   </div>
 ));
