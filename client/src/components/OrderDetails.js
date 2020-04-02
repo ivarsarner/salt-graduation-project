@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CheckoutCard from '../components/checkout/CheckoutCard';
 import { CSSTransition } from 'react-transition-group';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Card = styled.div`
   position: absolute;
@@ -12,14 +12,31 @@ const Card = styled.div`
   padding: 20px;
 `;
 
+const OrderDetailsDiv = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color 0.3s linear;
+  visibility: hidden;
+  ${(props) =>
+    props.showBackground &&
+    css`
+      background-color: rgba(0, 0, 0, 0.6);
+      visibility: visible;
+    `};
+`;
+
 export default function OrderDetails({ data, close, show }) {
   const [showBackground, setShowBackground] = useState(false);
 
   return (
-    <div
-      className={`order-details overlay-hidden ${
-        showBackground ? 'overlay-display' : ''
-      }`}
+    <OrderDetailsDiv
+      showBackground={showBackground}
       onClick={() => {
         close();
         setShowBackground(false);
@@ -37,6 +54,6 @@ export default function OrderDetails({ data, close, show }) {
           <CheckoutCard checkout={data} showFullList />
         </Card>
       </CSSTransition>
-    </div>
+    </OrderDetailsDiv>
   );
 }
