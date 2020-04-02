@@ -9,8 +9,4 @@ const CheckoutHistoryCard = forwardRef(({ checkout }, ref) => (
   </div>
 ));
 
-function shouldRender(prevProps, nextProps) {
-  if (prevProps !== nextProps) return true;
-}
-
-export default React.memo(CheckoutHistoryCard, shouldRender);
+export default React.memo(CheckoutHistoryCard);

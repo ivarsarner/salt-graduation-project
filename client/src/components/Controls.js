@@ -13,7 +13,7 @@ const ControlsDiv = styled.div`
   }
 `;
 
-export default function Controls({ setMobileView }) {
+function Controls({ setMobileView }) {
   return (
     <>
       <ControlsDiv>
@@ -23,3 +23,5 @@ export default function Controls({ setMobileView }) {
     </>
   );
 }
+
+export default React.memo(Controls);

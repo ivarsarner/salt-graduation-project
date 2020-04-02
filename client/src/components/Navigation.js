@@ -31,14 +31,14 @@ const NavLinks = styled.div`
 `;
 
 function Navigation() {
-  const { currentStore, checkoutsActions } = useContext(CheckoutContext);
+  const { checkoutsActions, state } = useContext(CheckoutContext);
 
   return (
     <MainNav>
       <NavLink className="main-nav-logo" exact to="/">
         <img src={logo} alt="Way" width={100} />
       </NavLink>
-      <p className="store-name">{currentStore}</p>
+      <p className="store-name">{state.currentStore}</p>
       <NavLinks>
         {/* <NavLink to="/other">Other</NavLink> */}
         <Button text="Add New" clickAction={checkoutsActions.addNewCheckout} />

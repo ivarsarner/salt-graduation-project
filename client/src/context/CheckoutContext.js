@@ -1,22 +1,26 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useReducer } from 'react';
 import newMockData from '../assets/new-checkouts-mock-data.json';
 import moment from 'moment';
 import firebase from '../firebase';
 import axios from 'axios';
+import reducer from '../reducer';
 
 export const CheckoutContext = createContext();
 
-const CheckoutContextProvider = (props) => {
-  const [checkouts, setCheckouts] = useState([]);
-  const [newCheckoutData, setNewCheckoutData] = useState([]);
-  const [checkoutSyncComplete, setCheckoutSyncComplete] = useState(false);
-  const [currentStore, setCurrentStore] = useState('');
-  const [customers, setCustomers] = useState([]);
-  const [customerSyncComplete, setCustomerSyncComplete] = useState(false);
+const CheckoutContextProvider = ({ children }) => {
+  const initialState = {
+    checkouts: [],
+    customers: [],
+    currentStore: '',
+    showOrderDetails: false,
+    currentOrderDetails: {},
+    customerSyncComplete: false,
+    checkoutSyncComplete: false,
+  };
 
-  const [showOrderDetails, setShowOrderDetails] = useState(false);
-  const [orderDetails, setOrderDetails] = useState({});
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const [newCheckoutData, setNewCheckoutData] = useState([]); // move to reducer
 
   const addCheckoutId = async (firebaseData) => {
     const dataWithCheckoutId = firebaseData.map((checkout) => {
@@ -33,14 +37,20 @@ const CheckoutContextProvider = (props) => {
       }
       return checkout;
     });
-    setCheckouts(dataWithCheckoutId);
-    setCheckoutSyncComplete(true);
+    dispatch({ type: 'LOAD_FIREBASE', data: dataWithCheckoutId });
   };
 
-  const getRandomCustomer = () => customers[Math.floor(Math.random() * 99)];
+  const getRandomCustomer = () =>
+    state.customers[Math.floor(Math.random() * 99)];
 
-  const filterCurrentStore = () =>
-    setCurrentStore(checkouts[0] && checkouts[0].merchantName);
+  const filterCurrentStore = () => {
+    if (state.checkouts[0]) {
+      dispatch({
+        type: 'SET_STORE_NAME',
+        data: state.checkouts[0].merchantName,
+      });
+    }
+  };
 
   const addNewCheckout = () => {
     let newCheckout = newCheckoutData.splice(-1, 1);
@@ -65,24 +75,18 @@ const CheckoutContextProvider = (props) => {
   useEffect(() => {
     async function fetchCustomers() {
       const { data } = await axios.get('/api/customers');
-      setCustomers(data);
-      setCustomerSyncComplete(true);
+      dispatch({ type: 'SET_CUSTOMERS', data });
     }
     fetchCustomers();
   }, []);
 
   const showMoreDetails = (queryId) => {
-    const orderData = checkouts.find((item) => item.id === queryId);
-    setShowOrderDetails(!showOrderDetails);
-    setOrderDetails(orderData);
-  };
-
-  const hideOrderDetails = () => {
-    setShowOrderDetails(!showOrderDetails);
+    const orderData = state.checkouts.find((item) => item.id === queryId);
+    dispatch({ type: 'TOGGLE_ORDER_DETAILS', data: orderData });
   };
 
   useEffect(() => {
-    if (customerSyncComplete) {
+    if (state.customerSyncComplete) {
       let database = firebase.database().ref('/');
       database
         .orderByChild('merchant')
@@ -94,20 +98,19 @@ const CheckoutContextProvider = (props) => {
         });
       setNewCheckoutData(newMockData);
     }
-  }, [customerSyncComplete]);
-  // eslint-disable-next-line
-  useEffect(() => filterCurrentStore(), [checkoutSyncComplete]);
+  }, [state.customerSyncComplete]);
+
+  useEffect(() => filterCurrentStore(), [state.checkoutSyncComplete]);
 
   return (
     <CheckoutContext.Provider
       value={{
-        checkouts,
-        currentStore,
+        state,
+        dispatch,
         checkoutsActions: { addNewCheckout, showMoreDetails },
-        orderDetails: { showOrderDetails, orderDetails, hideOrderDetails },
       }}
     >
-      {props.children}
+      {children}
     </CheckoutContext.Provider>
   );
 };
