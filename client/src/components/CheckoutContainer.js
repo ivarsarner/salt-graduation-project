@@ -44,12 +44,23 @@ const Recent = styled(Section)`
   min-width: 300px;
 `;
 
-const History = styled(Section)`
+const HistoryContainer = styled(Section)`
+  display: flex;
+  justify-content: column;
   flex: 0 0 40%;
   max-width: 430px;
   min-width: 250px;
+`;
+
+const History = styled(Section)`
+  top: 0;
+  height: calc(100vh - 120px);
+  overflow: scroll;
   .header {
     margin-bottom: 0;
+  }
+  &::-webkit-scrollbar {
+    display: none;
   }
 `;
 
@@ -113,18 +124,19 @@ export default function CheckoutContainer() {
           ))}
         </FlipMove>
       </Recent>
-
-      <History hide={!showHistory}>
+      <HistoryContainer>
         <Headline>Log</Headline>
-        <FlipMove enterAnimation="accordionVertical">
-          {historyCheckouts.map((checkout) => (
-            <CheckoutHistoryCard
-              key={checkout.id.toString()}
-              checkout={checkout}
-            />
-          ))}
-        </FlipMove>
-      </History>
+        <History hide={!showHistory}>
+          <FlipMove enterAnimation="accordionVertical">
+            {historyCheckouts.map((checkout) => (
+              <CheckoutHistoryCard
+                key={checkout.id.toString()}
+                checkout={checkout}
+              />
+            ))}
+          </FlipMove>
+        </History>
+      </HistoryContainer>
     </Container>
   );
 }
