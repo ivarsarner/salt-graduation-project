@@ -8,7 +8,7 @@ import reducer from '../reducer';
 
 export const CheckoutContext = createContext();
 
-const CheckoutContextProvider = (props) => {
+const CheckoutContextProvider = ({ children }) => {
   const initialState = {
     checkouts: [],
     customers: [],
@@ -109,7 +109,7 @@ const CheckoutContextProvider = (props) => {
         checkoutsActions: { addNewCheckout, showMoreDetails },
       }}
     >
-      {props.children}
+      {children}
     </CheckoutContext.Provider>
   );
 };
