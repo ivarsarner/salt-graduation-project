@@ -29,10 +29,6 @@ const CheckoutCardDiv = styled.div`
       box-shadow: none;
       position: relative;
       top: -40px;
-      img {
-        width: 60px;
-        height: auto;
-      }
       &:hover {
         transform: none;
         cursor: initial;
@@ -71,7 +67,7 @@ const CheckoutCard = forwardRef(
                 <Item
                   key={item.gtin}
                   itemData={item}
-                  showFullScreen={showFullScreen}
+                  fullScreen={showFullScreen}
                 />
               ))}
             </ItemsContainer>

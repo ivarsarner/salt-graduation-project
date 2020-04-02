@@ -27,7 +27,7 @@ const Img = styled.img`
   border-radius: 10px;
   margin-right: 10px;
   ${(props) =>
-    props.isFullScreen &&
+    props.fullScreen &&
     css`
       margin-right: 0;
       height: 100px;
@@ -98,7 +98,7 @@ export function Image({ imageData, fullScreen }) {
       <Img
         src={imageData.customer.imageUrl}
         alt={imageData.customer.name}
-        isFullScreen={fullScreen}
+        fullScreen={fullScreen}
       />
     );
   } else {

@@ -21,7 +21,7 @@ const Details = styled.div`
     padding: 0 0 0 10px;
   }
   ${(props) =>
-    props.showFullScreen &&
+    props.fullScreen &&
     css`
       font-size: 1rem;
     `};
@@ -30,13 +30,13 @@ const Details = styled.div`
 const Image = styled.img`
   height: 40px;
   ${(props) =>
-    props.showFullScreen &&
+    props.fullScreen &&
     css`
-      height: 60px:
+      height: 60px;
     `};
 `;
 
-export default function Item({ itemData, showFullScreen }) {
+export default function Item({ itemData, fullScreen }) {
   const { price: total, quantity, gtin } = itemData;
   const { name, brand } = itemData.product;
   const [imagePath, setImagePath] = useState('');
@@ -55,8 +55,8 @@ export default function Item({ itemData, showFullScreen }) {
   return (
     <>
       <ItemDiv>
-        <Image src={imagePath} alt={name} />
-        <Details showFullScreen={showFullScreen}>
+        <Image src={imagePath} alt={name} fullScreen={fullScreen} />
+        <Details fullScreen={fullScreen}>
           <p className="title">{name}</p>
           <p className="brand">{brand}</p>
           <p className="data">
