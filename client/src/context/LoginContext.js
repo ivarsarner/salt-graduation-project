@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import firebase from '../firebase';
 
 export const LoginContext = createContext();
@@ -6,18 +6,19 @@ export const LoginContext = createContext();
 const LoginContextProvider = (props) => {
   const [loggedinUser, setLoggedinUser] = useState({});
 
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      console.log(user);
-      console.log('Auth state changed -> Logged in!');
-      //if (!loggedinUser) setLoggedinUser(user);
-    } else {
-      console.log('Auth state changed -> Logged out!');
-      //if (loggedinUser) setLoggedinUser({});
-    }
-  });
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        console.log('Auth state changed -> Logged in!');
+        setLoggedinUser(user);
+      } else {
+        console.log('Auth state changed -> Logged out!');
+        setLoggedinUser({});
+      }
+    });
+  }, []);
 
-  const getCurrentUser = () => {
+  /*   const getCurrentUser = () => {
     const user = firebase.auth().currentUser;
 
     if (user) {
@@ -27,14 +28,11 @@ const LoginContextProvider = (props) => {
     }
   };
 
-  getCurrentUser();
+  getCurrentUser(); */
 
   const logIn = async (username, password) => {
     try {
-      const user = await firebase
-        .auth()
-        .signInWithEmailAndPassword(username, password);
-      setLoggedinUser(user);
+      await firebase.auth().signInWithEmailAndPassword(username, password);
     } catch (error) {
       console.error(error.code);
       console.error(error.message);
