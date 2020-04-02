@@ -87,6 +87,7 @@ const CheckoutContextProvider = (props) => {
       database
         .orderByChild('merchant')
         .equalTo('IfO0fugaM9XRaaICJ7LQ')
+        .limitToLast(20)
         .on('value', (snapshot) => {
           const firebaseData = snapshot.val();
           addCheckoutId(Object.values(firebaseData));
