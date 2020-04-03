@@ -1,15 +1,24 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { createContext, useState, useEffect, useReducer } from 'react';
+import React, {
+  createContext,
+  useState,
+  useEffect,
+  useReducer,
+  useContext,
+} from 'react';
 import apiEndpoint from '../config';
 import newMockData from '../assets/new-checkouts-mock-data.json';
 import moment from 'moment';
 import firebase from '../firebase';
 import axios from 'axios';
 import reducer from '../reducer';
+import { LoginContext } from './LoginContext';
 
 export const CheckoutContext = createContext();
 
 const CheckoutContextProvider = ({ children }) => {
+  const { loggedinUser } = useContext(LoginContext);
+
   const initialState = {
     checkouts: [],
     customers: [],
@@ -87,13 +96,15 @@ const CheckoutContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    if (state.customerSyncComplete) {
+    if (state.customerSyncComplete && loggedinUser) {
       let database = firebase.database().ref('/');
       database
         .orderByChild('merchant')
-        .equalTo('IfO0fugaM9XRaaICJ7LQ')
+        .equalTo(loggedinUser.displayName)
         .limitToLast(20)
         .on('value', (snapshot) => {
+          console.log('getting firebase data');
+
           const firebaseData = snapshot.val();
           addCheckoutId(Object.values(firebaseData));
         });
