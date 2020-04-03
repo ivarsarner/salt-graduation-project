@@ -11,7 +11,8 @@ const LoginContextProvider = (props) => {
       if (user) {
         console.log('Auth state changed -> Logged in!');
         setLoggedinUser(user);
-        localStorage.user = JSON.stringify(user);
+        const { uid, displayName } = user;
+        localStorage.user = JSON.stringify({ uid, displayName });
       } else {
         console.log('Auth state changed -> Logged out!');
         setLoggedinUser('');
