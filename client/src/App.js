@@ -9,7 +9,6 @@ import { LoginContext } from './context/LoginContext';
 
 export default function App() {
   const { loggedinUser } = useContext(LoginContext);
-  console.log(loggedinUser);
   return (
     <BrowserRouter>
       <CheckoutContextProvider>
