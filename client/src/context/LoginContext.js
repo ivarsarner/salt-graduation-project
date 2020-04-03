@@ -21,7 +21,8 @@ const LoginContextProvider = (props) => {
   };
 
   useEffect(() => {
-    if (JSON.parse(localStorage.user)) {
+    const data = localStorage.user;
+    if (data) {
       console.log('im logged in');
       setLoggedinUser(JSON.parse(localStorage.user));
       checkAuthState();

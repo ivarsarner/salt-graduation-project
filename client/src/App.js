@@ -5,7 +5,7 @@ import Navigation from './components/Navigation';
 import CheckoutContainer from './components/CheckoutContainer';
 import Login from './components/Login';
 import './App.scss';
-import LoginContext from './context/LoginContext';
+import { LoginContext } from './context/LoginContext';
 
 export default function App() {
   const { loggedinUser } = useContext(LoginContext);
