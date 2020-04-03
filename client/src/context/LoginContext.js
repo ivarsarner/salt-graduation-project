@@ -10,8 +10,8 @@ const LoginContextProvider = (props) => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         console.log('Auth state changed -> Logged in!');
-        setLoggedinUser(user);
         const { uid, displayName } = user;
+        setLoggedinUser({ uid, displayName });
         localStorage.user = JSON.stringify({ uid, displayName });
       } else {
         console.log('Auth state changed -> Logged out!');

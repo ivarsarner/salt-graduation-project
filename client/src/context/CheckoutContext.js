@@ -32,6 +32,8 @@ const CheckoutContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [newCheckoutData, setNewCheckoutData] = useState([]); // move to reducer
 
+  const { loggedinUser } = useContext(LoginContext);
+
   const addCheckoutId = async (firebaseData) => {
     const dataWithCheckoutId = firebaseData.map((checkout) => {
       if (!checkout.customer) {
@@ -57,7 +59,7 @@ const CheckoutContextProvider = ({ children }) => {
     if (state.checkouts[0]) {
       dispatch({
         type: 'SET_STORE_NAME',
-        data: state.checkouts[0].merchantName,
+        data: loggedinUser.displayName,
       });
     }
   };

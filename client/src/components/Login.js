@@ -1,11 +1,14 @@
 import React, { useState, useContext } from 'react';
 import { LoginContext } from '../context/LoginContext';
 import styled from 'styled-components';
+import logo from '../assets/logo-black.svg';
 
 const LoginContainer = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin: 5%;
+  text-align: center;
 `;
 
 const Form = styled.form`
@@ -17,8 +20,8 @@ const Input = styled.input`
   text-align: center;
   border: grey SOLID 1px;
   border-radius: 5px;
-  padding: 2%;
-  margin: 5%;
+  padding: 0.2rem 1rem;
+  margin: 0.3rem 0rem;
   font-size: 1rem;
 `;
 
@@ -32,8 +35,6 @@ export default function Login() {
     e.preventDefault();
     if (validateUsername()) {
       await loggedinUserActions.logIn(username, password);
-      setUsername('');
-      setPassword('');
     } else {
       console.log('wrong email');
     }
@@ -47,12 +48,13 @@ export default function Login() {
   return (
     <LoginContainer>
       <div>
-        ica.sabbatsberg@ica.se <br></br>saltway
+        <img src={logo} alt="Way" width={100} />
+        <br></br>ica.sabbatsberg@ica.se <br></br>saltway
       </div>
       <Form onSubmit={handleSubmit}>
         <Input
           type="text"
-          placeholder="user name"
+          placeholder="email"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />

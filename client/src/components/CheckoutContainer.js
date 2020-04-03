@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
+import Navigation from './Navigation';
 import { CheckoutContext } from '../context/CheckoutContext';
 import CheckoutCard from './checkout/CheckoutCard';
 import CheckoutHistoryCard from './checkout/CheckoutHistoryCard';
@@ -93,50 +94,53 @@ export default function CheckoutContainer() {
   }
 
   return (
-    <Container>
-      {state.showOrderDetails && (
-        <OrderDetailsCard
-          close={() => dispatch({ type: 'TOGGLE_ORDER_DETAILS' })}
-          data={state.currentOrderDetails}
-          show={state.showOrderDetails}
-        />
-      )}
+    <>
+      <Navigation />
+      <Container>
+        {state.showOrderDetails && (
+          <OrderDetailsCard
+            close={() => dispatch({ type: 'TOGGLE_ORDER_DETAILS' })}
+            data={state.currentOrderDetails}
+            show={state.showOrderDetails}
+          />
+        )}
 
-      <Contols setMobileView={setMobileView} />
+        <Contols setMobileView={setMobileView} />
 
-      <Recent hide={showHistory}>
-        <Headline>Checkout feed</Headline>
-        <FlipMove
-          leaveAnimation="fade"
-          enterAnimation={{
-            from: {
-              opacity: 0.1,
-              transform: 'scale(0.5)',
-            },
-            to: {
-              opacity: 1,
-              transform: 'scale(1)',
-            },
-          }}
-        >
-          {recentCheckouts.map((checkout) => (
-            <CheckoutCard key={checkout.id.toString()} checkout={checkout} />
-          ))}
-        </FlipMove>
-      </Recent>
-      <HistoryContainer>
-        <Headline>Log</Headline>
-        <History hide={!showHistory}>
-          <FlipMove enterAnimation="accordionVertical">
-            {historyCheckouts.map((checkout) => (
-              <CheckoutHistoryCard
-                key={checkout.id.toString()}
-                checkout={checkout}
-              />
+        <Recent hide={showHistory}>
+          <Headline>Checkout feed</Headline>
+          <FlipMove
+            leaveAnimation="fade"
+            enterAnimation={{
+              from: {
+                opacity: 0.1,
+                transform: 'scale(0.5)',
+              },
+              to: {
+                opacity: 1,
+                transform: 'scale(1)',
+              },
+            }}
+          >
+            {recentCheckouts.map((checkout) => (
+              <CheckoutCard key={checkout.id.toString()} checkout={checkout} />
             ))}
           </FlipMove>
-        </History>
-      </HistoryContainer>
-    </Container>
+        </Recent>
+        <HistoryContainer>
+          <Headline>Log</Headline>
+          <History hide={!showHistory}>
+            <FlipMove enterAnimation="accordionVertical">
+              {historyCheckouts.map((checkout) => (
+                <CheckoutHistoryCard
+                  key={checkout.id.toString()}
+                  checkout={checkout}
+                />
+              ))}
+            </FlipMove>
+          </History>
+        </HistoryContainer>
+      </Container>
+    </>
   );
 }
