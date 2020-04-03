@@ -9,4 +9,8 @@ const CheckoutHistoryCard = forwardRef(({ checkout }, ref) => (
   </div>
 ));
 
-export default React.memo(CheckoutHistoryCard);
+function areEqual(prevProps, nextProps) {
+  return JSON.stringify(prevProps) === JSON.stringify(nextProps);
+}
+
+export default React.memo(CheckoutHistoryCard, areEqual);

@@ -79,7 +79,7 @@ const CheckoutCard = forwardRef(
 );
 
 function shouldRender(prevProps, nextProps) {
-  if (prevProps !== nextProps) return true;
+  return JSON.stringify(prevProps) === JSON.stringify(nextProps);
 }
 
 export default React.memo(CheckoutCard, shouldRender);
