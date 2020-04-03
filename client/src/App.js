@@ -9,7 +9,7 @@ import LoginContextProvider from './context/LoginContext';
 import firebase from './firebase';
 
 export default function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  /*   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
@@ -21,7 +21,7 @@ export default function App() {
         setLoggedIn(false);
       }
     });
-  }, []);
+  }, []); */
 
   return (
     <BrowserRouter>
@@ -30,7 +30,7 @@ export default function App() {
           <Navigation />
           <Switch>
             <Route exact path="/">
-              {loggedIn ? <CheckoutContainer /> : <Login />}
+              <CheckoutContainer />
             </Route>
             <Route path="/login" component={Login} />
           </Switch>

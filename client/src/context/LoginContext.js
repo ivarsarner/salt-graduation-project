@@ -1,10 +1,12 @@
 import React, { createContext, useState, useEffect } from 'react';
 import firebase from '../firebase';
+import Login from '../components/Login';
 
 export const LoginContext = createContext();
 
 const LoginContextProvider = (props) => {
-  const [loggedinUser, setLoggedinUser] = useState({});
+  const [loggedinUser, setLoggedinUser] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
@@ -13,22 +15,10 @@ const LoginContextProvider = (props) => {
         setLoggedinUser(user);
       } else {
         console.log('Auth state changed -> Logged out!');
-        setLoggedinUser({});
+        setLoggedinUser('');
       }
     });
   }, []);
-
-  /*   const getCurrentUser = () => {
-    const user = firebase.auth().currentUser;
-
-    if (user) {
-      console.log(user);
-    } else {
-      console.log('not signed in');
-    }
-  };
-
-  getCurrentUser(); */
 
   const logIn = async (username, password) => {
     try {
@@ -52,7 +42,7 @@ const LoginContextProvider = (props) => {
     <LoginContext.Provider
       value={{ loggedinUser, loggedinUserActions: { logIn, logOut } }}
     >
-      {props.children}
+      {loggedinUser ? props.children : <Login />}
     </LoginContext.Provider>
   );
 };
