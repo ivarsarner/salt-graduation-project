@@ -3,8 +3,7 @@ const axios = require('axios');
 
 const router = express.Router();
 const imageEndpoint = 'https://assets.icanet.se/t_product_small_v1,f_auto';
-const firbaseStorageEndpoint =
-  'https://firebasestorage.googleapis.com/v0/b/way-merchant-dashboard.appspot.com/o';
+const firbaseStorageEndpoint = 'https://firebasestorage.googleapis.com/v0/b/way-merchant-dashboard.appspot.com/o';
 const fireBaseSuffix = '?alt=media';
 
 const rareImages = [
@@ -31,7 +30,7 @@ const getApiImage = async (res, gtin) => {
 const getStoredImage = async (res, gtin) => {
   try {
     const response = await axios.get(
-      `${firbaseStorageEndpoint}/${gtin}.jpg${fireBaseSuffix}`
+      `${firbaseStorageEndpoint}/${gtin}.jpg${fireBaseSuffix}`,
     );
     if (response.status === 200) {
       res.json({

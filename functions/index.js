@@ -10,7 +10,7 @@ app.use(cors());
 app.use(
   compression({
     level: 7,
-  })
+  }),
 );
 
 app.post('*', (_, res) => res.sendStatus(400));
