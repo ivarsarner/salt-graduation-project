@@ -26,7 +26,7 @@ export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const { loggedinUser, loggedinUserActions } = useContext(LoginContext);
+  const { loggedinUserActions } = useContext(LoginContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,6 +46,9 @@ export default function Login() {
 
   return (
     <LoginContainer>
+      <div>
+        ica.sabbatsberg@ica.se <br></br>saltway
+      </div>
       <Form onSubmit={handleSubmit}>
         <Input
           type="text"
@@ -59,13 +62,6 @@ export default function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button
-          onClick={async () => {
-            await loggedinUserActions.logOut();
-          }}
-        >
-          Log out
-        </button>
         <Input type="submit" value="Login" />
       </Form>
     </LoginContainer>
