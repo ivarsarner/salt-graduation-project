@@ -1,23 +1,34 @@
 import React, { createContext, useState, useEffect } from 'react';
 import firebase from '../firebase';
-import Login from '../components/Login';
 
 export const LoginContext = createContext();
 
 const LoginContextProvider = (props) => {
   const [loggedinUser, setLoggedinUser] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  useEffect(() => {
+  const checkAuthState = () => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         console.log('Auth state changed -> Logged in!');
         setLoggedinUser(user);
+        localStorage.user = JSON.stringify(user);
       } else {
         console.log('Auth state changed -> Logged out!');
         setLoggedinUser('');
+        localStorage.user = false;
       }
     });
+  };
+
+  useEffect(() => {
+    if (JSON.parse(localStorage.user)) {
+      console.log('im logged in');
+      setLoggedinUser(JSON.parse(localStorage.user));
+      checkAuthState();
+    } else {
+      console.log(localStorage.user, 'FALSE I not logged in');
+      checkAuthState();
+    }
   }, []);
 
   const logIn = async (username, password) => {
@@ -32,6 +43,7 @@ const LoginContextProvider = (props) => {
   const logOut = async () => {
     try {
       await firebase.auth().signOut();
+      checkAuthState();
     } catch (error) {
       console.error(error.code);
       console.error(error.message);
@@ -42,7 +54,7 @@ const LoginContextProvider = (props) => {
     <LoginContext.Provider
       value={{ loggedinUser, loggedinUserActions: { logIn, logOut } }}
     >
-      {loggedinUser ? props.children : <Login />}
+      {props.children}
     </LoginContext.Provider>
   );
 };

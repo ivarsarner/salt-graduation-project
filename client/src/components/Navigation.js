@@ -33,7 +33,7 @@ const NavLinks = styled.div`
 
 function Navigation() {
   const { checkoutsActions, state } = useContext(CheckoutContext);
-  const { loggedinUser, loggedinUserActions } = useContext(LoginContext);
+  const { loggedinUserActions } = useContext(LoginContext);
 
   return (
     <MainNav>

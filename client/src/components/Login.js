@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { LoginContext } from '../context/LoginContext';
 import styled from 'styled-components';
-import { Redirect } from 'react-router-dom';
 
 const LoginContainer = styled.div`
   display: flex;
@@ -27,7 +26,7 @@ export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const { loggedinUser, loggedinUserActions } = useContext(LoginContext);
+  const { loggedinUserActions } = useContext(LoginContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
