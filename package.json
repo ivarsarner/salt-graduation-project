@@ -12,7 +12,7 @@
     "test": "jest __tests__/ --maxWorkers=1",
     "watch": "jest __tests__/ --maxWorkers=1 --watch",
     "lint": "npm-run-all server:lint client:lint",
-    "new-install": "npm i && cd client && npm i",
+    "new-install": "npm i && cd client && npm i && cd .. && cd functions && npm i",
     "deploy": "cd client && npm run build && cd .. && firebase deploy"
   },
   "jest": {
