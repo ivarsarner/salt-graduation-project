@@ -1,11 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { createContext, useState, useEffect, useReducer } from 'react';
+import React, {
+  createContext,
+  useState,
+  useEffect,
+  useReducer,
+  useContext,
+} from 'react';
 import apiEndpoint from '../config';
 import newMockData from '../assets/new-checkouts-mock-data.json';
 import moment from 'moment';
 import firebase from '../firebase';
 import axios from 'axios';
 import reducer from '../reducer';
+import { LoginContext } from './LoginContext';
 
 export const CheckoutContext = createContext();
 
@@ -22,6 +29,8 @@ const CheckoutContextProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
   const [newCheckoutData, setNewCheckoutData] = useState([]); // move to reducer
+
+  const { loggedinUser } = useContext(LoginContext);
 
   const addCheckoutId = async (firebaseData) => {
     const dataWithCheckoutId = firebaseData.map((checkout) => {
@@ -48,7 +57,7 @@ const CheckoutContextProvider = ({ children }) => {
     if (state.checkouts[0]) {
       dispatch({
         type: 'SET_STORE_NAME',
-        data: state.checkouts[0].merchantName,
+        data: loggedinUser.displayName,
       });
     }
   };
@@ -91,7 +100,7 @@ const CheckoutContextProvider = ({ children }) => {
       let database = firebase.database().ref('/');
       database
         .orderByChild('merchant')
-        .equalTo('IfO0fugaM9XRaaICJ7LQ')
+        .equalTo(loggedinUser.displayName)
         .limitToLast(20)
         .on('value', (snapshot) => {
           const firebaseData = snapshot.val();

@@ -43,7 +43,6 @@ function Navigation() {
       <p className="store-name">{state.currentStore}</p>
       <NavLinks>
         <Button text="Log out" clickAction={loggedinUserActions.logOut} />
-        {/* <NavLink to="/other">Other</NavLink> */}
         <Button text="Add New" clickAction={checkoutsActions.addNewCheckout} />
       </NavLinks>
     </MainNav>
