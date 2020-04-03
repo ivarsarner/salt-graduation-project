@@ -45,10 +45,11 @@ export default function Login() {
     return emailRegex.test(username);
   };
 
-  return Object.keys(loggedinUser).length > 0 ? (
-    <Redirect to="/" />
-  ) : (
+  return (
     <LoginContainer>
+      <div>
+        ica.sabbatsberg@ica.se <br></br>saltway
+      </div>
       <Form onSubmit={handleSubmit}>
         <Input
           type="text"
