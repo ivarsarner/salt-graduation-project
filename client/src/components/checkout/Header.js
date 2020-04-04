@@ -74,7 +74,7 @@ function Header({ checkout, hideHr, fullScreen }) {
   return (
     <>
       <HeaderDiv fullScreen={fullScreen}>
-        <Image imageData={checkout} fullScreen={fullScreen} />
+        <Image imageData={checkout.customer} fullScreen={fullScreen} />
         <div className="details">
           <CustomerName customerData={checkout} />
           <div className="data">
@@ -97,13 +97,15 @@ export function Image({ imageData, fullScreen }) {
   if (imageData !== undefined) {
     return (
       <Img
-        src={imageData.customer.imageUrl}
-        alt={imageData.customer.name}
+        src={imageData.imageUrl}
+        alt={imageData.name}
         fullScreen={fullScreen}
       />
     );
   } else {
-    return <CheckoutNumber>{randomId}</CheckoutNumber>;
+    return (
+      <CheckoutNumber className="checkout-number">{randomId}</CheckoutNumber>
+    );
   }
 }
 
