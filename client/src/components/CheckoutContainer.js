@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
-import Navigation from './Navigation';
 import { CheckoutContext } from '../context/CheckoutContext';
 import CheckoutCard from './checkout/CheckoutCard';
 import CheckoutHistoryCard from './checkout/CheckoutHistoryCard';
@@ -95,7 +94,6 @@ export default function CheckoutContainer() {
 
   return (
     <>
-      <Navigation />
       <Container>
         {state.showOrderDetails && (
           <OrderDetailsCard

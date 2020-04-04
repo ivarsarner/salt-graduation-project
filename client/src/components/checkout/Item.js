@@ -37,7 +37,7 @@ const Image = styled.img`
     `};
 `;
 
-export default function Item({ itemData, fullScreen }) {
+function Item({ itemData, fullScreen }) {
   const { price: total, quantity, gtin } = itemData;
   const { name, brand } = itemData.product;
   const [imagePath, setImagePath] = useState('');
@@ -68,3 +68,5 @@ export default function Item({ itemData, fullScreen }) {
     </>
   );
 }
+
+export default React.memo(Item);

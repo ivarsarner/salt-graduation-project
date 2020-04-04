@@ -50,7 +50,7 @@ function Navigation() {
 }
 
 function shouldRender(prevProps, nextProps) {
-  if (prevProps !== nextProps) return true;
+  return prevProps === nextProps;
 }
 
 export default React.memo(Navigation, shouldRender);

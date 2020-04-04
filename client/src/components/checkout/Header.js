@@ -58,7 +58,7 @@ const Text = styled.p`
   padding: 0;
 `;
 
-export default function Header({ checkout, hideHr, fullScreen }) {
+function Header({ checkout, hideHr, fullScreen }) {
   const [checkoutTotal, setCheckoutTotal] = useState(0);
   const [itemPrice, setItemprice] = useState(0);
 
@@ -116,3 +116,5 @@ export function CustomerName({ customerData }) {
     return null;
   }
 }
+
+export default React.memo(Header);
