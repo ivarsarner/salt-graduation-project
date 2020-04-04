@@ -32,8 +32,6 @@ const CheckoutContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [newCheckoutData, setNewCheckoutData] = useState([]); // move to reducer
 
-  const { loggedinUser } = useContext(LoginContext);
-
   const addCheckoutId = async (firebaseData) => {
     const dataWithCheckoutId = firebaseData.map((checkout) => {
       if (!checkout.customer) {
@@ -56,10 +54,13 @@ const CheckoutContextProvider = ({ children }) => {
     state.customers[Math.floor(Math.random() * 99)];
 
   const filterCurrentStore = () => {
-    if (state.checkouts[0]) {
+    const data = state.checkouts.find(
+      (item) => item.merchant === loggedinUser.displayName
+    );
+    if (data) {
       dispatch({
         type: 'SET_STORE_NAME',
-        data: loggedinUser.displayName,
+        data: data.merchantName,
       });
     }
   };
@@ -67,7 +68,6 @@ const CheckoutContextProvider = ({ children }) => {
   const addNewCheckout = () => {
     let newCheckout = newCheckoutData.splice(-1, 1);
     const customer = getRandomCustomer();
-
     newCheckout = {
       ...newCheckout[0],
       timeCreated: moment().format('YYYY-MM-DDTHH:mm:ss'),
@@ -78,10 +78,7 @@ const CheckoutContextProvider = ({ children }) => {
         name: customer.name,
       },
     };
-    firebase
-      .database()
-      .ref('/')
-      .push(newCheckout);
+    firebase.database().ref('/').push(newCheckout);
   };
 
   useEffect(() => {
@@ -105,16 +102,14 @@ const CheckoutContextProvider = ({ children }) => {
         .equalTo(loggedinUser.displayName)
         .limitToLast(20)
         .on('value', (snapshot) => {
-          console.log('getting firebase data');
-
           const firebaseData = snapshot.val();
           addCheckoutId(Object.values(firebaseData));
         });
       setNewCheckoutData(newMockData);
     }
-  }, [state.customerSyncComplete]);
+  }, [state.customerSyncComplete, loggedinUser]);
 
-  useEffect(() => filterCurrentStore(), [state.checkoutSyncComplete]);
+  useEffect(() => filterCurrentStore(), [state.checkouts, loggedinUser]);
 
   return (
     <CheckoutContext.Provider
