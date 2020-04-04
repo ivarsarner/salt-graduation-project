@@ -13,6 +13,20 @@ A dashboard for connected merchants to get an overview of their Way checkout flo
 - Jest
 - Enzyme
 
+## 🧪 Testing
+
+You can test to see how different users can switch accounts by logging in with the following test accounts
+
+_ICA_
+
+- ica.sabbatsberg@ica.se
+- saltway
+
+_Way Popup Store_
+
+- test@way.com
+- password
+
 ## 🔥 Firebase
 
 You will need to create a `.env` file to connect to the database. This needs to be saved at `client/.env`:
