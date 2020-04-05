@@ -51,8 +51,7 @@ export default function Login() {
         <img src={logo} alt="Way" width={200} />
         <br></br>ica.sabbatsberg@ica.se <br></br>saltway
       </div>
-      {/* <Form onSubmit={handleSubmit}> */}
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Input
           type="text"
           placeholder="email"
@@ -65,8 +64,8 @@ export default function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button onClick={handleSubmit}>Login</Button>
-        {/* <Input type="submit" value="Login" /> */}
+        {/* <Button onClick={handleSubmit}>Login</Button> */}
+        <Input type="submit" value="Login" />
       </Form>
     </LoginContainer>
   );

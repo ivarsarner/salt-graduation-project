@@ -13,10 +13,16 @@ export default function App() {
   return (
     <BrowserRouter>
       <CheckoutContextProvider>
-        <Navigation />
         <Switch>
           <Route exact path="/">
-            {loggedinUser ? <CheckoutContainer /> : <Login />}
+            {loggedinUser ? (
+              <>
+                <Navigation />
+                <CheckoutContainer />
+              </>
+            ) : (
+              <Login />
+            )}
           </Route>
           <Route path="/login" component={Login} />
         </Switch>
