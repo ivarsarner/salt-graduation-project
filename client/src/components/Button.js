@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Btn = styled.button`
   /* display: flex; */
   overflow: hidden;
-  margin: 10px;
+  margin: ${(props) => (props.alignCenter ? '0 auto' : '10px')};
   padding: 12px 12px;
   cursor: pointer;
   user-select: none;
@@ -39,9 +39,17 @@ const Btn = styled.button`
   }
 `;
 
-function Button({ children, onClick }) {
+function Button({ children, onClick, alignCenter }) {
   return (
-    <Btn isDark onClick={() => onClick()}>
+    <Btn
+      alignCenter={alignCenter}
+      isDark
+      onClick={() => {
+        if (onClick) {
+          onClick();
+        }
+      }}
+    >
       {children}
     </Btn>
   );

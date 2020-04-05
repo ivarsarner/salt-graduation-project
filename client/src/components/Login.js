@@ -1,6 +1,8 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { LoginContext } from '../context/LoginContext';
 import styled from 'styled-components';
+import Button from './Button';
+
 import logo from '../assets/logo-black.svg';
 
 const LoginContainer = styled.div`
@@ -93,7 +95,9 @@ export default function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Input type="submit" value="Login" />
+        <Button type="submit" alignCenter>
+          Login
+        </Button>
       </Form>
       {firebaseError ? (
         <div>{firebaseError.errorMessage}</div>
