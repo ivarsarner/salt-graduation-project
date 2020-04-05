@@ -106,7 +106,7 @@ export default function CheckoutContainer() {
         <Contols setMobileView={setMobileView} />
 
         <Recent hide={showHistory}>
-          <Headline>Checkout feed</Headline>
+          <Headline>Checkouts</Headline>
           <FlipMove
             leaveAnimation="fade"
             enterAnimation={{

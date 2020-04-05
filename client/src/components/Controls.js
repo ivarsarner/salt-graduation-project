@@ -17,7 +17,7 @@ function Controls({ setMobileView }) {
   return (
     <ControlsDiv>
       <Button onClick={() => setMobileView(false)}>Checkouts</Button>
-      <Button onClick={() => setMobileView(true)}>History</Button>
+      <Button onClick={() => setMobileView(true)}>Log</Button>
     </ControlsDiv>
   );
 }
