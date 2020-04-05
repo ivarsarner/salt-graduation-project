@@ -14,7 +14,7 @@ const LoginContainer = styled.div`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 200px;
   text-align: center;
 `;
 
