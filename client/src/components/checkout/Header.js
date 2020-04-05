@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Moment from 'react-moment';
 import styled, { css } from 'styled-components';
+import CustomerName from './CustomerName';
+import Image from './Image';
 
 const HeaderDiv = styled.header`
   display: flex;
@@ -9,9 +11,6 @@ const HeaderDiv = styled.header`
   margin-bottom: 5px;
   flex: 0 0 49%;
   font-size: 0.7rem;
-  * {
-    margin: 0;
-  }
   ${(props) =>
     props.fullScreen &&
     css`
@@ -20,31 +19,6 @@ const HeaderDiv = styled.header`
       text-align: center;
       font-size: 1rem;
     `};
-`;
-
-const Img = styled.img`
-  height: 40px;
-  border-radius: 10px;
-  margin-right: 10px;
-  ${(props) =>
-    props.fullScreen &&
-    css`
-      margin-right: 0;
-      height: 120px;
-      margin-bottom: 1rem;
-    `};
-`;
-
-const Headline = styled.h4`
-  margin: 0;
-`;
-
-const CheckoutNumber = styled.p`
-  height: 40px;
-  width: 40px;
-  text-align: center;
-  font-size: 2rem;
-  margin: 0;
 `;
 
 const Line = styled.hr`
@@ -88,35 +62,6 @@ function Header({ checkout, hideHr, fullScreen }) {
       {hideHr ? '' : <Line />}
     </>
   );
-}
-
-export function Image({ imageData, fullScreen }) {
-  // this should be replaced by a real checkout id from Firebase
-  const randomId = Math.floor(Math.random() * 4 + 1);
-
-  if (imageData !== undefined) {
-    return (
-      <Img
-        src={imageData.imageUrl}
-        alt={imageData.name}
-        fullScreen={fullScreen}
-      />
-    );
-  } else {
-    return (
-      <CheckoutNumber className="checkout-number">{randomId}</CheckoutNumber>
-    );
-  }
-}
-
-export function CustomerName({ customerData }) {
-  if (customerData !== undefined) {
-    return (
-      <Headline>{customerData.customer && customerData.customer.name}</Headline>
-    );
-  } else {
-    return null;
-  }
 }
 
 export default React.memo(Header);

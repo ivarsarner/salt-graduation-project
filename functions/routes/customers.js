@@ -3,9 +3,11 @@ const axios = require('axios');
 
 const router = express.Router();
 
-// eslint-disable-next-line operator-linebreak
 const endpoint =
   'https://randomuser.me/api/?nat=gb&noinfo&exc=location,id,email,dob,phone,cell,registered';
+
+const firebaseCache = (res) =>
+  res.set('Cache-Control', 'public, max-age=300, s-maxage=600');
 
 const getData = async (limit) => {
   try {

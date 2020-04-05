@@ -42,6 +42,9 @@ const Recent = styled(Section)`
   flex: 0 0 55%;
   max-width: 550px;
   min-width: 300px;
+  > h4 {
+    margin-bottom: 15px;
+  }
 `;
 
 const HistoryContainer = styled(Section)`
