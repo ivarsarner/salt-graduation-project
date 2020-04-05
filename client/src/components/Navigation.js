@@ -49,8 +49,8 @@ function Navigation() {
   );
 }
 
-function shouldRender(prevProps, nextProps) {
+function propsAreEqual(prevProps, nextProps) {
   return prevProps === nextProps;
 }
 
-export default React.memo(Navigation, shouldRender);
+export default React.memo(Navigation, propsAreEqual);

@@ -15,12 +15,10 @@ const ControlsDiv = styled.div`
 
 function Controls({ setMobileView }) {
   return (
-    <>
-      <ControlsDiv>
-        <Button clickAction={() => setMobileView(false)} text="Checkouts" />
-        <Button clickAction={() => setMobileView(true)} text="History" />
-      </ControlsDiv>
-    </>
+    <ControlsDiv>
+      <Button clickAction={() => setMobileView(false)} text="Checkouts" />
+      <Button clickAction={() => setMobileView(true)} text="History" />
+    </ControlsDiv>
   );
 }
 

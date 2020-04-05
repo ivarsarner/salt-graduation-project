@@ -1,14 +1,12 @@
-import React, { useContext, Suspense, lazy } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React, { useContext } from 'react';
 import CheckoutContextProvider from './context/CheckoutContext';
-// import CheckoutContainer from './components/CheckoutContainer';
+import CheckoutContainer from './components/CheckoutContainer';
 import Login from './components/Login';
-import Loading from './components/Loading';
-import './App.scss';
-import { LoginContext } from './context/LoginContext';
 import Navigation from './components/Navigation';
+import { LoginContext } from './context/LoginContext';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-const CheckoutContainer = lazy(() => import('./components/CheckoutContainer'));
+import './App.scss';
 
 export default function App() {
   const { loggedinUser } = useContext(LoginContext);
@@ -18,13 +16,7 @@ export default function App() {
         <Navigation />
         <Switch>
           <Route exact path="/">
-            {loggedinUser ? (
-              <Suspense fallback={<Loading />}>
-                <CheckoutContainer />
-              </Suspense>
-            ) : (
-              <Login />
-            )}
+            {loggedinUser ? <CheckoutContainer /> : <Login />}
           </Route>
           <Route path="/login" component={Login} />
         </Switch>
