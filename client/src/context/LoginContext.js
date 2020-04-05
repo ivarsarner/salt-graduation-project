@@ -5,6 +5,7 @@ export const LoginContext = createContext();
 
 const LoginContextProvider = (props) => {
   const [loggedinUser, setLoggedinUser] = useState('');
+  const [firebaseError, setFirebaseError] = useState('');
 
   const checkAuthState = () => {
     firebase.auth().onAuthStateChanged((user) => {
@@ -37,8 +38,10 @@ const LoginContextProvider = (props) => {
     try {
       await firebase.auth().signInWithEmailAndPassword(username, password);
     } catch (error) {
-      console.error(error.code);
-      console.error(error.message);
+      setFirebaseError({
+        errorCode: error.code,
+        errorMessage: error.message,
+      });
     }
   };
 
@@ -54,7 +57,11 @@ const LoginContextProvider = (props) => {
 
   return (
     <LoginContext.Provider
-      value={{ loggedinUser, loggedinUserActions: { logIn, logOut } }}
+      value={{
+        loggedinUser,
+        loggedinUserActions: { logIn, logOut },
+        firebaseError,
+      }}
     >
       {props.children}
     </LoginContext.Provider>

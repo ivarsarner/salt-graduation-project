@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { LoginContext } from '../context/LoginContext';
 import styled from 'styled-components';
 import logo from '../assets/logo-black.svg';
@@ -12,7 +12,7 @@ const LoginContainer = styled.div`
 `;
 
 const Form = styled.form`
-  width: 200px;
+  width: 300px;
   text-align: center;
 `;
 
@@ -27,8 +27,10 @@ const Input = styled.input`
 export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [errorStyle, setErrorStyle] = useState('');
 
   const { loggedinUserActions } = useContext(LoginContext);
+  const { firebaseError } = useContext(LoginContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,6 +46,32 @@ export default function Login() {
     return emailRegex.test(username);
   };
 
+  useEffect(() => {
+    console.log(Form);
+    if (firebaseError) {
+      console.log(firebaseError);
+      switch (firebaseError.errorCode) {
+        case 'auth/invalid-email':
+          console.log(firebaseError.errorMessage);
+          break;
+        case 'auth/user-disabled':
+          console.log(firebaseError.errorMessage);
+          break;
+        case 'auth/user-not-found':
+          console.log(firebaseError.errorMessage);
+          break;
+        case 'auth/wrong-password':
+          console.log(firebaseError.errorMessage);
+          break;
+
+        default:
+          console.error(firebaseError);
+          console.error(firebaseError);
+          break;
+      }
+    }
+  }, [firebaseError]);
+
   return (
     <LoginContainer>
       <div>
@@ -52,7 +80,7 @@ export default function Login() {
       </div>
       <Form onSubmit={handleSubmit}>
         <Input
-          type="text"
+          type="email"
           placeholder="email"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
@@ -65,6 +93,11 @@ export default function Login() {
         />
         <Input type="submit" value="Login" />
       </Form>
+      {firebaseError ? (
+        <div>{firebaseError.errorMessage}</div>
+      ) : (
+        <div>no errors</div>
+      )}
     </LoginContainer>
   );
 }
