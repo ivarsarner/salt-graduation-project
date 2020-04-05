@@ -12,12 +12,14 @@ const Card = styled.div`
   bottom: 0;
   padding: 20px;
   border-radius: 10px 10px 0 0;
+
   div {
     div {
       div {
         div {
           /* Productdetails + time */
           width: 245px;
+          margin-top: 2%;
         }
       }
     }
@@ -33,19 +35,17 @@ const Card = styled.div`
           width: 80px;
           height: auto;
         }
-
         div {
           div {
             /* Productimage,  time */
-
             img {
-              width: 40px;
+              width: 30px;
               height: auto;
             }
-
             div {
-              /* product details */
-              width: 250px;
+              /* text product details */
+              width: 145px;
+              font-size: 0.8rem;
             }
           }
         }
