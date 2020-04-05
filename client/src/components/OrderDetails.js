@@ -15,9 +15,8 @@ const Card = styled.div`
   div {
     div {
       div {
-        border: 1px blue solid;
         div {
-          border: 1px purple solid;
+          /* Productdetails + time */
           width: 245px;
         }
       }
@@ -26,17 +25,28 @@ const Card = styled.div`
 
   @media (max-width: 625px) {
     width: 100%;
-    border: 1px red solid;
 
     div {
-      border: 1px green solid;
       div {
-        border: 1px hotpink solid;
+        /* card, username, userimage, container */
+        img {
+          width: 80px;
+          height: auto;
+        }
+
         div {
-          border: 1px blue solid;
           div {
-            border: 1px purple solid;
-            width: 250px;
+            /* Productimage,  time */
+
+            img {
+              width: 40px;
+              height: auto;
+            }
+
+            div {
+              /* product details */
+              width: 250px;
+            }
           }
         }
       }

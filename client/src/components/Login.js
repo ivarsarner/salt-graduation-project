@@ -26,6 +26,10 @@ const Input = styled.input`
   margin: 0.6rem 0rem;
 `;
 
+// const LoginButton = styled.div`
+//   width: 100px;
+// `;
+
 export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -93,7 +97,9 @@ export default function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Input type="submit" value="Login" />
+        <div>
+          <Input type="submit" value="Login" className="button" />
+        </div>
       </Form>
       {firebaseError ? (
         <div>{firebaseError.errorMessage}</div>
