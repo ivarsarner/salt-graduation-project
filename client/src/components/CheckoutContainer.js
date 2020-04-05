@@ -73,18 +73,23 @@ export default function CheckoutContainer() {
   const [historyCheckouts, setHistoryCheckouts] = useState([]);
   const [showHistory, setShowHistory] = useState(false);
 
-  useEffect(() => {
+  const sortRecentCheckouts = () => {
     const recent = state.checkouts
       .sort((a, b) => new Date(b.timeCreated) - new Date(a.timeCreated))
       .slice(0, 3);
     setRecentCheckouts(recent);
-  }, [state.checkouts]);
+  };
 
-  useEffect(() => {
+  const sortHistoryCheckouts = () => {
     const history = state.checkouts
       .sort((a, b) => new Date(b.timeCreated) - new Date(a.timeCreated))
       .slice(3, 14);
     setHistoryCheckouts(history);
+  };
+
+  useEffect(() => {
+    sortRecentCheckouts();
+    sortHistoryCheckouts();
   }, [state.checkouts]);
 
   const setMobileView = (state) => {

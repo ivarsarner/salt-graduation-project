@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, {
   createContext,
   useState,
@@ -107,9 +106,9 @@ const CheckoutContextProvider = ({ children }) => {
         });
       setNewCheckoutData(newMockData);
     }
-  }, [state.customerSyncComplete]);
+  }, [state.customerSyncComplete, loggedinUser]);
 
-  useEffect(() => filterCurrentStore(), [state.checkouts, loggedinUser]);
+  useEffect(() => filterCurrentStore(), [state.checkouts]);
 
   return (
     <CheckoutContext.Provider
