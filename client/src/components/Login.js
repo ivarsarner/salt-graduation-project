@@ -1,7 +1,8 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext /* useEffect */ } from 'react';
 import { LoginContext } from '../context/LoginContext';
 import styled from 'styled-components';
 import logo from '../assets/logo-black.svg';
+import Loading from './Loading';
 
 const LoginContainer = styled.div`
   display: flex;
@@ -14,6 +15,7 @@ const LoginContainer = styled.div`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 200px;
   text-align: center;
 `;
@@ -35,40 +37,49 @@ const InputPassword = styled.input`
 `;
 
 const InputButton = styled.input`
+  width: 50%;
   text-align: center;
   border-radius: 5px;
   padding: 0.2rem 1rem;
   margin: 0.6rem 0rem;
   border: grey SOLID 1px;
+  &:hover {
+    background-color: #ababab;
+  }
+`;
+
+const ErrorMessage = styled.div`
+  color: red;
 `;
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errorType, setErrorType] = useState({
+
+  const [loading, setLoading] = useState('');
+
+  /*   const [errorType, setErrorType] = useState({
     email: false,
     password: false,
-  });
+  }); */
 
   const { loggedinUserActions } = useContext(LoginContext);
   const { firebaseError } = useContext(LoginContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validateEmail()) {
-      await loggedinUserActions.logIn(email, password);
-    } else {
-      console.log('wrong email');
-    }
+    setLoading(true);
+    await loggedinUserActions.logIn(email, password);
   };
 
-  const validateEmail = () => {
+  /*   const validateEmail = () => {
     const emailRegex = /^[\w._-]+@(\w[\w_-]+)+\.[a-z]{2,3}$/i;
     return emailRegex.test(email);
-  };
+  }; */
 
-  useEffect(() => {
+  /*   useEffect(() => {
     if (firebaseError) {
+      console.log(firebaseError.type);
       switch (firebaseError.errorCode) {
         case 'auth/invalid-email':
           setErrorType({ email: true });
@@ -88,13 +99,15 @@ export default function Login() {
           break;
       }
     }
-  }, [firebaseError]);
+  }, [firebaseError]); */
 
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
     <LoginContainer>
       <div>
         <img src={logo} alt="Way" width={200} />
-        <br></br>ica.sabbatsberg@ica.se <br></br>saltway
+        <h4>Login to your store</h4>
       </div>
       <Form onSubmit={handleSubmit}>
         <InputEmail
@@ -102,20 +115,25 @@ export default function Login() {
           placeholder="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          error={errorType.email ? true : false}
+          required
+          error={firebaseError.type === 'email' ? true : false}
         />
         <InputPassword
           type="password"
           placeholder="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          error={errorType.password ? true : false}
+          required
+          error={firebaseError.type === 'password' ? true : false}
         />
+        <InputButton type="submit" value="Login" className="button" />
+        <ErrorMessage>
+          {firebaseError ? firebaseError.errorMessage : ''}
+        </ErrorMessage>
         <div>
-          <InputButton type="submit" value="Login" className="button" />
+          <br></br>ica.sabbatsberg@ica.se <br></br>saltway
         </div>
       </Form>
-      {firebaseError ? <div>{firebaseError.errorMessage}</div> : <div></div>}
     </LoginContainer>
   );
 }

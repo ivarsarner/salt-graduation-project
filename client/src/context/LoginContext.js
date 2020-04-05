@@ -34,13 +34,26 @@ const LoginContextProvider = (props) => {
     }
   }, []);
 
-  const logIn = async (username, password) => {
-    try {
-      await firebase.auth().signInWithEmailAndPassword(username, password);
-    } catch (error) {
+  const validateEmail = (email) => {
+    const emailRegex = /^[\w._-]+@(\w[\w_-]+)+\.[a-z]{2,3}$/i;
+    return emailRegex.test(email);
+  };
+
+  const logIn = async (email, password) => {
+    if (validateEmail(email)) {
+      try {
+        await firebase.auth().signInWithEmailAndPassword(email, password);
+      } catch (error) {
+        setFirebaseError({
+          errorCode: error.code,
+          errorMessage: error.message,
+          type: error.code === 'auth/wrong-password' ? 'password' : 'email',
+        });
+      }
+    } else {
       setFirebaseError({
-        errorCode: error.code,
-        errorMessage: error.message,
+        errorMessage: 'Please enter a valid email',
+        type: 'email',
       });
     }
   };
