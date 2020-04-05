@@ -18,57 +18,73 @@ const Form = styled.form`
   text-align: center;
 `;
 
-const Input = styled.input`
+const InputEmail = styled.input`
   text-align: center;
-  border: grey SOLID 1px;
   border-radius: 5px;
   padding: 0.2rem 1rem;
   margin: 0.6rem 0rem;
+  border: ${(props) => (props.error ? 'red' : 'grey')} SOLID 1px;
+`;
+
+const InputPassword = styled.input`
+  text-align: center;
+  border-radius: 5px;
+  padding: 0.2rem 1rem;
+  margin: 0.6rem 0rem;
+  border: ${(props) => (props.error ? 'red' : 'grey')} SOLID 1px;
+`;
+
+const InputButton = styled.input`
+  text-align: center;
+  border-radius: 5px;
+  padding: 0.2rem 1rem;
+  margin: 0.6rem 0rem;
+  border: grey SOLID 1px;
 `;
 
 export default function Login() {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errorStyle, setErrorStyle] = useState('');
+  const [errorType, setErrorType] = useState({
+    email: false,
+    password: false,
+  });
 
   const { loggedinUserActions } = useContext(LoginContext);
   const { firebaseError } = useContext(LoginContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validateUsername()) {
-      await loggedinUserActions.logIn(username, password);
+    if (validateEmail()) {
+      await loggedinUserActions.logIn(email, password);
     } else {
       console.log('wrong email');
     }
   };
 
-  const validateUsername = () => {
+  const validateEmail = () => {
     const emailRegex = /^[\w._-]+@(\w[\w_-]+)+\.[a-z]{2,3}$/i;
-    return emailRegex.test(username);
+    return emailRegex.test(email);
   };
 
   useEffect(() => {
-    console.log(Form);
     if (firebaseError) {
-      console.log(firebaseError);
       switch (firebaseError.errorCode) {
         case 'auth/invalid-email':
-          console.log(firebaseError.errorMessage);
+          setErrorType({ email: true });
           break;
         case 'auth/user-disabled':
-          console.log(firebaseError.errorMessage);
+          setErrorType({ email: true });
           break;
         case 'auth/user-not-found':
-          console.log(firebaseError.errorMessage);
+          setErrorType({ email: true });
           break;
         case 'auth/wrong-password':
-          console.log(firebaseError.errorMessage);
+          setErrorType({ password: true });
           break;
-
         default:
-          console.error(firebaseError);
-          console.error(firebaseError);
+          console.error(firebaseError.errorCode);
+          console.error(firebaseError.errorMessage);
           break;
       }
     }
@@ -81,25 +97,25 @@ export default function Login() {
         <br></br>ica.sabbatsberg@ica.se <br></br>saltway
       </div>
       <Form onSubmit={handleSubmit}>
-        <Input
+        <InputEmail
           type="email"
           placeholder="email"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          error={errorType.email ? true : false}
         />
-        <Input
+        <InputPassword
           type="password"
           placeholder="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          error={errorType.password ? true : false}
         />
-        <Input type="submit" value="Login" />
+        <div>
+          <InputButton type="submit" value="Login" className="button" />
+        </div>
       </Form>
-      {firebaseError ? (
-        <div>{firebaseError.errorMessage}</div>
-      ) : (
-        <div>no errors</div>
-      )}
+      {firebaseError ? <div>{firebaseError.errorMessage}</div> : <div></div>}
     </LoginContainer>
   );
 }
