@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import { LoginContext } from '../context/LoginContext';
 import styled from 'styled-components';
 import logo from '../assets/logo-black.svg';
-import Button from '../components/Button';
 
 const LoginContainer = styled.div`
   display: flex;
@@ -64,7 +63,6 @@ export default function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        {/* <Button onClick={handleSubmit}>Login</Button> */}
         <Input type="submit" value="Login" />
       </Form>
     </LoginContainer>

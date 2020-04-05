@@ -126,7 +126,7 @@ export default function CheckoutContainer() {
           </FlipMove>
         </Recent>
         <HistoryContainer>
-          <Headline>Log</Headline>
+          <Headline>History</Headline>
           <History hide={!showHistory}>
             <FlipMove enterAnimation="accordionVertical">
               {historyCheckouts.map((checkout) => (
