@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { LoginContext } from '../context/LoginContext';
 import styled from 'styled-components';
 import logo from '../assets/logo-black.svg';
+import Button from '../components/Button';
 
 const LoginContainer = styled.div`
   display: flex;
@@ -21,8 +22,7 @@ const Input = styled.input`
   border: grey SOLID 1px;
   border-radius: 5px;
   padding: 0.2rem 1rem;
-  margin: 0.3rem 0rem;
-  font-size: 1rem;
+  margin: 0.6rem 0rem;
 `;
 
 export default function Login() {
@@ -48,10 +48,11 @@ export default function Login() {
   return (
     <LoginContainer>
       <div>
-        <img src={logo} alt="Way" width={100} />
+        <img src={logo} alt="Way" width={200} />
         <br></br>ica.sabbatsberg@ica.se <br></br>saltway
       </div>
-      <Form onSubmit={handleSubmit}>
+      {/* <Form onSubmit={handleSubmit}> */}
+      <Form>
         <Input
           type="text"
           placeholder="email"
@@ -64,7 +65,8 @@ export default function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Input type="submit" value="Login" />
+        <Button onClick={handleSubmit}>Login</Button>
+        {/* <Input type="submit" value="Login" /> */}
       </Form>
     </LoginContainer>
   );

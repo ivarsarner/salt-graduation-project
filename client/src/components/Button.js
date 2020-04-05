@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Btn = styled.button`
-  display: flex;
+  /* display: flex; */
   overflow: hidden;
   margin: 10px;
   padding: 12px 12px;
