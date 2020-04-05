@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { LoginContext } from '../context/LoginContext';
 import styled from 'styled-components';
-import Button from './Button';
+import Button from './helpers/Button';
 
 import logo from '../assets/logo-black.svg';
 

@@ -4,8 +4,8 @@ import { CheckoutContext } from '../context/CheckoutContext';
 import CheckoutCard from './checkout/CheckoutCard';
 import CheckoutHistoryCard from './checkout/CheckoutHistoryCard';
 import OrderDetailsCard from './OrderDetails';
-import Contols from './Controls';
-import Loading from './Loading';
+import Contols from './helpers/Controls';
+import Loading from './helpers/Loading';
 import FlipMove from 'react-flip-move';
 
 const Container = styled.div`
