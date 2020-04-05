@@ -39,10 +39,10 @@ const Btn = styled.button`
   }
 `;
 
-function Button({ text, clickAction }) {
+function Button({ children, onClick }) {
   return (
-    <Btn isDark onClick={() => clickAction()}>
-      {text}
+    <Btn isDark onClick={() => onClick()}>
+      {children}
     </Btn>
   );
 }
