@@ -107,7 +107,7 @@ const CheckoutContextProvider = ({ children }) => {
         });
       setNewCheckoutData(newMockData);
     }
-  }, [state.customerSyncComplete, loggedinUser]);
+  }, [state.customerSyncComplete]);
 
   useEffect(() => filterCurrentStore(), [state.checkouts, loggedinUser]);
 
