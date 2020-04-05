@@ -69,8 +69,4 @@ function Navigation() {
   );
 }
 
-function propsAreEqual(prevProps, nextProps) {
-  return prevProps === nextProps;
-}
-
-export default React.memo(Navigation, propsAreEqual);
+export default Navigation;
