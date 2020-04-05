@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-// import Controls from './Controls';
 
 const Btn = styled.button`
-  /* display: flex; */
   overflow: hidden;
   cursor: pointer;
   user-select: none;

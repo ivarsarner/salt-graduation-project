@@ -20,7 +20,7 @@ const MainNav = styled.div`
   }
   @media (max-width: 625px) {
     img {
-      width: 70px;
+      width: 90px;
     }
     p {
       font-size: 0.8rem;
