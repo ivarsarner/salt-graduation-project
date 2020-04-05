@@ -12,9 +12,41 @@ const Card = styled.div`
   bottom: 0;
   padding: 20px;
   border-radius: 10px 10px 0 0;
+  div {
+    div {
+      div {
+        border: 1px blue solid;
+        div {
+          border: 1px purple solid;
+          width: 245px;
+        }
+      }
+    }
+  }
+
   @media (max-width: 625px) {
     width: 100%;
+    border: 1px red solid;
+
+    div {
+      border: 1px green solid;
+      div {
+        border: 1px hotpink solid;
+        div {
+          border: 1px blue solid;
+          div {
+            border: 1px purple solid;
+            width: 250px;
+          }
+        }
+      }
+    }
   }
+`;
+
+const ItemsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 const OrderDetailsDiv = styled.div`
@@ -70,6 +102,7 @@ export default function OrderDetails({ data, close, show }) {
             <CloseBtn src={closeIcon} alt="" />
           </CloseDiv>
           <CheckoutCard checkout={data} showFullScreen />
+          <ItemsContainer />
         </Card>
       </CSSTransition>
     </OrderDetailsDiv>
