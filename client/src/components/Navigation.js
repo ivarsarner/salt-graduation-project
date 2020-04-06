@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import logo from '../assets/logo-black.svg';
 import { CheckoutContext } from '../context/CheckoutContext';
-import Button from '../components/Button';
+import Button from '../components/helpers/Button';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { LoginContext } from '../context/LoginContext';

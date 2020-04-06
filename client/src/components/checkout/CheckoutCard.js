@@ -78,8 +78,8 @@ const CheckoutCard = forwardRef(
   }
 );
 
-function shouldRender(prevProps, nextProps) {
+function propsAreEqual(prevProps, nextProps) {
   return JSON.stringify(prevProps) === JSON.stringify(nextProps);
 }
 
-export default React.memo(CheckoutCard, shouldRender);
+export default React.memo(CheckoutCard, propsAreEqual);

@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { LoginContext } from '../context/LoginContext';
 import styled from 'styled-components';
+import Button from './helpers/Button';
+
 import logo from '../assets/logo-black.svg';
-import Button from '../components/Button';
 
 const LoginContainer = styled.div`
   display: flex;

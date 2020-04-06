@@ -4,8 +4,8 @@ import { CheckoutContext } from '../context/CheckoutContext';
 import CheckoutCard from './checkout/CheckoutCard';
 import CheckoutHistoryCard from './checkout/CheckoutHistoryCard';
 import OrderDetailsCard from './OrderDetails';
-import Contols from './Controls';
-import Loading from './Loading';
+import Contols from './helpers/Controls';
+import Loading from './helpers/Loading';
 import FlipMove from 'react-flip-move';
 
 const Container = styled.div`
@@ -42,6 +42,9 @@ const Recent = styled(Section)`
   flex: 0 0 55%;
   max-width: 550px;
   min-width: 300px;
+  > h4 {
+    margin-bottom: 15px;
+  }
 `;
 
 const HistoryContainer = styled(Section)`
@@ -70,18 +73,23 @@ export default function CheckoutContainer() {
   const [historyCheckouts, setHistoryCheckouts] = useState([]);
   const [showHistory, setShowHistory] = useState(false);
 
-  useEffect(() => {
+  const sortRecentCheckouts = () => {
     const recent = state.checkouts
       .sort((a, b) => new Date(b.timeCreated) - new Date(a.timeCreated))
       .slice(0, 3);
     setRecentCheckouts(recent);
-  }, [state.checkouts]);
+  };
 
-  useEffect(() => {
+  const sortHistoryCheckouts = () => {
     const history = state.checkouts
       .sort((a, b) => new Date(b.timeCreated) - new Date(a.timeCreated))
       .slice(3, 14);
     setHistoryCheckouts(history);
+  };
+
+  useEffect(() => {
+    sortRecentCheckouts();
+    sortHistoryCheckouts();
   }, [state.checkouts]);
 
   const setMobileView = (state) => {

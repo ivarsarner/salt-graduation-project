@@ -9,8 +9,8 @@ const CheckoutHistoryCard = forwardRef(({ checkout }, ref) => (
   </div>
 ));
 
-function areEqual(prevProps, nextProps) {
+function propsAreEqual(prevProps, nextProps) {
   return prevProps === nextProps;
 }
 
-export default React.memo(CheckoutHistoryCard, areEqual);
+export default React.memo(CheckoutHistoryCard, propsAreEqual);

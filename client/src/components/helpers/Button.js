@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 const Btn = styled.button`
   overflow: hidden;
+  margin: ${(props) => (props.alignCenter ? '0 auto' : '10px')};
+  padding: 12px 12px;
   cursor: pointer;
   user-select: none;
   transition: all 150ms linear;

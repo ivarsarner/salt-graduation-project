@@ -11,8 +11,8 @@ import './App.scss';
 export default function App() {
   const { loggedinUser } = useContext(LoginContext);
   return (
-    <BrowserRouter>
-      <CheckoutContextProvider>
+    <CheckoutContextProvider>
+      <BrowserRouter>
         <Switch>
           <Route exact path="/">
             {loggedinUser ? (
@@ -26,7 +26,7 @@ export default function App() {
           </Route>
           <Route path="/login" component={Login} />
         </Switch>
-      </CheckoutContextProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </CheckoutContextProvider>
   );
 }

@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, {
   createContext,
   useState,
@@ -33,6 +32,7 @@ const CheckoutContextProvider = ({ children }) => {
   const [newCheckoutData, setNewCheckoutData] = useState([]); // move to reducer
 
   const addCheckoutId = async (firebaseData) => {
+    dispatch({ type: 'LOAD_FIREBASE', data: [] });
     const dataWithCheckoutId = firebaseData.map((checkout) => {
       if (!checkout.customer) {
         const customer = getRandomCustomer();
@@ -107,9 +107,9 @@ const CheckoutContextProvider = ({ children }) => {
         });
       setNewCheckoutData(newMockData);
     }
-  }, [state.customerSyncComplete]);
+  }, [state.customerSyncComplete, loggedinUser]);
 
-  useEffect(() => filterCurrentStore(), [state.checkouts, loggedinUser]);
+  useEffect(() => filterCurrentStore(), [state.checkouts]);
 
   return (
     <CheckoutContext.Provider
