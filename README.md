@@ -29,6 +29,8 @@ _Way Popup Store_
 
 ## 🔥 Firebase
 
+If this is your first time running the dashboard, you will need to install the Firebase CLI and login: `npm install -g firebase-tools`
+
 You will need to create a `.env` file to connect to the database. This needs to be saved at `client/.env`:
 
 ```
