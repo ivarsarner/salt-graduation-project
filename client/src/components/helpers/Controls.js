@@ -35,7 +35,7 @@ S.ControlsDiv = styled.div`
 function Controls({ setMobileView }) {
   return (
     <S.ControlsDiv>
-      <Button onClick={() => setMobileView(false)}>Checkouts</Button>
+      <Button onClick={() => setMobileView(false)}>Orders</Button>
       <Button onClick={() => setMobileView(true)}>History</Button>
     </S.ControlsDiv>
   );

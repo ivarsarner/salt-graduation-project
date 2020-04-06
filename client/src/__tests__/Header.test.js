@@ -1,9 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Header from '../components/checkout/Header';
+import Header from '../components/order/Header';
 
 const testData = {
-  checkoutId: 2,
+  orderId: 2,
   customer: {
     imageUrl: 'https://randomuser.me/api/portraits/men/22.jpg',
     name: 'Luis Douglas',
@@ -27,7 +27,7 @@ const testData = {
 };
 
 const testData2 = {
-  checkoutId: 2,
+  orderId: 2,
   id: 733666501,
   items: [
     {
@@ -48,15 +48,15 @@ const testData2 = {
 
 describe('The <Header /> component', () => {
   it('WITH DATA renders as expected', () => {
-    const component = mount(<Header checkout={testData} />);
+    const component = mount(<Header order={testData} />);
     expect(component.find('img').text().length).toBeGreaterThanOrEqual(0);
     expect(component.find('h4').text().length).toBeGreaterThanOrEqual(0);
     expect(component.find('h4').text()).toMatch(/\b\w*\s\w*/gm);
   });
   it.skip('WITH NO DATA renders as expected', () => {
-    const component = mount(<Header checkout={testData2} />);
+    const component = mount(<Header order={testData2} />);
     console.log(component.debug());
-    // expect(component.find('.checkout-number')).toMatch(/\d*/);
+    // expect(component.find('.order-number')).toMatch(/\d*/);
     // expect(component.find('h4').text().length).toBeGreaterThanOrEqual(0);
     // expect(component.find('h4').text()).toMatch(/\b\w*\s\w*/gm);
   });

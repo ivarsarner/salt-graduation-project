@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import CheckoutContextProvider from './context/CheckoutContext';
-import CheckoutContainer from './components/CheckoutContainer';
+import OrderContextProvider from './context/OrderContext';
+import OrderContainer from './components/OrderContainer';
 import Login from './components/Login';
 import Navigation from './components/Navigation';
 import { LoginContext } from './context/LoginContext';
@@ -15,10 +15,10 @@ export default function App() {
       <Switch>
         <Route exact path="/">
           {loggedinUser ? (
-            <CheckoutContextProvider>
+            <OrderContextProvider>
               <Navigation />
-              <CheckoutContainer />
-            </CheckoutContextProvider>
+              <OrderContainer />
+            </OrderContextProvider>
           ) : (
             <Login />
           )}

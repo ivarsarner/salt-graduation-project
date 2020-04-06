@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Item from '../components/checkout/Item';
+import Item from '../components/order/Item';
 
 const testData = {
   gtin: '5712840020043',

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import logo from '../assets/logo-black.svg';
-import { CheckoutContext } from '../context/CheckoutContext';
+import { OrderContext } from '../context/OrderContext';
 import Button from '../components/helpers/Button';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
@@ -46,7 +46,7 @@ S.StoreName = styled.p`
 `;
 
 function Navigation() {
-  const { state } = useContext(CheckoutContext);
+  const { state } = useContext(OrderContext);
   const { loggedinUserActions } = useContext(LoginContext);
 
   return (

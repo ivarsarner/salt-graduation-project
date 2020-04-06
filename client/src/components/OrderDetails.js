@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CheckoutCard from '../components/checkout/CheckoutCard';
+import OrderCard from '../components/order/OrderCard';
 import { CSSTransition } from 'react-transition-group';
 import styled, { css } from 'styled-components';
 import closeIcon from '../assets/close.svg';
@@ -115,7 +115,7 @@ export default function OrderDetails({ data, close, show }) {
               }}
             />
           </S.CloseDiv>
-          <CheckoutCard checkout={data} showOrderDetails />
+          <OrderCard order={data} showOrderDetails />
           <S.ItemsContainer />
         </S.Card>
       </CSSTransition>

@@ -1,7 +1,7 @@
 export default function reducer(state, action) {
   switch (action.type) {
     case 'LOAD_FIREBASE':
-      return { ...state, checkouts: action.data, checkoutSyncComplete: true };
+      return { ...state, orders: action.data, orderSyncComplete: true };
     case 'SET_STORE_NAME':
       return { ...state, currentStore: action.data };
     case 'TOGGLE_ORDER_DETAILS': {

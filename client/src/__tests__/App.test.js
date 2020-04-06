@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from '../components/CheckoutContainer';
+import App from '../components/OrderContainer';
 import LoginContext from '../context/LoginContext';
 
 describe('The <App /> component', () => {

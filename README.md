@@ -1,6 +1,6 @@
 # way-merchant-dashboard
 
-A dashboard for connected merchants to get an overview of their Way checkout flow.
+A dashboard for connected merchants to get an overview of their Way order flow.
 
 [![](https://img.shields.io/badge/%F0%9F%94%A5-View%20on%20Firebase-orange)](https://way-merchant-dashboard.web.app/)
 

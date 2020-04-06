@@ -5,14 +5,14 @@ const getRandomCustomer = (data) => {
   return data[Math.floor(Math.random() * 99)];
 };
 
-const postNewCheckoutToFirebase = (array, stateData, currentUser) => {
-  let newCheckout = array.splice(-1, 1);
+const postNewOrderToFirebase = (array, stateData, currentUser) => {
+  let newOrder = array.splice(-1, 1);
   const customer = getRandomCustomer(stateData.customers);
   const currentStoreName = stateData.currentStore;
-  newCheckout = {
-    ...newCheckout[0],
+  newOrder = {
+    ...newOrder[0],
     timeCreated: moment().format('YYYY-MM-DDTHH:mm:ss'),
-    checkoutId: Math.floor(Math.random() * 4) + 1,
+    orderId: Math.floor(Math.random() * 4) + 1,
     merchantName: currentStoreName,
     merchant: currentUser.displayName,
     id: Math.floor(Math.random() * 999999999),
@@ -21,7 +21,7 @@ const postNewCheckoutToFirebase = (array, stateData, currentUser) => {
       name: customer.name,
     },
   };
-  firebase.database().ref('/').push(newCheckout);
+  firebase.database().ref('/').push(newOrder);
 };
 
-export { getRandomCustomer, postNewCheckoutToFirebase };
+export { getRandomCustomer, postNewOrderToFirebase };

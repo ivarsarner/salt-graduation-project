@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 import {
   getRandomCustomer,
-  postNewCheckoutToFirebase,
+  postNewOrderToFirebase,
 } from './mockHelperFunctions';
 import apiEndpoint from '../config';
 import firebase from '../firebase';
@@ -16,25 +16,25 @@ import axios from 'axios';
 import reducer from '../reducer';
 import { LoginContext } from './LoginContext';
 
-import newMockData from '../assets/new-checkouts-mock-data.json';
+import newMockData from '../assets/new-orders-mock-data.json';
 
-export const CheckoutContext = createContext();
+export const OrderContext = createContext();
 
-const CheckoutContextProvider = ({ children }) => {
+const OrderContextProvider = ({ children }) => {
   const { loggedinUser } = useContext(LoginContext);
 
   const initialState = {
-    checkouts: [],
+    orders: [],
     customers: [],
     currentStore: '',
     showOrderDetails: false,
     currentOrderDetails: {},
     customerSyncComplete: false,
-    checkoutSyncComplete: false,
+    orderSyncComplete: false,
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
-  const [newCheckoutData, setNewCheckoutData] = useState([]); // move to reducer
+  const [newOrderData, setNewOrderData] = useState([]); // move to reducer
 
   useEffect(() => {
     async function fetchCustomers() {
@@ -56,32 +56,32 @@ const CheckoutContextProvider = ({ children }) => {
           const firebaseData = snapshot.val();
           storeFirebaseData(Object.values(firebaseData));
         });
-      setNewCheckoutData(newMockData);
+      setNewOrderData(newMockData);
     }
   }, [state.customerSyncComplete, loggedinUser]);
 
   const storeFirebaseData = async (firebaseData) => {
-    const dataWithCheckoutId = firebaseData.map((checkout) => {
-      if (!checkout.customer) {
+    const dataWithOrderId = firebaseData.map((order) => {
+      if (!order.customer) {
         const customer = getRandomCustomer(state.customers);
         return {
-          ...checkout,
-          checkoutId: Math.floor(Math.random() * 4) + 1,
+          ...order,
+          orderId: Math.floor(Math.random() * 4) + 1,
           customer: {
             imageUrl: customer.picture,
             name: customer.name,
           },
         };
       }
-      return checkout;
+      return order;
     });
-    dispatch({ type: 'LOAD_FIREBASE', data: dataWithCheckoutId });
+    dispatch({ type: 'LOAD_FIREBASE', data: dataWithOrderId });
   };
 
-  useEffect(() => filterCurrentStore(), [state.checkouts]);
+  useEffect(() => filterCurrentStore(), [state.orders]);
 
   const filterCurrentStore = () => {
-    const data = state.checkouts.find(
+    const data = state.orders.find(
       (item) => item.merchant === loggedinUser.displayName
     );
     if (data) {
@@ -92,25 +92,25 @@ const CheckoutContextProvider = ({ children }) => {
     }
   };
 
-  const addNewCheckout = () =>
-    postNewCheckoutToFirebase(newCheckoutData, state, loggedinUser);
+  const addNewOrder = () =>
+    postNewOrderToFirebase(newOrderData, state, loggedinUser);
 
   const showOrderDetailsView = (queryId) => {
-    const orderData = state.checkouts.find((item) => item.id === queryId);
+    const orderData = state.orders.find((item) => item.id === queryId);
     dispatch({ type: 'TOGGLE_ORDER_DETAILS', data: orderData });
   };
 
   return (
-    <CheckoutContext.Provider
+    <OrderContext.Provider
       value={{
         state,
         dispatch,
-        checkoutsActions: { addNewCheckout, showOrderDetailsView },
+        ordersActions: { addNewOrder, showOrderDetailsView },
       }}
     >
       {children}
-    </CheckoutContext.Provider>
+    </OrderContext.Provider>
   );
 };
 
-export default CheckoutContextProvider;
+export default OrderContextProvider;

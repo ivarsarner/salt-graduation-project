@@ -1,7 +1,7 @@
 {
   "name": "way-merchant-dashboard",
   "version": "1.0.0",
-  "description": "A dashboard for connected merchants to get an overview of their Way checkout flow.",
+  "description": "A dashboard for connected merchants to get an overview of their Way order flow.",
   "main": "index.js",
   "scripts": {
     "server": "firebase serve --only functions,hosting",

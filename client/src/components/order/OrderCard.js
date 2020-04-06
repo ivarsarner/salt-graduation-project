@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
-import { CheckoutContext } from '../../context/CheckoutContext';
+import { OrderContext } from '../../context/OrderContext';
 import Header from './Header';
 import Item from './Item';
 
@@ -10,7 +10,7 @@ S.ItemsContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-S.CheckoutCard = styled.div`
+S.OrderCard = styled.div`
   border-radius: 10px;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   margin: 0 auto;
@@ -37,31 +37,27 @@ S.CheckoutCard = styled.div`
     `};
 `;
 
-const CheckoutCard = forwardRef(
-  ({ checkout, showOrderDetails, hideHr, hideItems }, ref) => {
-    const { checkoutsActions } = useContext(CheckoutContext);
+const OrderCard = forwardRef(
+  ({ order, showOrderDetails, hideHr, hideItems }, ref) => {
+    const { ordersActions } = useContext(OrderContext);
     const [itemsToRender, setItemsToRender] = useState([]);
 
     useEffect(() => {
       if (!showOrderDetails) {
-        const limitItems = checkout.items.slice(-4);
+        const limitItems = order.items.slice(-4);
         setItemsToRender(limitItems);
       } else {
-        setItemsToRender(checkout.items);
+        setItemsToRender(order.items);
       }
-    }, [checkout.items, showOrderDetails]);
+    }, [order.items, showOrderDetails]);
 
     return (
       <div ref={ref}>
-        <S.CheckoutCard
+        <S.OrderCard
           fullScreen={showOrderDetails}
-          onClick={() => checkoutsActions.showOrderDetailsView(checkout.id)}
+          onClick={() => ordersActions.showOrderDetailsView(order.id)}
         >
-          <Header
-            checkout={checkout}
-            hideHr={hideHr}
-            fullScreen={showOrderDetails}
-          />
+          <Header order={order} hideHr={hideHr} fullScreen={showOrderDetails} />
           {!hideItems && (
             <S.ItemsContainer>
               {itemsToRender.map((item) => (
@@ -73,7 +69,7 @@ const CheckoutCard = forwardRef(
               ))}
             </S.ItemsContainer>
           )}
-        </S.CheckoutCard>
+        </S.OrderCard>
       </div>
     );
   }
@@ -83,4 +79,4 @@ function propsAreEqual(prevProps, nextProps) {
   return JSON.stringify(prevProps) === JSON.stringify(nextProps);
 }
 
-export default React.memo(CheckoutCard, propsAreEqual);
+export default React.memo(OrderCard, propsAreEqual);

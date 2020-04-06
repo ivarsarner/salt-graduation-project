@@ -15,7 +15,7 @@ S.Img = styled.img`
     `};
 `;
 
-S.CheckoutNumber = styled.p`
+S.OrderNumber = styled.p`
   height: 40px;
   width: 40px;
   text-align: center;
@@ -24,7 +24,7 @@ S.CheckoutNumber = styled.p`
 `;
 
 export default function Image({ imageData, fullScreen }) {
-  // this should be replaced by a real checkout id from Firebase
+  // this should be replaced by a real order id from Firebase
   const randomId = Math.floor(Math.random() * 4 + 1);
 
   if (imageData !== undefined) {
@@ -36,10 +36,6 @@ export default function Image({ imageData, fullScreen }) {
       />
     );
   } else {
-    return (
-      <S.CheckoutNumber className="checkout-number">
-        {randomId}
-      </S.CheckoutNumber>
-    );
+    return <S.OrderNumber className="order-number">{randomId}</S.OrderNumber>;
   }
 }

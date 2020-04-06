@@ -33,30 +33,30 @@ S.Text = styled.p`
   padding: 0;
 `;
 
-function Header({ checkout, hideHr, fullScreen }) {
-  const [checkoutTotal, setCheckoutTotal] = useState(0);
+function Header({ order, hideHr, fullScreen }) {
+  const [orderTotal, setOrderTotal] = useState(0);
   const [itemPrice, setItemprice] = useState(0);
 
   useEffect(() => {
-    const checkoutTotal = checkout.items.reduce(
+    const orderTotal = order.items.reduce(
       (acc, current) => acc + current.quantity,
       0
     );
-    setCheckoutTotal(checkoutTotal);
-    setItemprice((Math.round(checkout.price * 100) / 100).toFixed(2));
-  }, [checkout.items, checkout.price]);
+    setOrderTotal(orderTotal);
+    setItemprice((Math.round(order.price * 100) / 100).toFixed(2));
+  }, [order.items, order.price]);
 
   return (
     <>
       <S.HeaderDiv fullScreen={fullScreen}>
-        <Image imageData={checkout.customer} fullScreen={fullScreen} />
+        <Image imageData={order.customer} fullScreen={fullScreen} />
         <div className="details">
-          <CustomerName customerData={checkout} />
+          <CustomerName customerData={order} />
           <div className="data">
             <S.Text>
-              {checkoutTotal} items &bull; {itemPrice} kr
+              {orderTotal} items &bull; {itemPrice} kr
             </S.Text>
-            <Moment fromNow>{checkout.timeCreated}</Moment>
+            <Moment fromNow>{order.timeCreated}</Moment>
           </div>
         </div>
       </S.HeaderDiv>

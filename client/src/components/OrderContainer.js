@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useState, useEffect } from 'react';
 import styled, { css } from 'styled-components';
-import { CheckoutContext } from '../context/CheckoutContext';
-import CheckoutCard from './checkout/CheckoutCard';
-import CheckoutHistoryCard from './checkout/CheckoutHistoryCard';
+import { OrderContext } from '../context/OrderContext';
+import OrderCard from './order/OrderCard';
+import OrderHistoryCard from './order/OrderHistoryCard';
 import OrderDetailsCard from './OrderDetails';
 import Contols from './helpers/Controls';
 import Loading from './helpers/Loading';
@@ -70,43 +70,43 @@ S.History = styled(S.Section)`
   }
 `;
 
-export default function CheckoutContainer() {
-  const { state, dispatch, checkoutsActions } = useContext(CheckoutContext);
-  const [recentCheckouts, setRecentCheckouts] = useState([]);
-  const [historyCheckouts, setHistoryCheckouts] = useState([]);
+export default function OrderContainer() {
+  const { state, dispatch, ordersActions } = useContext(OrderContext);
+  const [recentOrders, setRecentOrders] = useState([]);
+  const [historyOrders, setHistoryOrders] = useState([]);
   const [showHistory, setShowHistory] = useState(false);
 
-  const sortRecentCheckouts = () => {
-    const recent = state.checkouts
+  const sortRecentOrders = () => {
+    const recent = state.orders
       .sort((a, b) => new Date(b.timeCreated) - new Date(a.timeCreated))
       .slice(0, 3);
-    setRecentCheckouts(recent);
+    setRecentOrders(recent);
   };
 
-  const sortHistoryCheckouts = () => {
-    const history = state.checkouts
+  const sortHistoryOrders = () => {
+    const history = state.orders
       .sort((a, b) => new Date(b.timeCreated) - new Date(a.timeCreated))
       .slice(3, 14);
-    setHistoryCheckouts(history);
+    setHistoryOrders(history);
   };
 
   useEffect(() => {
-    sortRecentCheckouts();
-    sortHistoryCheckouts();
-  }, [state.checkouts]);
+    sortRecentOrders();
+    sortHistoryOrders();
+  }, [state.orders]);
 
   const setMobileView = (state) => {
     setShowHistory(state);
   };
 
-  if (recentCheckouts.length < 1) {
+  if (recentOrders.length < 1) {
     return <Loading />;
   }
 
   return (
     <>
       {!showHistory && (
-        <Button onClick={checkoutsActions.addNewCheckout} addNew>
+        <Button onClick={ordersActions.addNewOrder} addNew>
           + Add
         </Button>
       )}
@@ -122,7 +122,7 @@ export default function CheckoutContainer() {
         <Contols setMobileView={setMobileView} />
 
         <S.Recent hide={showHistory}>
-          <S.Headline>Checkouts</S.Headline>
+          <S.Headline>Orders</S.Headline>
           <FlipMove
             leaveAnimation="fade"
             enterAnimation={{
@@ -136,8 +136,8 @@ export default function CheckoutContainer() {
               },
             }}
           >
-            {recentCheckouts.map((checkout) => (
-              <CheckoutCard key={checkout.id.toString()} checkout={checkout} />
+            {recentOrders.map((order) => (
+              <OrderCard key={order.id.toString()} order={order} />
             ))}
           </FlipMove>
         </S.Recent>
@@ -145,11 +145,8 @@ export default function CheckoutContainer() {
           <S.Headline>History</S.Headline>
           <S.History>
             <FlipMove enterAnimation="accordionVertical">
-              {historyCheckouts.map((checkout) => (
-                <CheckoutHistoryCard
-                  key={checkout.id.toString()}
-                  checkout={checkout}
-                />
+              {historyOrders.map((order) => (
+                <OrderHistoryCard key={order.id.toString()} order={order} />
               ))}
             </FlipMove>
           </S.History>
