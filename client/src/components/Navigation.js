@@ -6,12 +6,13 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { LoginContext } from '../context/LoginContext';
 
-const Logo = styled.img`
+const S = {};
+S.Logo = styled.img`
   margin-right: 0;
   width: 100px;
 `;
 
-const MainNav = styled.div`
+S.MainNav = styled.div`
   display: flex;
   background-color: #ffffff;
   align-items: center;
@@ -35,12 +36,12 @@ const MainNav = styled.div`
   }
 `;
 
-const NavLinks = styled.div`
+S.NavLinks = styled.div`
   margin-left: auto;
   display: flex;
 `;
 
-const StoreName = styled.p`
+S.StoreName = styled.p`
   text-align: center;
 `;
 
@@ -49,15 +50,15 @@ function Navigation() {
   const { loggedinUserActions } = useContext(LoginContext);
 
   return (
-    <MainNav>
+    <S.MainNav>
       <NavLink className="main-nav-logo" exact to="/">
-        <Logo src={logo} alt="Way" />
+        <S.Logo src={logo} alt="Way" />
       </NavLink>
-      <StoreName>{state.currentStore}</StoreName>
-      <NavLinks>
+      <S.StoreName>{state.currentStore}</S.StoreName>
+      <S.NavLinks>
         <Button onClick={loggedinUserActions.logOut}>Log out</Button>
-      </NavLinks>
-    </MainNav>
+      </S.NavLinks>
+    </S.MainNav>
   );
 }
 

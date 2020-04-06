@@ -4,7 +4,8 @@ import styled, { css } from 'styled-components';
 import CustomerName from './CustomerName';
 import Image from './Image';
 
-const HeaderDiv = styled.header`
+const S = {};
+S.HeaderDiv = styled.header`
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -21,13 +22,13 @@ const HeaderDiv = styled.header`
     `};
 `;
 
-const Line = styled.hr`
+S.Line = styled.hr`
   border: 0.5px solid #e1e1e1;
   width: 90%;
   margin: 0 2;
 `;
 
-const Text = styled.p`
+S.Text = styled.p`
   margin: 0;
   padding: 0;
 `;
@@ -47,19 +48,19 @@ function Header({ checkout, hideHr, fullScreen }) {
 
   return (
     <>
-      <HeaderDiv fullScreen={fullScreen}>
+      <S.HeaderDiv fullScreen={fullScreen}>
         <Image imageData={checkout.customer} fullScreen={fullScreen} />
         <div className="details">
           <CustomerName customerData={checkout} />
           <div className="data">
-            <Text>
+            <S.Text>
               {checkoutTotal} items &bull; {itemPrice} kr
-            </Text>
+            </S.Text>
             <Moment fromNow>{checkout.timeCreated}</Moment>
           </div>
         </div>
-      </HeaderDiv>
-      {hideHr ? '' : <Line />}
+      </S.HeaderDiv>
+      {hideHr ? '' : <S.Line />}
     </>
   );
 }

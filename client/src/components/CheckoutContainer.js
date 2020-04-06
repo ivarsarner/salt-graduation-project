@@ -10,7 +10,8 @@ import Loading from './helpers/Loading';
 import Button from './helpers/Button';
 import FlipMove from 'react-flip-move';
 
-const Container = styled.div`
+const S = {};
+S.Container = styled.div`
   display: flex;
   justify-content: center;
   @media (max-width: 625px) {
@@ -19,11 +20,11 @@ const Container = styled.div`
   }
 `;
 
-const Headline = styled.h4`
+S.Headline = styled.h4`
   margin: 5px;
 `;
 
-const Section = styled.section`
+S.Section = styled.section`
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -39,7 +40,7 @@ const Section = styled.section`
   }
 `;
 
-const Recent = styled(Section)`
+S.Recent = styled(S.Section)`
   max-height: calc(100vh - 110px);
   flex: 0 0 55%;
   max-width: 550px;
@@ -49,7 +50,7 @@ const Recent = styled(Section)`
   }
 `;
 
-const HistoryContainer = styled(Section)`
+S.HistoryContainer = styled(S.Section)`
   display: flex;
   justify-content: column;
   flex: 0 0 40%;
@@ -57,7 +58,7 @@ const HistoryContainer = styled(Section)`
   min-width: 250px;
 `;
 
-const History = styled(Section)`
+S.History = styled(S.Section)`
   top: 0;
   height: calc(100vh - 120px);
   overflow: scroll;
@@ -109,7 +110,7 @@ export default function CheckoutContainer() {
           + Add
         </Button>
       )}
-      <Container>
+      <S.Container>
         {state.showOrderDetails && (
           <OrderDetailsCard
             close={() => dispatch({ type: 'TOGGLE_ORDER_DETAILS' })}
@@ -120,8 +121,8 @@ export default function CheckoutContainer() {
 
         <Contols setMobileView={setMobileView} />
 
-        <Recent hide={showHistory}>
-          <Headline>Checkouts</Headline>
+        <S.Recent hide={showHistory}>
+          <S.Headline>Checkouts</S.Headline>
           <FlipMove
             leaveAnimation="fade"
             enterAnimation={{
@@ -139,10 +140,10 @@ export default function CheckoutContainer() {
               <CheckoutCard key={checkout.id.toString()} checkout={checkout} />
             ))}
           </FlipMove>
-        </Recent>
-        <HistoryContainer hide={!showHistory}>
-          <Headline>History</Headline>
-          <History>
+        </S.Recent>
+        <S.HistoryContainer hide={!showHistory}>
+          <S.Headline>History</S.Headline>
+          <S.History>
             <FlipMove enterAnimation="accordionVertical">
               {historyCheckouts.map((checkout) => (
                 <CheckoutHistoryCard
@@ -151,9 +152,9 @@ export default function CheckoutContainer() {
                 />
               ))}
             </FlipMove>
-          </History>
-        </HistoryContainer>
-      </Container>
+          </S.History>
+        </S.HistoryContainer>
+      </S.Container>
     </>
   );
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Btn = styled.button`
+const S = {};
+S.Btn = styled.button`
   overflow: hidden;
   margin: ${(props) => (props.alignCenter ? '0 auto' : '10px')};
   padding: 12px 12px;
@@ -48,7 +49,7 @@ const Btn = styled.button`
 
 function Button({ children, onClick, type = 'button', addNew }) {
   return (
-    <Btn
+    <S.Btn
       isDark
       addNew={addNew}
       type={type}
@@ -57,7 +58,7 @@ function Button({ children, onClick, type = 'button', addNew }) {
       }}
     >
       {children}
-    </Btn>
+    </S.Btn>
   );
 }
 

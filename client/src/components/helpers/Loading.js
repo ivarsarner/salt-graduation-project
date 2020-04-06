@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
+const S = {};
+S.Container = styled.div`
   display: flex;
   justify-content: center;
   height: calc(100vh - 110px);
 `;
 
-const LoadingDiv = styled.div`
+S.LoadingDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,15 +71,15 @@ const LoadingDiv = styled.div`
 
 export default function Loading() {
   return (
-    <Container>
-      <LoadingDiv>
+    <S.Container>
+      <S.LoadingDiv>
         <div className="lds-ellipsis">
           <div></div>
           <div></div>
           <div></div>
           <div></div>
         </div>
-      </LoadingDiv>
-    </Container>
+      </S.LoadingDiv>
+    </S.Container>
   );
 }

@@ -4,7 +4,8 @@ import { CSSTransition } from 'react-transition-group';
 import styled, { css } from 'styled-components';
 import closeIcon from '../assets/close.svg';
 
-const Card = styled.div`
+const S = {};
+S.Card = styled.div`
   position: absolute;
   background: #fff;
   width: 700px;
@@ -54,12 +55,12 @@ const Card = styled.div`
   }
 `;
 
-const ItemsContainer = styled.div`
+S.ItemsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
 
-const OrderDetailsDiv = styled.div`
+S.OrderDetailsDiv = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
@@ -78,14 +79,14 @@ const OrderDetailsDiv = styled.div`
     `};
 `;
 
-const CloseDiv = styled.div`
+S.CloseDiv = styled.div`
   display: flex;
   width: 100%;
   justify-content: flex-end;
   cursor: pointer;
 `;
 
-const CloseBtn = styled.img`
+S.CloseBtn = styled.img`
   width: 25px;
 `;
 
@@ -93,7 +94,7 @@ export default function OrderDetails({ data, close, show }) {
   const [showBackground, setShowBackground] = useState(false);
 
   return (
-    <OrderDetailsDiv showBackground={showBackground}>
+    <S.OrderDetailsDiv showBackground={showBackground}>
       <CSSTransition
         in={show}
         timeout={300}
@@ -102,9 +103,9 @@ export default function OrderDetails({ data, close, show }) {
         onEntered={() => setShowBackground(true)}
         appear
       >
-        <Card>
-          <CloseDiv>
-            <CloseBtn
+        <S.Card>
+          <S.CloseDiv>
+            <S.CloseBtn
               src={closeIcon}
               alt=""
               onClick={() => {
@@ -112,11 +113,11 @@ export default function OrderDetails({ data, close, show }) {
                 close();
               }}
             />
-          </CloseDiv>
+          </S.CloseDiv>
           <CheckoutCard checkout={data} showFullScreen />
-          <ItemsContainer />
-        </Card>
+          <S.ItemsContainer />
+        </S.Card>
       </CSSTransition>
-    </OrderDetailsDiv>
+    </S.OrderDetailsDiv>
   );
 }

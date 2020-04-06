@@ -4,7 +4,8 @@ import styled, { css } from 'styled-components';
 import axios from 'axios';
 import apiEndpoint from '../../config';
 
-const ItemDiv = styled.div`
+const S = {};
+S.ItemDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -15,7 +16,7 @@ const ItemDiv = styled.div`
   }
 `;
 
-const Details = styled.div`
+S.Details = styled.div`
   font-size: 0.7rem;
   > * {
     margin: 0;
@@ -28,7 +29,7 @@ const Details = styled.div`
     `};
 `;
 
-const Image = styled.img`
+S.Image = styled.img`
   height: 40px;
   ${(props) =>
     props.fullScreen &&
@@ -54,18 +55,16 @@ function Item({ itemData, fullScreen }) {
   }, []);
 
   return (
-    <>
-      <ItemDiv>
-        <Image src={imagePath} alt={name} fullScreen={fullScreen} />
-        <Details fullScreen={fullScreen}>
-          <p className="title">{name}</p>
-          <p className="brand">{brand}</p>
-          <p className="data">
-            {quantity} st &bull; {itemPrice} kr
-          </p>
-        </Details>
-      </ItemDiv>
-    </>
+    <S.ItemDiv>
+      <S.Image src={imagePath} alt={name} fullScreen={fullScreen} />
+      <S.Details fullScreen={fullScreen}>
+        <p className="title">{name}</p>
+        <p className="brand">{brand}</p>
+        <p className="data">
+          {quantity} st &bull; {itemPrice} kr
+        </p>
+      </S.Details>
+    </S.ItemDiv>
   );
 }
 

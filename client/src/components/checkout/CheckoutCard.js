@@ -4,12 +4,13 @@ import { CheckoutContext } from '../../context/CheckoutContext';
 import Header from './Header';
 import Item from './Item';
 
-const ItemsContainer = styled.div`
+const S = {};
+S.ItemsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
 
-const CheckoutCardDiv = styled.div`
+S.CheckoutCard = styled.div`
   border-radius: 10px;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   margin: 0 auto;
@@ -52,7 +53,7 @@ const CheckoutCard = forwardRef(
 
     return (
       <div ref={ref}>
-        <CheckoutCardDiv
+        <S.CheckoutCard
           fullScreen={showFullScreen}
           onClick={() => checkoutsActions.showMoreDetails(checkout.id)}
         >
@@ -62,7 +63,7 @@ const CheckoutCard = forwardRef(
             fullScreen={showFullScreen}
           />
           {!hideItems && (
-            <ItemsContainer>
+            <S.ItemsContainer>
               {itemsToRender.map((item) => (
                 <Item
                   key={item.gtin}
@@ -70,9 +71,9 @@ const CheckoutCard = forwardRef(
                   fullScreen={showFullScreen}
                 />
               ))}
-            </ItemsContainer>
+            </S.ItemsContainer>
           )}
-        </CheckoutCardDiv>
+        </S.CheckoutCard>
       </div>
     );
   }

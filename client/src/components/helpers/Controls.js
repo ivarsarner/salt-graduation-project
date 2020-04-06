@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from './Button';
 
-const ControlsDiv = styled.div`
+const S = {};
+S.ControlsDiv = styled.div`
   display: none;
   @media (max-width: 625px) {
     display: flex;
@@ -33,10 +34,10 @@ const ControlsDiv = styled.div`
 
 function Controls({ setMobileView }) {
   return (
-    <ControlsDiv>
+    <S.ControlsDiv>
       <Button onClick={() => setMobileView(false)}>Checkouts</Button>
       <Button onClick={() => setMobileView(true)}>History</Button>
-    </ControlsDiv>
+    </S.ControlsDiv>
   );
 }
 

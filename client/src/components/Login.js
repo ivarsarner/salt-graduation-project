@@ -5,7 +5,8 @@ import Button from './helpers/Button';
 
 import logo from '../assets/logo-black.svg';
 
-const LoginContainer = styled.div`
+const S = {};
+S.LoginContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +14,7 @@ const LoginContainer = styled.div`
   text-align: center;
 `;
 
-const Form = styled.form`
+S.Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +22,7 @@ const Form = styled.form`
   text-align: center;
 `;
 
-const InputEmail = styled.input`
+S.InputEmail = styled.input`
   text-align: center;
   border-radius: 5px;
   padding: 0.2rem 1rem;
@@ -29,7 +30,7 @@ const InputEmail = styled.input`
   border: ${(props) => (props.error ? 'red' : 'grey')} SOLID 1px;
 `;
 
-const InputPassword = styled.input`
+S.InputPassword = styled.input`
   text-align: center;
   border-radius: 5px;
   padding: 0.2rem 1rem;
@@ -37,7 +38,7 @@ const InputPassword = styled.input`
   border: ${(props) => (props.error ? 'red' : 'grey')} SOLID 1px;
 `;
 
-const ErrorMessage = styled.div`
+S.ErrorMessage = styled.div`
   color: red;
 `;
 
@@ -54,13 +55,13 @@ export default function Login() {
   };
 
   return (
-    <LoginContainer>
+    <S.LoginContainer>
       <div>
         <img src={logo} alt="Way" width={200} />
         <h4>Login to your store</h4>
       </div>
-      <Form onSubmit={handleSubmit}>
-        <InputEmail
+      <S.Form onSubmit={handleSubmit}>
+        <S.InputEmail
           type="email"
           placeholder="email"
           value={email}
@@ -68,7 +69,7 @@ export default function Login() {
           required
           error={firebaseError.type === 'email' ? true : false}
         />
-        <InputPassword
+        <S.InputPassword
           type="password"
           placeholder="password"
           value={password}
@@ -77,10 +78,10 @@ export default function Login() {
           error={firebaseError.type === 'password' ? true : false}
         />
         <Button type="submit">Log in</Button>
-        <ErrorMessage>
+        <S.ErrorMessage>
           {firebaseError ? firebaseError.errorMessage : ''}
-        </ErrorMessage>
-      </Form>
-    </LoginContainer>
+        </S.ErrorMessage>
+      </S.Form>
+    </S.LoginContainer>
   );
 }

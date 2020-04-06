@@ -1,7 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Img = styled.img`
+const S = {};
+S.Img = styled.img`
   height: 40px;
   border-radius: 10px;
   margin-right: 10px;
@@ -14,7 +15,7 @@ const Img = styled.img`
     `};
 `;
 
-const CheckoutNumber = styled.p`
+S.CheckoutNumber = styled.p`
   height: 40px;
   width: 40px;
   text-align: center;
@@ -28,7 +29,7 @@ export default function Image({ imageData, fullScreen }) {
 
   if (imageData !== undefined) {
     return (
-      <Img
+      <S.Img
         src={imageData.imageUrl}
         alt={imageData.name}
         fullScreen={fullScreen}
@@ -36,7 +37,9 @@ export default function Image({ imageData, fullScreen }) {
     );
   } else {
     return (
-      <CheckoutNumber className="checkout-number">{randomId}</CheckoutNumber>
+      <S.CheckoutNumber className="checkout-number">
+        {randomId}
+      </S.CheckoutNumber>
     );
   }
 }
