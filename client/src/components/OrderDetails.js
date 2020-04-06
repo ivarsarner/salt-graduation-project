@@ -82,6 +82,7 @@ const CloseDiv = styled.div`
   display: flex;
   width: 100%;
   justify-content: flex-end;
+  cursor: pointer;
 `;
 
 const CloseBtn = styled.img`
@@ -92,13 +93,7 @@ export default function OrderDetails({ data, close, show }) {
   const [showBackground, setShowBackground] = useState(false);
 
   return (
-    <OrderDetailsDiv
-      showBackground={showBackground}
-      onClick={() => {
-        close();
-        setShowBackground(false);
-      }}
-    >
+    <OrderDetailsDiv showBackground={showBackground}>
       <CSSTransition
         in={show}
         timeout={300}
@@ -109,7 +104,14 @@ export default function OrderDetails({ data, close, show }) {
       >
         <Card>
           <CloseDiv>
-            <CloseBtn src={closeIcon} alt="" />
+            <CloseBtn
+              src={closeIcon}
+              alt=""
+              onClick={() => {
+                setShowBackground(false);
+                close();
+              }}
+            />
           </CloseDiv>
           <CheckoutCard checkout={data} showFullScreen />
           <ItemsContainer />
