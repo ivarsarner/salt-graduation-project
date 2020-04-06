@@ -39,9 +39,17 @@ const Btn = styled.button`
   }
 `;
 
-function Button({ children, onClick }) {
+function Button({ children, onClick, type = 'button' }) {
   return (
-    <Btn type="button" isDark onClick={() => onClick()}>
+    <Btn
+      isDark
+      type={type}
+      onClick={() => {
+        if (onClick) {
+          onClick();
+        }
+      }}
+    >
       {children}
     </Btn>
   );
