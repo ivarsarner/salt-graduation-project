@@ -2,10 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Btn = styled.button`
-  /* display: flex; */
   overflow: hidden;
-  margin: 10px;
-  padding: 12px 12px;
   cursor: pointer;
   user-select: none;
   transition: all 150ms linear;
@@ -13,7 +10,6 @@ const Btn = styled.button`
   white-space: nowrap;
   text-decoration: none !important;
   text-transform: none;
-  text-transform: capitalize;
   color: ${(props) => (props.isDark ? '#ffffff' : '#202129')};
   background-color: ${(props) => (props.isDark ? '#161616' : '#f2f2f2')};
   border: 0 none;
@@ -24,8 +20,12 @@ const Btn = styled.button`
   appearance: none;
   justify-content: center;
   align-items: center;
-  width: 100px;
   box-shadow: 2px 5px 10px #f5f5f5;
+  width: 70px;
+  height: 30px;
+  margin: 5px;
+  padding: 0px;
+
   &:hover {
     transition: all 150ms linear;
     opacity: 0.85;

@@ -12,13 +12,20 @@ const Logo = styled.img`
 
 const MainNav = styled.div`
   display: flex;
-  background-color: white;
+  background-color: #ffffff;
   align-items: center;
   margin-top: 1rem;
   > * {
-    margin: 0rem 1rem;
+    margin: 0 5px;
   }
   @media (max-width: 625px) {
+    img {
+      width: 90px;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+
     padding: 0 10px;
     justify-content: space-between;
     > * {
@@ -32,14 +39,18 @@ const NavLinks = styled.div`
   display: flex;
   @media (max-width: 625px) {
     button {
+      font-size: 0.7rem;
+      height: 30px;
+      width: 60px;
       &:first-child {
         position: absolute;
         bottom: 0;
         right: 0;
         font-size: 0px;
-        width: 75px;
+        height: 30px;
+        width: 60px;
         &:after {
-          font-size: 12px;
+          font-size: 0.7rem;
           content: '+ Add';
         }
       }

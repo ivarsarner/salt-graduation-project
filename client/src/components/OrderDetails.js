@@ -12,13 +12,14 @@ const Card = styled.div`
   bottom: 0;
   padding: 20px;
   border-radius: 10px 10px 0 0;
+
   div {
     div {
       div {
-        border: 1px blue solid;
         div {
-          border: 1px purple solid;
+          /* Productdetails + time */
           width: 245px;
+          margin-top: 2%;
         }
       }
     }
@@ -26,17 +27,26 @@ const Card = styled.div`
 
   @media (max-width: 625px) {
     width: 100%;
-    border: 1px red solid;
 
     div {
-      border: 1px green solid;
       div {
-        border: 1px hotpink solid;
+        /* card, username, userimage, container */
+        img {
+          width: 80px;
+          height: auto;
+        }
         div {
-          border: 1px blue solid;
           div {
-            border: 1px purple solid;
-            width: 250px;
+            /* Productimage,  time */
+            img {
+              width: 30px;
+              height: auto;
+            }
+            div {
+              /* text product details */
+              width: 145px;
+              font-size: 0.8rem;
+            }
           }
         }
       }
