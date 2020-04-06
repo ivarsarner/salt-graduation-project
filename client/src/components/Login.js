@@ -80,9 +80,6 @@ export default function Login() {
         <ErrorMessage>
           {firebaseError ? firebaseError.errorMessage : ''}
         </ErrorMessage>
-        <div>
-          <br></br>ica.sabbatsberg@ica.se <br></br>saltway
-        </div>
       </Form>
     </LoginContainer>
   );
