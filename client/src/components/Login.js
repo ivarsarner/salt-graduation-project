@@ -79,7 +79,7 @@ export default function Login() {
         />
         <Button type="submit">Log in</Button>
         <S.ErrorMessage>
-          {firebaseError ? firebaseError.errorMessage : ''}
+          {firebaseError && firebaseError.errorMessage}
         </S.ErrorMessage>
       </S.Form>
     </S.LoginContainer>

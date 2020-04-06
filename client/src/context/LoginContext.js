@@ -12,10 +12,10 @@ const LoginContextProvider = (props) => {
       if (user) {
         const { uid, displayName } = user;
         setLoggedinUser({ uid, displayName });
-        localStorage.user = JSON.stringify({ uid, displayName });
+        localStorage.setItem('user', JSON.stringify({ uid, displayName }));
       } else {
         setLoggedinUser('');
-        localStorage.user = false;
+        localStorage.setItem('user', false);
       }
     });
   };
