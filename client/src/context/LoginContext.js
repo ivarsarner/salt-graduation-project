@@ -64,9 +64,7 @@ const LoginContextProvider = ({ children }) => {
     }
   };
 
-  const clearError = () => {
-    setFirebaseError('');
-  };
+  const clearError = () => setFirebaseError('');
 
   return (
     <LoginContext.Provider
