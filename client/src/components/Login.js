@@ -22,20 +22,18 @@ S.Form = styled.form`
   text-align: center;
 `;
 
-S.InputEmail = styled.input`
+S.Input = styled.input`
   text-align: center;
-  border-radius: 5px;
   padding: 0.2rem 1rem;
-  margin: 0.6rem 0rem;
-  border: ${(props) => (props.error ? 'red' : 'grey')} SOLID 1px;
-`;
-
-S.InputPassword = styled.input`
-  text-align: center;
-  border-radius: 5px;
-  padding: 0.2rem 1rem;
-  margin: 0.6rem 0rem;
-  border: ${(props) => (props.error ? 'red' : 'grey')} SOLID 1px;
+  margin: 0;
+  padding: 10px 20px;
+  width: 300px;
+  font-size: 0.8rem;
+  border: ${(props) => (props.error ? 'red' : '#ebebeb')} solid 1px;
+  &:first-child {
+    border-radius: 4px 4px 0 0;
+  }
+  border-radius: 0 0 4px 4px;
 `;
 
 S.ErrorMessage = styled.div`
@@ -61,7 +59,7 @@ export default function Login() {
         <h4>Login to your store</h4>
       </div>
       <S.Form onSubmit={handleSubmit}>
-        <S.InputEmail
+        <S.Input
           type="email"
           placeholder="email"
           value={email}
@@ -69,7 +67,7 @@ export default function Login() {
           required
           error={firebaseError.type === 'email' ? true : false}
         />
-        <S.InputPassword
+        <S.Input
           type="password"
           placeholder="password"
           value={password}

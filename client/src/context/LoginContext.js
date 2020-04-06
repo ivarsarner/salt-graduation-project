@@ -3,7 +3,7 @@ import firebase from '../firebase';
 
 export const LoginContext = createContext();
 
-const LoginContextProvider = (props) => {
+const LoginContextProvider = ({ children }) => {
   const [loggedinUser, setLoggedinUser] = useState('');
   const [firebaseError, setFirebaseError] = useState('');
 
@@ -72,7 +72,7 @@ const LoginContextProvider = (props) => {
         firebaseError,
       }}
     >
-      {props.children}
+      {children}
     </LoginContext.Provider>
   );
 };

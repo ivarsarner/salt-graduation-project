@@ -3,9 +3,10 @@ import styled, { css } from 'styled-components';
 
 const S = {};
 S.Btn = styled.button`
+  display: flex;
   overflow: hidden;
   margin: ${(props) => (props.alignCenter ? '0 auto' : '10px')};
-  padding: 12px 12px;
+  padding: 12px 16px;
   cursor: pointer;
   user-select: none;
   transition: all 150ms linear;
