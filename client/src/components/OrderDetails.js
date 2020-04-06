@@ -115,7 +115,7 @@ export default function OrderDetails({ data, close, show }) {
               }}
             />
           </S.CloseDiv>
-          <CheckoutCard checkout={data} showFullScreen />
+          <CheckoutCard checkout={data} showOrderDetails />
           <S.ItemsContainer />
         </S.Card>
       </CSSTransition>

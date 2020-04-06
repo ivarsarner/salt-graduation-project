@@ -95,7 +95,7 @@ const CheckoutContextProvider = ({ children }) => {
   const addNewCheckout = () =>
     postNewCheckoutToFirebase(newCheckoutData, state, loggedinUser);
 
-  const showMoreDetails = (queryId) => {
+  const showOrderDetailsView = (queryId) => {
     const orderData = state.checkouts.find((item) => item.id === queryId);
     dispatch({ type: 'TOGGLE_ORDER_DETAILS', data: orderData });
   };
@@ -105,7 +105,7 @@ const CheckoutContextProvider = ({ children }) => {
       value={{
         state,
         dispatch,
-        checkoutsActions: { addNewCheckout, showMoreDetails },
+        checkoutsActions: { addNewCheckout, showOrderDetailsView },
       }}
     >
       {children}

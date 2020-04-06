@@ -38,29 +38,29 @@ S.CheckoutCard = styled.div`
 `;
 
 const CheckoutCard = forwardRef(
-  ({ checkout, showFullScreen, hideHr, hideItems }, ref) => {
+  ({ checkout, showOrderDetails, hideHr, hideItems }, ref) => {
     const { checkoutsActions } = useContext(CheckoutContext);
     const [itemsToRender, setItemsToRender] = useState([]);
 
     useEffect(() => {
-      if (!showFullScreen) {
+      if (!showOrderDetails) {
         const limitItems = checkout.items.slice(-4);
         setItemsToRender(limitItems);
       } else {
         setItemsToRender(checkout.items);
       }
-    }, [checkout.items, showFullScreen]);
+    }, [checkout.items, showOrderDetails]);
 
     return (
       <div ref={ref}>
         <S.CheckoutCard
-          fullScreen={showFullScreen}
-          onClick={() => checkoutsActions.showMoreDetails(checkout.id)}
+          fullScreen={showOrderDetails}
+          onClick={() => checkoutsActions.showOrderDetailsView(checkout.id)}
         >
           <Header
             checkout={checkout}
             hideHr={hideHr}
-            fullScreen={showFullScreen}
+            fullScreen={showOrderDetails}
           />
           {!hideItems && (
             <S.ItemsContainer>
@@ -68,7 +68,7 @@ const CheckoutCard = forwardRef(
                 <Item
                   key={item.gtin}
                   itemData={item}
-                  fullScreen={showFullScreen}
+                  fullScreen={showOrderDetails}
                 />
               ))}
             </S.ItemsContainer>
