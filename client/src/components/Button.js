@@ -41,7 +41,7 @@ const Btn = styled.button`
 
 function Button({ children, onClick }) {
   return (
-    <Btn isDark onClick={() => onClick()}>
+    <Btn type="button" isDark onClick={() => onClick()}>
       {children}
     </Btn>
   );

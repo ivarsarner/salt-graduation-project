@@ -3,6 +3,7 @@ import { LoginContext } from '../context/LoginContext';
 import styled from 'styled-components';
 import logo from '../assets/logo-black.svg';
 import Loading from './Loading';
+import Button from '../components/Button';
 
 const LoginContainer = styled.div`
   display: flex;
@@ -36,7 +37,7 @@ const InputPassword = styled.input`
   border: ${(props) => (props.error ? 'red' : 'grey')} SOLID 1px;
 `;
 
-const InputButton = styled.input`
+/* const InputButton = styled.input`
   width: 50%;
   text-align: center;
   border-radius: 5px;
@@ -46,7 +47,7 @@ const InputButton = styled.input`
   &:hover {
     background-color: #ababab;
   }
-`;
+`; */
 
 const ErrorMessage = styled.div`
   color: red;
@@ -66,8 +67,7 @@ export default function Login() {
   const { loggedinUserActions } = useContext(LoginContext);
   const { firebaseError } = useContext(LoginContext);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     setLoading(true);
     await loggedinUserActions.logIn(email, password);
   };
@@ -109,7 +109,7 @@ export default function Login() {
         <img src={logo} alt="Way" width={200} />
         <h4>Login to your store</h4>
       </div>
-      <Form onSubmit={handleSubmit}>
+      <Form>
         <InputEmail
           type="email"
           placeholder="email"
@@ -126,7 +126,8 @@ export default function Login() {
           required
           error={firebaseError.type === 'password' ? true : false}
         />
-        <InputButton type="submit" value="Login" className="button" />
+        {/* <InputButton type="submit" value="Login" /> */}
+        <Button onClick={handleSubmit}>Log in</Button>
         <ErrorMessage>
           {firebaseError ? firebaseError.errorMessage : ''}
         </ErrorMessage>
