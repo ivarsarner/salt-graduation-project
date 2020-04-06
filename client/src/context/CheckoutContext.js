@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {
   createContext,
   useState,
@@ -5,13 +6,17 @@ import React, {
   useReducer,
   useContext,
 } from 'react';
+import {
+  getRandomCustomer,
+  postNewCheckoutToFirebase,
+} from './mockHelperFunctions';
 import apiEndpoint from '../config';
-import newMockData from '../assets/new-checkouts-mock-data.json';
-import moment from 'moment';
 import firebase from '../firebase';
 import axios from 'axios';
 import reducer from '../reducer';
 import { LoginContext } from './LoginContext';
+
+import newMockData from '../assets/new-checkouts-mock-data.json';
 
 export const CheckoutContext = createContext();
 
@@ -31,11 +36,34 @@ const CheckoutContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [newCheckoutData, setNewCheckoutData] = useState([]); // move to reducer
 
-  const addCheckoutId = async (firebaseData) => {
-    dispatch({ type: 'LOAD_FIREBASE', data: [] });
+  useEffect(() => {
+    async function fetchCustomers() {
+      const { data } = await axios.get(`${apiEndpoint}/api/customers`);
+      dispatch({ type: 'SET_CUSTOMERS', data });
+    }
+    fetchCustomers();
+    return () => dispatch({ type: 'LOAD_FIREBASE', data: [] });
+  }, []);
+
+  useEffect(() => {
+    if (state.customerSyncComplete && loggedinUser) {
+      let database = firebase.database().ref('/');
+      database
+        .orderByChild('merchant')
+        .equalTo(loggedinUser.displayName)
+        .limitToLast(20)
+        .on('value', (snapshot) => {
+          const firebaseData = snapshot.val();
+          storeFirebaseData(Object.values(firebaseData));
+        });
+      setNewCheckoutData(newMockData);
+    }
+  }, [state.customerSyncComplete, loggedinUser]);
+
+  const storeFirebaseData = async (firebaseData) => {
     const dataWithCheckoutId = firebaseData.map((checkout) => {
       if (!checkout.customer) {
-        const customer = getRandomCustomer();
+        const customer = getRandomCustomer(state.customers);
         return {
           ...checkout,
           checkoutId: Math.floor(Math.random() * 4) + 1,
@@ -50,8 +78,7 @@ const CheckoutContextProvider = ({ children }) => {
     dispatch({ type: 'LOAD_FIREBASE', data: dataWithCheckoutId });
   };
 
-  const getRandomCustomer = () =>
-    state.customers[Math.floor(Math.random() * 99)];
+  useEffect(() => filterCurrentStore(), [state.checkouts]);
 
   const filterCurrentStore = () => {
     const data = state.checkouts.find(
@@ -65,54 +92,13 @@ const CheckoutContextProvider = ({ children }) => {
     }
   };
 
-  const addNewCheckout = () => {
-    let newCheckout = newCheckoutData.splice(-1, 1);
-    const customer = getRandomCustomer();
-    const currentStoreName = state.currentStore;
-    newCheckout = {
-      ...newCheckout[0],
-      timeCreated: moment().format('YYYY-MM-DDTHH:mm:ss'),
-      checkoutId: Math.floor(Math.random() * 4) + 1,
-      merchantName: currentStoreName,
-      merchant: loggedinUser.displayName,
-      id: Math.floor(Math.random() * 999999999),
-      customer: {
-        imageUrl: customer.picture,
-        name: customer.name,
-      },
-    };
-    firebase.database().ref('/').push(newCheckout);
-  };
-
-  useEffect(() => {
-    async function fetchCustomers() {
-      const { data } = await axios.get(`${apiEndpoint}/api/customers`);
-      dispatch({ type: 'SET_CUSTOMERS', data });
-    }
-    fetchCustomers();
-  }, []);
+  const addNewCheckout = () =>
+    postNewCheckoutToFirebase(newCheckoutData, state, loggedinUser);
 
   const showMoreDetails = (queryId) => {
     const orderData = state.checkouts.find((item) => item.id === queryId);
     dispatch({ type: 'TOGGLE_ORDER_DETAILS', data: orderData });
   };
-
-  useEffect(() => {
-    if (state.customerSyncComplete && loggedinUser) {
-      let database = firebase.database().ref('/');
-      database
-        .orderByChild('merchant')
-        .equalTo(loggedinUser.displayName)
-        .limitToLast(20)
-        .on('value', (snapshot) => {
-          const firebaseData = snapshot.val();
-          addCheckoutId(Object.values(firebaseData));
-        });
-      setNewCheckoutData(newMockData);
-    }
-  }, [state.customerSyncComplete, loggedinUser]);
-
-  useEffect(() => filterCurrentStore(), [state.checkouts]);
 
   return (
     <CheckoutContext.Provider

@@ -31,7 +31,7 @@ S.Btn = styled.button`
       position: absolute;
       bottom: 0;
       right: 0;
-      z-index: 9;
+      z-index: 2;
       margin: 15px;
     `};
 

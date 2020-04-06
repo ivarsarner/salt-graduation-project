@@ -71,6 +71,7 @@ S.OrderDetailsDiv = styled.div`
   background-color: rgba(255, 255, 255, 0);
   transition: background-color 0.3s linear;
   visibility: hidden;
+  z-index: 5;
   ${(props) =>
     props.showBackground &&
     css`
@@ -87,7 +88,7 @@ S.CloseDiv = styled.div`
 `;
 
 S.CloseBtn = styled.img`
-  width: 25px;
+  width: 30px;
 `;
 
 export default function OrderDetails({ data, close, show }) {
