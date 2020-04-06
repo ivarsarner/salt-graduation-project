@@ -64,11 +64,15 @@ const LoginContextProvider = (props) => {
     }
   };
 
+  const clearError = () => {
+    setFirebaseError('');
+  };
+
   return (
     <LoginContext.Provider
       value={{
         loggedinUser,
-        loggedinUserActions: { logIn, logOut },
+        loggedinUserActions: { logIn, logOut, clearError },
         firebaseError,
       }}
     >

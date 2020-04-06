@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { LoginContext } from '../context/LoginContext';
 import styled from 'styled-components';
 import Button from './helpers/Button';
@@ -53,6 +53,10 @@ export default function Login() {
     e.preventDefault();
     await loggedinUserActions.logIn(email, password);
   };
+
+  useEffect(() => {
+    loggedinUserActions.clearError();
+  }, [email, password]);
 
   return (
     <S.LoginContainer>
