@@ -8,6 +8,7 @@ import { LoginContext } from '../context/LoginContext';
 
 const Logo = styled.img`
   margin-right: 0;
+  width: 100px;
 `;
 
 const MainNav = styled.div`
@@ -50,7 +51,7 @@ function Navigation() {
   return (
     <MainNav>
       <NavLink className="main-nav-logo" exact to="/">
-        <Logo src={logo} alt="Way" width={100} />
+        <Logo src={logo} alt="Way" />
       </NavLink>
       <StoreName>{state.currentStore}</StoreName>
       <NavLinks>

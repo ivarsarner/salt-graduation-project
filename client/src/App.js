@@ -6,27 +6,25 @@ import Navigation from './components/Navigation';
 import { LoginContext } from './context/LoginContext';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import './App.scss';
+import './App.css';
 
 export default function App() {
   const { loggedinUser } = useContext(LoginContext);
   return (
-    <CheckoutContextProvider>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/">
-            {loggedinUser ? (
-              <>
-                <Navigation />
-                <CheckoutContainer />
-              </>
-            ) : (
-              <Login />
-            )}
-          </Route>
-          <Route path="/login" component={Login} />
-        </Switch>
-      </BrowserRouter>
-    </CheckoutContextProvider>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          {loggedinUser ? (
+            <CheckoutContextProvider>
+              <Navigation />
+              <CheckoutContainer />
+            </CheckoutContextProvider>
+          ) : (
+            <Login />
+          )}
+        </Route>
+        <Route path="/login" component={Login} />
+      </Switch>
+    </BrowserRouter>
   );
 }

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700&display=swap');
 
-@import-normalize;
+@import normalize;
 
 html {
   box-sizing: border-box;
@@ -12,13 +12,8 @@ html {
 *:after {
   box-sizing: inherit;
 }
-
-$color-background: #f5f5f5;
-$color-dark: #161616;
-$size-small: 40px;
-
 body {
-  background-color: $color-background;
+  background-color: #f5f5f5;
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   height: 100vh;
@@ -26,13 +21,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 a {
   text-decoration: none;
   font-weight: 600;
   color: black;
 }
-
 .order-details-appear {
   transform: translateY(100%);
 }

@@ -8,7 +8,7 @@ const firbaseStorageEndpoint =
 const fireBaseSuffix = '?alt=media';
 
 const firebaseCache = (res) =>
-  res.set('Cache-Control', 'public, max-age=300, s-maxage=600');
+  res.set('Cache-Control', 'public, max-age=604800, s-maxage=604800');
 
 const rareImages = [
   '40099330',
