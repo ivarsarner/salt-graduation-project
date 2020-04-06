@@ -61,7 +61,7 @@ export default function Login() {
     <S.LoginContainer>
       <div>
         <img src={logo} alt="Way" width={200} />
-        <h4>Login to your store</h4>
+        <h4>Log in to your store</h4>
       </div>
       <S.Form onSubmit={handleSubmit}>
         <S.Input
