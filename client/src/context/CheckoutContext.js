@@ -68,10 +68,13 @@ const CheckoutContextProvider = ({ children }) => {
   const addNewCheckout = () => {
     let newCheckout = newCheckoutData.splice(-1, 1);
     const customer = getRandomCustomer();
+    const currentStoreName = state.currentStore;
     newCheckout = {
       ...newCheckout[0],
       timeCreated: moment().format('YYYY-MM-DDTHH:mm:ss'),
       checkoutId: Math.floor(Math.random() * 4) + 1,
+      merchantName: currentStoreName,
+      merchant: loggedinUser.displayName,
       id: Math.floor(Math.random() * 999999999),
       customer: {
         imageUrl: customer.picture,
