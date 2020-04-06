@@ -53,9 +53,7 @@ function Button({ children, onClick, type = 'button', addNew }) {
       addNew={addNew}
       type={type}
       onClick={() => {
-        if (onClick) {
-          onClick();
-        }
+        onClick && onClick();
       }}
     >
       {children}
