@@ -37,25 +37,6 @@ const MainNav = styled.div`
 const NavLinks = styled.div`
   margin-left: auto;
   display: flex;
-  @media (max-width: 625px) {
-    button {
-      font-size: 0.7rem;
-      height: 30px;
-      width: 60px;
-      &:first-child {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        font-size: 0px;
-        height: 30px;
-        width: 60px;
-        &:after {
-          font-size: 0.7rem;
-          content: '+ Add';
-        }
-      }
-    }
-  }
 `;
 
 const StoreName = styled.p`
@@ -63,7 +44,7 @@ const StoreName = styled.p`
 `;
 
 function Navigation() {
-  const { checkoutsActions, state } = useContext(CheckoutContext);
+  const { state } = useContext(CheckoutContext);
   const { loggedinUserActions } = useContext(LoginContext);
 
   return (
@@ -73,7 +54,6 @@ function Navigation() {
       </NavLink>
       <StoreName>{state.currentStore}</StoreName>
       <NavLinks>
-        <Button onClick={checkoutsActions.addNewCheckout}>Add New</Button>
         <Button onClick={loggedinUserActions.logOut}>Log out</Button>
       </NavLinks>
     </MainNav>

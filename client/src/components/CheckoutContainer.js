@@ -6,6 +6,7 @@ import CheckoutHistoryCard from './checkout/CheckoutHistoryCard';
 import OrderDetailsCard from './OrderDetails';
 import Contols from './helpers/Controls';
 import Loading from './helpers/Loading';
+import Button from './helpers/Button';
 import FlipMove from 'react-flip-move';
 
 const Container = styled.div`
@@ -68,7 +69,7 @@ const History = styled(Section)`
 `;
 
 export default function CheckoutContainer() {
-  const { state, dispatch } = useContext(CheckoutContext);
+  const { state, dispatch, checkoutsActions } = useContext(CheckoutContext);
   const [recentCheckouts, setRecentCheckouts] = useState([]);
   const [historyCheckouts, setHistoryCheckouts] = useState([]);
   const [showHistory, setShowHistory] = useState(false);
@@ -102,6 +103,11 @@ export default function CheckoutContainer() {
 
   return (
     <>
+      {!showHistory && (
+        <Button onClick={checkoutsActions.addNewCheckout} addNew>
+          + Add
+        </Button>
+      )}
       <Container>
         {state.showOrderDetails && (
           <OrderDetailsCard
@@ -133,9 +139,9 @@ export default function CheckoutContainer() {
             ))}
           </FlipMove>
         </Recent>
-        <HistoryContainer>
+        <HistoryContainer hide={!showHistory}>
           <Headline>History</Headline>
-          <History hide={!showHistory}>
+          <History>
             <FlipMove enterAnimation="accordionVertical">
               {historyCheckouts.map((checkout) => (
                 <CheckoutHistoryCard

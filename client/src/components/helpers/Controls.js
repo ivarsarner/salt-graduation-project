@@ -12,12 +12,9 @@ const ControlsDiv = styled.div`
       color: #202129;
       background-color: #ffffff;
       box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
-      height: 30px;
-      width: 70px;
       display: flex;
       text-align: center;
       margin: 5px;
-      padding: 0px;
       font-size: 0.7rem;
 
       &:hover {

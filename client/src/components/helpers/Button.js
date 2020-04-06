@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Btn = styled.button`
   overflow: hidden;
@@ -23,10 +23,15 @@ const Btn = styled.button`
   justify-content: center;
   align-items: center;
   box-shadow: 2px 5px 10px #f5f5f5;
-  width: 70px;
-  height: 30px;
-  margin: 5px;
-  padding: 0px;
+  ${(props) =>
+    props.addNew &&
+    css`
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 9;
+      margin: 15px;
+    `};
 
   &:hover {
     transition: all 150ms linear;
@@ -41,10 +46,11 @@ const Btn = styled.button`
   }
 `;
 
-function Button({ children, onClick, type = 'button' }) {
+function Button({ children, onClick, type = 'button', addNew }) {
   return (
     <Btn
       isDark
+      addNew={addNew}
       type={type}
       onClick={() => {
         if (onClick) {
