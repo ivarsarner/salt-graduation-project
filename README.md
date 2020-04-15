@@ -2,7 +2,15 @@
 
 A dashboard for connected merchants to get an overview of their Way order flow.
 
+This was my final graduation project at `</salt>` together with our client [Way](https://www.wayretail.co/) and my team:
+
+- [Oskar Näsman](https://github.com/onasman)
+- [Daniel Reed](https://github.com/kwaimind)
+- [Isabelle Caspersson](https://github.com/Isabelle-123)
+
 [![](https://img.shields.io/badge/%F0%9F%94%A5-View%20on%20Firebase-orange)](https://way-merchant-dashboard.web.app/)
+
+![](screenshot.png)
 
 ## 👨‍💻 Tech stack
 
@@ -16,11 +24,6 @@ A dashboard for connected merchants to get an overview of their Way order flow.
 ## 🧪 Testing
 
 You can test to see how different users can switch accounts by logging in with the following test accounts
-
-_ICA_
-
-- ica.sabbatsberg@ica.se
-- saltway
 
 _Way Popup Store_
 
